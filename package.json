@@ -1,5 +1,5 @@
 {
-  "name": "Pragati Classes Edu Site",
+  "name": "classroom",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -7,7 +7,7 @@
     "start": "node app",
     "dev": "nodemon app.js -e js,ejs"
   },
-  "author": "web dev team",
+  "author": "webdev",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
