@@ -1,13 +1,13 @@
-var express = require("express");
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
+const facultyRoutes = require("./Faculty/faculty");
+const studentRoutes = require("./Student/student");
+const adminRoutes = require("./Admin/admin");
 
-router.get("/", (req, res) => {
-  res.redirect("/student/login");
+router.get("/login", (req, res) => {
+  res.render("login");
 });
 
-var facultyRoutes = require("./Faculty/faculty");
-var studentRoutes = require("./Student/student");
-var adminRoutes = require("./Admin/admin");
 router.use("/faculty", facultyRoutes);
 router.use("/student", studentRoutes);
 router.use("/admin", adminRoutes);
