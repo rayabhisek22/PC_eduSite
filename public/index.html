@@ -13,9 +13,18 @@
       rel="stylesheet"
     />
     <link
+      href="https://fonts.googleapis.com/css2?family=Notable&display=swap"
+      rel="stylesheet"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <link rel="stylesheet" href="./css/index.css" />
     <title>Pragati Classes</title>
     <style>
@@ -52,9 +61,13 @@
 
       .typing {
         padding-top: 15px;
-        background-color: #fff;
+        background-color: #1287a5;
         font-family: "Anonymous Pro", monospace;
         margin-bottom: -5px;
+        z-index: 10000;
+        border: 1px solid;
+        margin: 0.2rem;
+        color: #fff;
       }
 
       .line {
@@ -68,6 +81,7 @@
         white-space: nowrap;
         overflow: hidden;
         transform: translateY(-50%);
+        z-index: 10000;
       }
 
       /*Animation*/
@@ -75,6 +89,10 @@
       .anim-typewriter {
         animation: typewriter 4s steps(40) 1s infinite normal both,
           blinkTextCursor 500ms steps(40) infinite normal;
+      }
+
+      .logo {
+        display: flex;
       }
 
       .opt-div {
@@ -89,6 +107,236 @@
         padding: 0.7rem;
         font-size: 17px;
         border-radius: 5px;
+        box-shadow: 0.5rem 0.5rem 0.5rem grey;
+        margin: 1rem 0.1rem;
+      }
+
+      .logo-section {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        background-color: black;
+      }
+
+      .main-section {
+        display: flex;
+        padding: 2rem;
+        background-image: linear-gradient(to right, #f6e47f, #ff621a);
+      }
+      .sidebar {
+        width: 350px;
+        background-image: linear-gradient(to left top, #192a56, #1287a5);
+        height: 500px;
+        border: 2px solid black;
+        margin: 2rem;
+        border-radius: 10px;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+      }
+      .large-main {
+        flex: 1;
+        background-image: linear-gradient(to right, #f6e47f, #ff621a);
+        height: 500px;
+        margin: 2rem;
+      }
+
+      .sidebar-item,
+      .sidebar-item:link,
+      .sidebar-item:visited {
+        color: black;
+        border-bottom: 1px solid black;
+        margin-bottom: 2rem;
+        background-color: white;
+        padding: 0rem 1rem;
+        font-size: 25px;
+        border-radius: 5px;
+      }
+
+      .sidebar-item:hover {
+        text-decoration: none;
+      }
+
+      .blogs {
+        display: flex;
+        flex-direction: column;
+        padding: 3rem;
+      }
+      .blogs-sub1 {
+        display: flex;
+      }
+      .blogs-sub3 {
+        display: flex;
+      }
+
+      .blogs-sub1-1 {
+        width: 50%;
+        background-color: green;
+        height: 500px;
+      }
+      .blogs-sub1-2 {
+        flex: 1;
+        background-color: yellow;
+        height: 500px;
+      }
+      .blogs-sub3-1 {
+        width: 50%;
+        background-color: green;
+        height: 500px;
+      }
+      .blogs-sub3-2 {
+        flex: 1;
+        background-color: yellow;
+        height: 500px;
+      }
+
+      .blogs-sub2 {
+        width: 100%;
+        background-color: red;
+        height: 500px;
+      }
+
+      /* footer */
+
+      footer {
+        background: rgba(0, 0, 2, 0.1);
+        padding: 90px 0;
+      }
+
+      .footer-container {
+        max-width: 1300px;
+        margin: auto;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+      }
+
+      .left-col div {
+        font-size: 2em;
+      }
+      .left-col span {
+        color: rgba(0, 0, 255, 0.6);
+      }
+
+      .social-media {
+        margin: 20px 0;
+      }
+
+      .social-media a {
+        color: #001a21;
+        margin-right: 25px;
+        font-size: 22px;
+        text-decoration: none;
+        transition: 0.3s linear;
+      }
+
+      .social-media a:hover {
+        color: rgba(0, 0, 255, 0.6);
+      }
+
+      .content .fas {
+        font-size: 1.4375rem;
+        background: whitesmoke;
+        height: 45px;
+        width: 45px;
+        line-height: 45px;
+        text-align: center;
+        border-radius: 50%;
+        transition: 0.3s;
+        cursor: pointer;
+      }
+      .content .fas:hover {
+        background: rgba(0, 0, 255, 0.6);
+      }
+      .content .text {
+        text-decoration: none;
+        font-size: 1.0625rem;
+        font-weight: 500;
+        padding-left: 10px;
+      }
+      .content .phone {
+        margin: 15px 0;
+      }
+      .right-col h1 {
+        font-size: 26px;
+      }
+
+      .border {
+        width: 100px;
+        height: 4px;
+        background: rgba(0, 0, 255, 0.6);
+      }
+
+      .newsletter-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .txtb {
+        text-decoration: none;
+        flex: 1;
+        padding: 18px 40px;
+        font-size: 16px;
+        color: #293043;
+        background: #ddd;
+        border: none;
+        font-weight: 700;
+        outline: none;
+        min-width: 260px;
+        border-radius: 0.6em;
+      }
+
+      .btn {
+        padding: 18px 40px;
+        font-size: 16px;
+        color: #f1f1f1;
+        background: rgba(0, 0, 255, 0.6);
+        border: none;
+        font-weight: 700;
+        outline: none;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: opacity 0.3s linear;
+        border-radius: 0.6em;
+      }
+
+      .btn:hover {
+        opacity: 0.7;
+      }
+
+      .page-content {
+        min-height: 100vh;
+        font-size: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media screen and (max-width: 960px) {
+        .footer-container {
+          max-width: 600px;
+        }
+        .right-col {
+          width: 100%;
+          margin-bottom: 60px;
+        }
+
+        .left-col {
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      @media screen and (max-width: 700px) {
+        .btn {
+          margin: 0;
+          width: 100%;
+          margin-top: 20px;
+        }
       }
 
       @keyframes typewriter {
@@ -109,6 +357,80 @@
         }
       }
 
+      .contact-us {
+        display: flex;
+        justify-content: center;
+      }
+      .contact {
+        font-size: 20px;
+        margin-bottom: 50px;
+        padding: 50px;
+      }
+      .contact-one {
+        display: flex;
+        justify-content: space-between;
+      }
+      .contact-one .contact-name {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 30px;
+      }
+      .contact-one .contact-email {
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-two {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-input {
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid #222d61;
+      }
+      .contact-input:focus {
+        outline: none;
+      }
+      .contact-submit {
+        margin-top: 30px;
+        font-size: 20px;
+        width: 100px;
+        height: 40px;
+        border-radius: 5px;
+        border-style: none;
+        background-color: #222d61;
+        color: white;
+      }
+      .contact-submit:hover {
+        background-color: white;
+        color: #222d61;
+        outline: 1px solid #222d61;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      @media (max-width: 760px) {
+        .contact-one .contact-name {
+          width: 200px;
+          margin-right: 20px;
+        }
+        .contact-one .contact-email {
+          width: 200px;
+        }
+      }
+      @media (max-width: 465px) {
+        .contact-one .contact-name {
+          width: 150px;
+          margin-right: 20px;
+        }
+        .contact-one .contact-email {
+          width: 150px;
+        }
+      }
+
       @media only screen and (max-width: 901px) {
         .pseudonav {
           display: none;
@@ -125,15 +447,58 @@
     </style>
   </head>
   <body>
+    <div class="logo-section">
+      <div class="logo">
+        <div>
+          <img
+            src="./assets/images/logo1.jpeg"
+            style="height: 200px; width: 200px;"
+            alt=""
+          />
+        </div>
+        <div>
+          <h1 style="margin: 3rem; font-size: 70px; color: #fff;">
+            Pragati Classes, Kalain
+          </h1>
+        </div>
+      </div>
+      <div class="date" style="color: #fff; font-size: 30px; padding: 2rem;">
+        Time: 10:00 am <br />
+        30 June, 2020
+      </div>
+    </div>
     <div class="typing">
       <p class="line anim-typewriter">
         Welcome to Pragati Classes
       </p>
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a style="font-size: 22px;" class="navbar-brand" href="#"
+      <!-- <a style="font-size: 22px;" class="navbar-brand" href="#"
         >Pragati Classes</a
-      >
+      > -->
+      <div style="display: flex;" class="search">
+        <input
+          type="text"
+          placeholder="Search here for courses"
+          style="
+            width: 400px;
+            border-radius: 40px;
+            border-style: none;
+            height: 30px;
+            padding: 10px;
+          "
+        />
+        <button
+          style="
+            border-style: none;
+            border-radius: 40px;
+            margin-left: 10px;
+            width: 50px;
+          "
+        >
+          Search
+        </button>
+      </div>
       <button
         class="navbar-toggler"
         type="button"
@@ -148,16 +513,24 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Student Portal &nbsp;</a>
+            <a class="nav-link" style="font-size: 15px; color: white;" href="#"
+              >Student Portal &nbsp; &nbsp;</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">TCH stuff &nbsp;</a>
+            <a class="nav-link" style="font-size: 15px; color: white;" href="#"
+              >TCH staff &nbsp; &nbsp;</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">MNG stuff &nbsp;</a>
+            <a class="nav-link" style="font-size: 15px; color: white;" href="#"
+              >MNG staff &nbsp; &nbsp;</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us &nbsp;</a>
+            <a class="nav-link" style="font-size: 15px; color: white;" href="#"
+              >Contact Us &nbsp; &nbsp;</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link stryke" href="#">Notices</a>
@@ -198,7 +571,6 @@
           <li class="nav-item">
             <a class="nav-link stryke" href="#">Scholarship Test</a>
           </li>
-
           <li class="nav-item">
             <a class="nav-link stryke" href="#">Upcoming Events</a>
           </li>
@@ -207,77 +579,242 @@
     </nav>
     <section class="pseudonav">
       <div class="container">
-        <div style="margin: 2rem auto; display: flex;" class="row text-center">
-          <div class="col-md-3 opt-div">
+        <div
+          style="
+            margin: 2rem auto;
+            display: flex;
+            justify-content: space-evenly;
+          "
+          class="row text-center"
+        >
+          <div class="opt-div">
             <a class="opt" href="">Notices</a>
           </div>
-          <div class="col-md-3 opt-div">
+          <div class="opt-div">
             <a class="opt" href="">Media Gallery</a>
           </div>
-          <div class="col-md-3 opt-div">
-            <a class="opt" href="">Result Portal</a>
-          </div>
-          <div class="col-md-3 opt-div">
+
+          <div class="opt-div">
             <a class="opt" href="">Admission Portal</a>
           </div>
-          <div class="col-md-3 opt-div">
-            <a class="opt" href="">Leaderboard</a>
-          </div>
-          <div class="col-md-3 opt-div">
+
+          <div class="opt-div">
             <a class="opt" href="">Exams update</a>
           </div>
-          <div class="col-md-3 opt-div">
+          <div class="opt-div">
             <a class="opt" href="">Achievements</a>
           </div>
-          <div class="col-md-3 opt-div">
+          <div class="opt-div">
             <a class="opt" href="">Board of Founders</a>
           </div>
-          <div class="col-md-3 opt-div">
+          <div class="opt-div">
             <a class="opt" href="">General Doubts</a>
           </div>
-          <div class="col-md-3 opt-div">
-            <a class="opt" href="">Scholarship Test</a>
-          </div>
-          <div class="col-md-3 opt-div">
+
+          <div class="opt-div">
             <a class="opt" href="">Upcoming events</a>
           </div>
         </div>
       </div>
+      <!-- <div style="border-bottom: 1px solid; color: #000;"></div> -->
     </section>
-
-    <section id="banner">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-6 tagl">
-            <p id="tagline">PRAGATI CLASSES</p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat
-              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-              sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
+    <section
+      style="padding: 10rem 25rem; margin-bottom: 5rem; background-color: #fff;"
+    >
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              style="height: 400px;"
+              class="d-block w-100"
+              src="./assets/images/carousel1.jpeg"
+              alt="First slide"
+            />
           </div>
-          <div class="col-md-6">
-            <div class="container">
-              <img src="/assets/images/edu.png" class="img-fluid" />
+          <div class="carousel-item">
+            <img
+              style="height: 400px;"
+              class="d-block w-100"
+              src="./assets/images/carousel2.jpeg"
+              alt="Second slide"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              style="height: 400px;"
+              class="d-block w-100"
+              src="./assets/images/carousel3.jpeg"
+              alt="Third slide"
+            />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </section>
+    <div style="height: 50px; background-color: #1287a5;"></div>
+    <div class="main-section">
+      <div class="sidebar">
+        <a style="width: 300px;" class="sidebar-item" href="#"
+          >Online Platform</a
+        >
+        <br />
+        <a class="sidebar-item" href="#">Main Center</a>
+        <br />
+
+        <a class="sidebar-item" href="#">Result Portal</a>
+        <br />
+
+        <a class="sidebar-item" href="#">Leaderboard</a>
+        <br />
+
+        <a class="sidebar-item" href="#">Scholarship Test</a>
+        <br />
+
+        <a class="sidebar-item" href="#">FAQ</a>
+        <br />
+
+        <a class="sidebar-item" href="#">About Us</a>
+      </div>
+      <div class="large-main">
+        <div>
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/EkHcUK7KNp8"
+            frameborder="0"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </div>
+    <div style="height: 50px; background-color: #1287a5;"></div>
+
+    <h1
+      style="margin: 5rem; text-align: center; font-size: 30px; color: #192a56;"
+    >
+      Fulfil your dreams with Pragati Classes...
+    </h1>
+    <div class="blogs">
+      <div class="blogs-sub1">
+        <div class="blogs-sub1-1">One</div>
+        <div class="blogs-sub1-2">Two</div>
+      </div>
+      <div class="blogs-sub2">Hi</div>
+      <div class="blogs-sub3">
+        <div class="blogs-sub3-1">One</div>
+        <div class="blogs-sub3-2">Two</div>
+      </div>
+    </div>
+
+    <h1 style="margin-bottom: 50px; text-align: center; margin-top: 100px;">
+      Get in Touch
+    </h1>
+
+    <div class="contact-us">
+      <div class="contact">
+        <form action="#">
+          <div style="margin-bottom: 50px;" class="contact-one">
+            <div class="contact-name">
+              <label>First Name</label>
+              <br />
+              <input class="contact-input" type="text" name="name" />
+            </div>
+            <div class="contact-email">
+              <label>Last Name</label>
+              <br />
+              <input class="contact-input" type="email" name="email" />
+            </div>
+          </div>
+          <div class="contact-one">
+            <div class="contact-name">
+              <label>Phone Number </label>
+              <br />
+              <input class="contact-input" type="text" name="name" />
+            </div>
+            <div class="contact-email">
+              <label>Email</label>
+              <br />
+              <input class="contact-input" type="email" name="email" />
+            </div>
+          </div>
+          <div class="contact-two">
+            <label>Message</label>
+            <br />
+            <input class="contact-input" type="text" name="name" />
+          </div>
+          <button class="contact-submit" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <footer>
+      <div class="footer-container">
+        <div class="left-col">
+          <div style="font-size: 50px;"><span>Pragati</span>Classes</div>
+
+          <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+          <p class="rights-text" style="font-size: 15px;">
+            &copy; &nbsp; 2020 Pragati classes All Rights Reserved.
+          </p>
+        </div>
+        <div class="center box">
+          <h2 style="font-size: 25px !important;">
+            Address
+          </h2>
+          <div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text" style="font-size: 20px;">Kalain, Silchar</span>
+            </div>
+            <div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text" style="font-size: 20px;">012......</span>
+            </div>
+            <div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text" style="font-size: 20px;">abc@example.com</span>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section id="features">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
-          <div class="col-md-4"></div>
+        <div class="right-col">
+          <h1>Contact us</h1>
+          <div class="border"></div>
+          <p>Enter Your Email to get our news and updates.</p>
+          <form action="" class="newsletter-form">
+            <input type="text" class="txtb" placeholder="Enter Your Email" />
+            <input type="submit" class="btn" value="submit" />
+          </form>
         </div>
       </div>
-    </section>
+    </footer>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
