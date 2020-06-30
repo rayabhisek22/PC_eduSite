@@ -439,11 +439,11 @@ footer {
   }
 
   .date {
-    font-size: 20px !important;
+    font-size: 10px !important;
   }
 
   .input-course {
-    width: 300px !important;
+    width: 250px !important;
   }
   .carousel-sec {
     padding: 2rem !important;
@@ -459,6 +459,7 @@ footer {
   }
   .vid {
     height: 300px;
+    width: 300px !important;
   }
   .blogs-sub1 {
     flex-direction: column;
