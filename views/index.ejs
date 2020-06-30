@@ -19,170 +19,267 @@
     <link rel="stylesheet" href="./css/index.css" />
     <title>Pragati Classes</title>
     <style>
-        .pseudonav
-        {
-            padding-top: 20px;
-            background-image: linear-gradient(to right, #f6e47f , #ff621a);
-            padding-bottom: 20px;
-            color:white; 
-          
+      .pseudonav {
+        padding-top: 20px;
+        background-image: linear-gradient(to right, #f6e47f, #ff621a);
+        padding-bottom: 20px;
+        color: white;
+      }
 
+      #banner {
+        padding-top: 50px;
+        background-image: linear-gradient(to right, #f6e47f, #ff621a);
+        padding-bottom: 0px;
+        color: white;
+      }
+
+      .stryke {
+        display: none;
+      }
+
+      .pseudonav a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .pseudonav a:hover {
+        color: yellow;
+      }
+
+      #tagline {
+        font-size: 36px;
+      }
+
+      .typing {
+        padding-top: 15px;
+        background-color: #fff;
+        font-family: "Anonymous Pro", monospace;
+        margin-bottom: -5px;
+      }
+
+      .line {
+        position: relative;
+        top: 50%;
+        width: 16em;
+        margin: 0 auto;
+        border-right: 2px solid rgba(255, 255, 255, 0.75);
+        font-size: 180%;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        transform: translateY(-50%);
+      }
+
+      /*Animation*/
+
+      .anim-typewriter {
+        animation: typewriter 4s steps(40) 1s infinite normal both,
+          blinkTextCursor 500ms steps(40) infinite normal;
+      }
+
+      .opt-div {
+        margin-bottom: 2rem;
+      }
+
+      .opt,
+      .opt:link,
+      .opt:visited {
+        color: white;
+        background-color: #1287a5;
+        padding: 0.7rem;
+        font-size: 17px;
+        border-radius: 5px;
+      }
+
+      @keyframes typewriter {
+        from {
+          width: 0;
+        }
+        to {
+          width: 16em;
+        }
+      }
+
+      @keyframes blinkTextCursor {
+        from {
+          border-right-color: rgba(255, 255, 255, 0.75);
+        }
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      @media only screen and (max-width: 901px) {
+        .pseudonav {
+          display: none;
         }
 
-        #banner
-        {  
-            padding-top:50px;
-            background-image: linear-gradient(to right, #f6e47f , #ff621a);
-            padding-bottom:0px;
-            color : white; 
+        .stryke {
+          display: block;
         }
 
-        .stryke
-        {
-            display:none; 
+        .tagl {
+          text-align: center;
         }
-
-        .pseudonav a 
-        {
-            color:white; 
-            text-decoration:none;
-        }
-
-        .pseudonav a:hover 
-        {
-            color:yellow;
-        }
-
-        #tagline
-        {
-            font-size: 36px;
-        }
-
-        @media only screen and (max-width: 901px) {
-            .pseudonav 
-            {
-                display:none; 
-            }
-
-            .stryke 
-            {
-                display:block;
-
-            }
-
-            .tagl
-            {
-                text-align: center;
-            }
-
-       
-         }
-
-
+      }
     </style>
   </head>
   <body>
+    <div class="typing">
+      <p class="line anim-typewriter">
+        Welcome to Pragati Classes
+      </p>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Pragati Classes</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Courses</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About Us</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link stryke" href="#">News</a>
-              </li>
+      <a style="font-size: 22px;" class="navbar-brand" href="#"
+        >Pragati Classes</a
+      >
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Student Portal &nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">TCH stuff &nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">MNG stuff &nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact Us &nbsp;</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Notices</a>
+          </li>
 
-              <li class="nav-item">
-                <a class="nav-link stryke" href="#">Events</a>
-              </li>
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Media Gallery</a>
+          </li>
 
-              <li class="nav-item">
-                <a class="nav-link stryke" href="#">Admission</a>
-              </li>
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Result Portal</a>
+          </li>
 
-              <li class="nav-item">
-                <a class="nav-link stryke" href="#">Exam Schedule</a>
-              </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-               Login
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="/student/login">Students</a>
-                <a class="dropdown-item" href="/faculty/login">Faculty</a>
-                <a class="dropdown-item" href="/management/login">Management Staff</a>
-                <a class="dropdown-item" href="/admin/login">Admin</a>
-                
-              </div>
-            </li>
-         
-          </ul>
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Admission Portal</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Board of Founders</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Exam update</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Achievements</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Leaderboard</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">General Doubts</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Scholarship Test</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link stryke" href="#">Upcoming Events</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="pseudonav">
+      <div class="container">
+        <div style="margin: 2rem auto; display: flex;" class="row text-center">
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Notices</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Media Gallery</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Result Portal</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Admission Portal</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Leaderboard</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Exams update</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Achievements</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Board of Founders</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">General Doubts</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Scholarship Test</a>
+          </div>
+          <div class="col-md-3 opt-div">
+            <a class="opt" href="">Upcoming events</a>
+          </div>
         </div>
-      </nav>
-      <section class = "pseudonav">
-          <div class="container">
-              <div class = "row text-center">
-                  <div class="col-md-3">
-                      <a href = "">News</a>
-                  </div>
-                  <div class="col-md-3">
-                      <a href = "">Events</a>
-                </div>
-                <div class="col-md-3">
-                       <a href = "">Admission</a>
-                </div>
-                <div class="col-md-3">
-                       <a href = "">Exam Schedule</a>
-                </div>
-              </div>
+      </div>
+    </section>
 
+    <section id="banner">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 tagl">
+            <p id="tagline">PRAGATI CLASSES</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
           </div>
-      </section>
-
-      <section id = "banner">
-          <div class = "container">
-              <div class="row">
-                  <div class = "col-md-6 tagl">
-                    <p id="tagline">PRAGATI CLASSES</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-          
-                  </div>
-                  <div class = "col-md-6">
-                      <div class = "container">
-                          <img src = "/assets/images/edu.png" class = "img-fluid">
-
-                      </div>
-                  </div>
-
-              </div>
+          <div class="col-md-6">
+            <div class="container">
+              <img src="/assets/images/edu.png" class="img-fluid" />
+            </div>
           </div>
-      </section>
+        </div>
+      </div>
+    </section>
 
-      <section id = "features">
-          <div class = "container">
-              <div class="row text-center">
-                  <div class="col-md-4"><div>
-                  <div class="col-md-4"></div>
-                  <div class = "col-md-4"></div>
-              </div>
-          </div>
-      </section>
-
-    
-
+    <section id="features">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+        </div>
+      </div>
+    </section>
   </body>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </html>
-

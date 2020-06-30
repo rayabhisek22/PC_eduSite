@@ -5,7 +5,7 @@ const studentRoutes = require("./Student/student");
 const adminRoutes = require("./Admin/admin");
 
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index.ejs");
 });
 
 router.get("/login", (req, res) => {
