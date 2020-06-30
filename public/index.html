@@ -8,6 +8,7 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
@@ -28,6 +29,9 @@
     <link rel="stylesheet" href="./css/index.css" />
     <title>Pragati Classes</title>
     <style>
+      html {
+        scroll-behavior: smooth;
+      }
       .pseudonav {
         padding-top: 20px;
         background-image: linear-gradient(to right, #f6e47f, #ff621a);
@@ -160,39 +164,68 @@
       .blogs {
         display: flex;
         flex-direction: column;
-        padding: 3rem;
+        padding: 1rem;
+        background-image: linear-gradient(to right bottom, #f6e47f, #ff621a);
       }
       .blogs-sub1 {
         display: flex;
-      }
-      .blogs-sub3 {
-        display: flex;
+        padding: 5rem;
+        margin-left: -50px;
       }
 
       .blogs-sub1-1 {
         width: 50%;
-        background-color: green;
         height: 500px;
+        padding: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .blogs-sub1-2 {
-        flex: 1;
-        background-color: yellow;
+        width: 25%;
         height: 500px;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
-      .blogs-sub3-1 {
-        width: 50%;
-        background-color: green;
-        height: 500px;
-      }
-      .blogs-sub3-2 {
+      .blogs-sub1-3 {
         flex: 1;
-        background-color: yellow;
         height: 500px;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
       .blogs-sub2 {
-        width: 100%;
-        background-color: red;
+        display: flex;
+        padding: 5rem;
+        margin-top: -150px;
+      }
+
+      .blogs-sub2-1 {
+        height: 500px;
+        width: 25%;
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .blogs-sub2-2 {
+        padding: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 25%;
+        height: 500px;
+      }
+      .blogs-sub2-3 {
+        padding: 5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
         height: 500px;
       }
 
@@ -463,8 +496,9 @@
         </div>
       </div>
       <div class="date" style="color: #fff; font-size: 30px; padding: 2rem;">
-        Time: 10:00 am <br />
-        30 June, 2020
+        <div class="date" id="printDate"></div>
+        <div class="date" id="printDay"></div>
+        <div class="date" id="printTime"></div>
       </div>
     </div>
     <div class="typing">
@@ -528,7 +562,10 @@
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 15px; color: white;" href="#"
+            <a
+              class="nav-link"
+              style="font-size: 15px; color: white;"
+              href="#contact"
               >Contact Us &nbsp; &nbsp;</a
             >
           </li>
@@ -718,17 +755,111 @@
     </h1>
     <div class="blogs">
       <div class="blogs-sub1">
-        <div class="blogs-sub1-1">One</div>
-        <div class="blogs-sub1-2">Two</div>
+        <div class="blogs-sub1-1">
+          <div class="card" style="width: 100%; height: 300px;">
+            <img
+              class="card-img-top"
+              src="./assets/images/carousel1.jpeg"
+              style="height: 250px;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="blogs-sub1-2">
+          <div class="card" style="width: 100%;">
+            <img
+              class="card-img-top"
+              src="./assets/images/carousel1.jpeg"
+              style="height: 250px;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="blogs-sub1-3">
+          <div class="card" style="width: 100%;">
+            <img
+              class="card-img-top"
+              src="./assets/images/carousel1.jpeg"
+              style="height: 250px;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="blogs-sub2">Hi</div>
-      <div class="blogs-sub3">
-        <div class="blogs-sub3-1">One</div>
-        <div class="blogs-sub3-2">Two</div>
+      <div class="blogs-sub2">
+        <div class="blogs-sub2-1">
+          <div class="card" style="width: 100%;">
+            <img
+              class="card-img-top"
+              src="./assets/images/carousel1.jpeg"
+              style="height: 250px;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="blogs-sub2-2">
+          <div class="card" style="width: 100%;">
+            <img
+              class="card-img-top"
+              src="./assets/images/carousel1.jpeg"
+              style="height: 250px;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="blogs-sub2-3">
+          <div class="card" style="width: 100%; height: 300px;">
+            <img
+              class="card-img-top"
+              src="./assets/images/carousel1.jpeg"
+              style="height: 250px;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h1 style="margin-bottom: 50px; text-align: center; margin-top: 100px;">
+    <h1
+      id="contact"
+      style="margin-bottom: 50px; text-align: center; margin-top: 100px;"
+    >
       Get in Touch
     </h1>
 
@@ -816,6 +947,67 @@
       </div>
     </footer>
   </body>
+  <script>
+    var date = new Date();
+    const elementDate = document.getElementById("printDate");
+    const elementDay = document.getElementById("printDay");
+    const elementTime = document.getElementById("printTime");
+    const listOfDays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+
+    function printDate() {
+      var day = date.getDate();
+      var month = date.getMonth();
+      var year = date.getFullYear();
+
+      elementDate.innerHTML = day + " / " + month + " / " + year;
+    }
+
+    function printDay() {
+      date = new Date();
+      var numberOfDay = date.getDay();
+      var day = listOfDays[numberOfDay];
+      elementDay.innerHTML = day;
+    }
+
+    function printTime() {
+      date = new Date();
+      var hours = date.getHours();
+      var minutes = date.getMinutes();
+      var seconds = date.getSeconds();
+
+      if (seconds < 10) {
+        seconds = "0" + seconds;
+      }
+      if (minutes < 10) {
+        minutes = "0" + minutes;
+      }
+      if (hours > 12) {
+        hours = hours - 12;
+        elementTime.innerHTML =
+          hours + " : " + minutes + " : " + seconds + "  PM ";
+      } else if (hours < 12) {
+        elementTime.innerHTML =
+          hours + " : " + minutes + " : " + seconds + "  AM ";
+      } else if ((hours = 12)) {
+        elementTime.innerHTML =
+          hours + " : " + minutes + " : " + seconds + "  PM ";
+      }
+    }
+
+    setInterval(function () {
+      printTime();
+      printDate();
+      printDay();
+    }, 1000);
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
