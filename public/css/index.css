@@ -103,7 +103,7 @@ body {
 .main-section {
   display: flex;
   padding: 2rem;
-  background-image: linear-gradient(to right, #f6e47f, #ff621a);
+  background-image: linear-gradient(to top left, #f6e47f, #ff621a);
 }
 .sidebar {
   width: 350px;
@@ -431,15 +431,17 @@ footer {
 
   .logo {
     display: flex;
-    flex-direction: column;
   }
 
   .PC {
-    font-size: 20px !important;
+    font-size: 16px !important;
+    margin-left: 5px !important;
   }
 
   .date {
     font-size: 10px !important;
+    text-align: right !important;
+    margin-left: -30px !important;
   }
 
   .input-course {
@@ -454,8 +456,8 @@ footer {
   }
   .video-div {
     height: 200px;
-    margin-top: 80px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 50px;
   }
   .vid {
     height: 300px;
