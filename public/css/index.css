@@ -108,7 +108,7 @@ body {
 .sidebar {
   width: 350px;
   background-image: linear-gradient(to left top, #192a56, #1287a5);
-  height: 500px;
+  height: auto;
   border: 2px solid black;
   margin: 2rem;
   border-radius: 10px;
@@ -448,7 +448,7 @@ footer {
     width: 250px !important;
   }
   .carousel-sec {
-    padding: 2rem !important;
+    padding: 10rem !important;
   }
   .main-section {
     flex-direction: column;
