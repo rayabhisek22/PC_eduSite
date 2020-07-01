@@ -1,16 +1,17 @@
 
 const express = require('express'), 
-	passport = require('passport'),
+  passport = require('passport'),
+  flash = require('connect-flash'),
     LocalStrategy = require('passport-local').Strategy;
 
-var router = express.Router();
-var User = require('../../models/User');
-var Student = require('../../models/Student');
+const router = express.Router();
+const User = require('../../models/User');
+const Student = require('../../models/Student');
 
 //PASSPORT CONFIGURATION===========
 const session = require('express-session');
 const bcrypt = require('bcryptjs');
-
+const { body, validationResult } = require('express-validator');
 
 router.use(session({
     secret: 'TheDarkKnight',
@@ -61,19 +62,25 @@ router.use(session({
   });
 
 
+router.use(flash());
+router.use(function (req, res, next) {
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
 
 //AUTH ROUTES===================
 //login
-router.get("/login",(req,res)=>{
-	res.render("./Student/login");
-})
+router.get("/login", ifLoggedIn, (req,res)=>{
+	res.render("login");
+});
 router.post("/login", passport.authenticate("local",
 	{
 		successRedirect: "/student/acc",
-		failureRedirect: "/student/login"
+    failureRedirect: "/student/login", 
+    failureFlash:true
 	}),(req,res)=>{
 
-})
+});
 
 
 //register
@@ -82,12 +89,21 @@ router.post("/login", passport.authenticate("local",
 //logout
 router.get("/logout",function(req,res){
   req.logout();
-  res.redirect("/student/login");
+  res.redirect("/");
 })
 
 
 router.get("/acc", isLoggedIn, isStudent,  function(req, res){
-        res.render("./Student/acc");
+      
+       Student.findOne({_id:req.user.student_id}, (err, data) => {
+                    if (err)
+                     {
+                       return handleError(err); 
+                     }
+                     res.render("./Student/acc", { user:data });
+       }); 
+        
+        
 });
 
 function isStudent(req,res,next){
@@ -106,5 +122,16 @@ function isLoggedIn(req,res,next){
   }
   res.redirect("/student/login");
 }
+
+function ifLoggedIn(req,res,next){
+  if(!req.isAuthenticated()){
+    return next(); 
+  }
+  res.redirect("/student/acc");
+  
+}
+
+
+
 
 module.exports = router;

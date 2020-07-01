@@ -19,74 +19,62 @@
     <link rel="stylesheet" href="./css/index.css" />
     <title>Pragati Classes</title>
     <style>
-      .cs
+      body
       {
-        height: 300px;
-        width:300px;
-      }
-      .doubt
-      {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        
-      }
-      .test
-      {
-        padding-top:70px;
-        padding-bottom:50px;
+        background-image: linear-gradient(to right, #f6e47f, #ff621a);
       }
       .navbar
       {
         background-image: linear-gradient(to right, #f6e47f, #ff621a);
       }
+
       .profile
       {
         padding-top: 100px;
         padding-bottom:50px;
-        background-image: linear-gradient(to right, #f6e47f, #ff621a);
       }
+    
+          .profileImage 
+          {
+            height:200px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            
+          }
+            .attrib
+            {
+              color: black;
+              font-size: 32px;
+              
+            }
 
-      .profileImage 
-      {
-        height:200px;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
-      }
-      .attrib
-      {
-        color: black;
-        font-size: 32px;
-        
-      }
-
-      .card
-      {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
+            .card
+            {
+              box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
 
 
-      @media only screen and (max-width: 901px) {
-       .attrib
-       {
-         text-align: center;
-       }
-       .profileCont
-       {
-         text-align:center; 
-       }
+              @media only screen and (max-width: 901px) {
+              .attrib
+              {
+                text-align: center;
+              }
+              .profileCont
+              {
+                text-align:center; 
+              }
 
-       .title
-       {
-         text-align: center;
-       }
+              .title
+              {
+                text-align: center;
+              }
 
-       .card 
-       {
-         text-align: center;
-         margin-top: 60px;
-       }
-      }
+              .card 
+              {
+                text-align: center;
+                margin-top: 60px;
+              }
+              }
     </style>
   </head>
   <body>
@@ -109,15 +97,16 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#test">Ask doubt</a>
+            <a class="nav-link" href="#test">Queries</a>
           </li>
           <li class="nav-item">
-             <a class="nav-link" href = "#test">Resource  Hub</a>
+             <a class="nav-link" href = "#test">Register Complaint</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href = "/student/logout">Logout</a>
+            <a class="nav-link" href = "/management/logout">Logout</a>
          </li>
 
+        
          
         
 
@@ -132,7 +121,8 @@
         </ul>
       </div>
     </nav>
-
+   
+         
     <section class = "profile">
       <div class="container">
         <div class="row">
@@ -154,13 +144,12 @@
                 <p><small class="title">CONTACT NUMBER</small></p>
                 <p class="attrib"><%= user.contact %></p>
                 <p></p>
-                <p><small class="title">MOTHER'S NAME</small></p>
-                <p class="attrib"><%= user.mother %></p>
-                <p></p>
 
-                <p><small class="title">FATHER'S NAME</small></p>
-                <p class="attrib"><%= user.father %></p>
+                <p><small class="title">ROLE</small></p>
+                <p class="attrib"><%= user.role %></p>
                 <p></p>
+               
+               
 
 
               </div>
@@ -173,24 +162,18 @@
       </div>
     </section>
 
-    <section class="test">
-           <div class="container">
-             
-              <div class="row">
-                 <div class="col-md-6 text-center">
-                  <img src = "/assets/images/growth.png" class = "img-fluid cs">
-                    <h1>Test Performance</h1>
-                    <p>Track your progress with tests. Feature in progress. Coming soon!</p>
-                 </div>
-                 <div class="col-md-6 text-center">
-                       <img src = "/assets/images/doubt.png" class = "img-fluid cs">
-                       <h1>Doubt Corner</h1>
-                       <p>Clear your doubts in the blink on an eye. Comping soon!</p>
-                 </div>
-              </div>
-           </div>
-    </section>
+
+
+
+          
+
+
+
+          
+
+
   
+
    
   
  

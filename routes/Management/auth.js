@@ -5,7 +5,7 @@ LocalStrategy = require('passport-local').Strategy;
 
 const router = express.Router();
 const User = require('../../models/User');
-const Faculty = require('../../models/Faculty');
+const Management = require('../../models/Management');
 
 //PASSPORT CONFIGURATION===========
 const session = require('express-session');
@@ -69,8 +69,8 @@ router.get("/login", ifLoggedIn, (req,res)=>{
 });
 router.post("/login", passport.authenticate("local",
 	{
-		successRedirect: "/faculty/acc",
-		failureRedirect: "/faculty/login"
+		successRedirect: "/management/acc",
+		failureRedirect: "/management/login"
 	}),(req,res)=>{
 
 })
@@ -78,31 +78,40 @@ router.post("/login", passport.authenticate("local",
 
 
 //logout
-router.get("/logout",isLoggedIn, isTeacher, function(req,res){
+router.get("/logout",isLoggedIn, isManagement, function(req,res){
   req.logout();
   res.redirect("/");
 })
 
 
-router.get("/acc", isLoggedIn, isTeacher,  function(req, res){
+router.get("/acc", isLoggedIn, isManagement,  function(req, res){
       
-	Faculty.findOne({_id:req.user.faculty_id}, (err, data) => {
+	Management.findOne({_id:req.user.management_id}, (err, data) => {
 				 if (err)
 				  {
 					return handleError(err); 
 				  }
-				  res.render("./Faculty/acc", { user:data });
-	}); 
+				  res.render("./Management/acc", { user:data });
+	});  
 	 
 	 
 });
 
-
-function isTeacher(req,res,next){
-  if(req.user.faculty_id){
+function isManagement(req,res,next){
+  if(req.user.management_id){
     return next();
   }
-  res.redirect("/faculty/login");
+  res.redirect("/login");
+}
+
+
+
+//middleware for login
+function isLoggedIn(req,res,next){
+  if(req.isAuthenticated()){
+    return next();
+  }
+  res.redirect("/login");
 }
 
 
@@ -110,15 +119,8 @@ function ifLoggedIn(req,res,next){
 	if(!req.isAuthenticated()){
 	  return next(); 
 	}
-	res.redirect("/faculty/acc");
+	res.redirect("/management/acc");
 	
   }
-//middleware for login
-function isLoggedIn(req,res,next){
-  if(req.isAuthenticated()){
-    return next();
-  }
-  res.redirect("/faculty/login");
-}
-
+  
 module.exports = router;
