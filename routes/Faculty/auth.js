@@ -3,9 +3,9 @@ const express = require('express'),
 passport = require('passport'),
 LocalStrategy = require('passport-local').Strategy;
 
-var router = express.Router();
-var User = require('../../models/User');
-var Faculty = require('../../models/Faculty');
+const router = express.Router();
+const User = require('../../models/User');
+const Faculty = require('../../models/Faculty');
 
 //PASSPORT CONFIGURATION===========
 const session = require('express-session');
@@ -64,9 +64,9 @@ next();
 
 //AUTH ROUTES===================
 //login
-router.get("/login",(req,res)=>{
-	res.render("./Faculty/login");
-})
+router.get("/login", ifLoggedIn, (req,res)=>{
+	res.render("login");
+});
 router.post("/login", passport.authenticate("local",
 	{
 		successRedirect: "/faculty/acc",
@@ -80,12 +80,21 @@ router.post("/login", passport.authenticate("local",
 //logout
 router.get("/logout",isLoggedIn, isTeacher, function(req,res){
   req.logout();
-  res.redirect("/faculty/login");
+  res.redirect("/");
 })
 
 
-router.get("/acc", isLoggedIn, isTeacher, function(req, res){
-        res.render("./Faculty/acc");
+router.get("/acc", isLoggedIn, isTeacher,  function(req, res){
+      
+	Faculty.findOne({_id:req.user.faculty_id}, (err, data) => {
+				 if (err)
+				  {
+					return handleError(err); 
+				  }
+				  res.render("./Faculty/acc", { user:data });
+	}); 
+	 
+	 
 });
 
 
@@ -97,7 +106,13 @@ function isTeacher(req,res,next){
 }
 
 
-
+function ifLoggedIn(req,res,next){
+	if(!req.isAuthenticated()){
+	  return next(); 
+	}
+	res.redirect("/faculty/acc");
+	
+  }
 //middleware for login
 function isLoggedIn(req,res,next){
   if(req.isAuthenticated()){
