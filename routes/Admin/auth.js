@@ -24,6 +24,7 @@ const isAdmin = (req, res, next) => {
 
 const loggedInBlackout = (req,res,next) => {
   if(!req.isAuthenticated()){
+    console.log("error")
     return next();
   }
   res.redirect("/admin/acc");
@@ -107,6 +108,7 @@ router.use(session({
                             console.log(err); 
                             return;
                         }
+                        console.log("created")
                         res.redirect('/admin/login'); 
                     }); 
                 });
@@ -122,8 +124,9 @@ router.use(session({
 
   router.post('/login',
    passport.authenticate('local', { successRedirect: "acc",
-  failureRedirect: "login",
-   }));
+      failureRedirect: "login",
+   }
+  ));
 
    router.get('/acc', isLoggedIn, isAdmin, (req, res)=>{
 
