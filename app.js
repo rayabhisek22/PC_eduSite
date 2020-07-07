@@ -10,7 +10,7 @@ const app = express();
 const url = "mongodb+srv://pragati:pragati123@cluster0.fqhit.mongodb.net/PC?retryWrites=true&w=majority/";
 const urlLocal = "mongodb://localhost:27017/PC"
 mongoose.connect(
-  urlLocal,
+  url,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
