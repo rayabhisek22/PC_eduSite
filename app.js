@@ -7,10 +7,10 @@ const LocalStrategy = require("passport-local");
 const app = express();
 
 //Database config===================================
-const url = "mongodb+srv://pragati:pragati123@cluster0.fqhit.mongodb.net/PC?retryWrites=true&w=majority/";
-const urlLocal = "mongodb://localhost:27017/PC"
+// const url = "mongodb+srv://pragati:pragati123@cluster0.fqhit.mongodb.net/PC?retryWrites=true&w=majority/";
+const urlLocal = "mongodb://localhost:27017/PC";
 mongoose.connect(
-  url,
+  urlLocal,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -22,6 +22,10 @@ mongoose.connect(
     else console.log("DB connected");
   }
 );
+
+app.get("/notices", (req, res) => {
+  res.render("notices");
+});
 
 //App config=======================================
 app.set("view engine", "ejs");
