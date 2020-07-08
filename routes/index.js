@@ -9,10 +9,10 @@ router.get("/", (req, res) => {
   res.render("index");
 });
 
-app.get("/notices", (req, res) => {
-  console.log("hi");
-  res.render("notices");
-});
+// app.get("/notices", (req, res) => {
+//   console.log("hi");
+//   res.render("notices");
+// });
 
 router.use("/faculty", facultyRoutes);
 router.use("/student", studentRoutes);
