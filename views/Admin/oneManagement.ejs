@@ -1,0 +1,42 @@
+<html>
+    <head></head>
+    <body>
+        
+<h1> Edit Student </h1>
+<form method = "POST" action="/admin/management/edit/<%= person._id %>">
+  
+  <label for="lname">Name:</label><br>
+  <input type="text" id="lname" name="name" value = <%= person.name %>><br><br>
+  <label for="lname">Email:</label><br>
+  <input type="email" id="lname" name="email" value = <%= person.email %>><br><br>
+  <label for="lname">Contact Number:</label><br>
+  <input type="text" id="lname" name="contact" value = <%= person.contact %>><br><br>
+  <label for="lname">Role:</label><br>
+  <input type="text" id="lname" name="father" value = <%= person.role %>><br>
+  
+  <input type="submit" value="Submit">
+</form> 
+
+
+<input type="submit" class="death" value="Delete Staff" data-id = <%= person._id %>></button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+        $(".death").click(function(){
+
+        if (confirm("Sure you want to delete?")) {
+        var extension = $(".death").attr('data-id'); 
+        console.log(extension);
+        $.ajax({url: "/admin/management/edit/" + extension,type:'DELETE',  success: function(result){
+        window.location.href='/admin/management/';
+        }});
+        } else {
+
+        }
+
+        });
+        });
+        </script>
+    </body>
+
+    </html>
