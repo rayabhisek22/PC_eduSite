@@ -1,20 +1,16 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose'); 
+const Schema = mongoose.Schema; 
 
-const adminSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    trim: true,
-  },
-  contact: {
-    type: Number,
-  },
-  email: {
-    type: String,
-    unique: true,
-  },
-  designation: String,
-});
 
-const Admin = mongoose.model("Admin", adminSchema);
+const Admin = new Schema({
+	
+	name:String, 
+	contact:String, 
+	email :String, 
+	designation:String, 
 
-module.exports = Admin;
+}); 
+
+
+
+module.exports = mongoose.model('Admin', Admin);

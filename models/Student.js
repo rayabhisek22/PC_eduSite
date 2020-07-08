@@ -1,27 +1,17 @@
-const mongoose = require("mongoose");
+var mongoose = require('mongoose'); 
+var Schema = mongoose.Schema; 
 
-const studentSchema = new mongoose.Schema({
-  name: {
-    type: String,
-    trim: true,
-  },
-  contact: {
-    type: Number,
-    unique: true,
-  },
-  email: {
-    type: String,
-    unique: true,
-  },
-  fatherName: {
-    type: String,
-    trim: true,
-  },
-  motherName: {
-    type: String,
-    trim: true,
-  },
-});
 
-const Student = mongoose.model("Student", studentSchema);
-module.exports = Student;
+var Student = new Schema({
+	
+	name:String, 
+	contact:String, 
+	email :String, 
+	father:String, 
+	mother:String, 
+
+}); 
+
+
+
+module.exports = mongoose.model('Student', Student);
