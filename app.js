@@ -33,6 +33,7 @@ app.use(express.json());
 //Routes===========================================
 app.use(express.static("public"));
 var indexRoutes = require("./routes/index");
+
 app.use(indexRoutes);
 
 //Application listen at port 8080

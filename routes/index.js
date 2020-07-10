@@ -6,9 +6,9 @@ const studentRoutes = require("./Student/student");
 const adminRoutes = require("./Admin/admin");
 const managementRoutes = require("./Management/management");
 
-router.get("/", (req, res) => {
-  res.send("index.html");
-});
+// router.get("/", (req, res) => {
+//   res.send("index.html");
+// });
 
 router.use("/faculty", facultyRoutes);
 router.use("/student", studentRoutes);
