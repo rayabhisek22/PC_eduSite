@@ -32,7 +32,7 @@ body {
 .Modal {
   max-width: 500px;
 
-  background: transparent;
+  
   margin: 0px auto;
   box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
   /*padding: 20px;*/
@@ -264,19 +264,19 @@ body {
 }
 @keyframes slide{
     0%{
-        background-image:url("images/AIIMS.jpg");
+        background-image:url("../images/AIIMS.jpg");
     }
     25%{
-        background-image: url("images/IITB.jpg");
+        background-image: url("../images/IITB.jpg");
     }
     50%{
-        background-image:url("images/IITB2.jpg");
+        background-image:url("../images/IITB2.jpg");
     }
     75%{
-        background-image:url("images/IITR.jpg");
+        background-image:url("../images/IITR.jpg");
     }
     100%{
-        background-image: url("images/Entrance_To_SMCH.jpg");
+        background-image: url("../images/Entrance_To_SMCH.jpg");
     }
     
 }
