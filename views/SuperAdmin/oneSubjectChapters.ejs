@@ -1,0 +1,121 @@
+<html>
+    <head></head>
+    <body>
+        
+<h1> Edit Suject : <%=subject.name%></h1>
+<h3> Course Id : <%=subject.subject_id%></h3>
+<h2>List of chapters</h2>
+
+<% subject.chapters.forEach((chapter)=>{ %>
+  <form method = "POST" action="/superadmin/subject/<%= subject._id %>/chapters/edit/" class="myform">   
+    <label for="name">Chapter Name:</label>
+    <input type="text" id="name" name="chapter_name" value = <%= chapter.chapter_name %>>
+    <label for="=subject_id">Chapter ID:</label>
+    <input type="text" id="lname" name="chapter_id" value = <%= chapter.chapter_id %>>
+    <input type="submit" class="death" value="Delete Subject" data-id = <%= chapter._id %>></button>
+    <input type="submit" class="update" value="Update Subject" data-id = <%= chapter._id %>></button>
+    <br><br> 
+  </form> 
+<%})%> 
+
+<div class="new_chapters">
+  
+</div>   
+
+<button class="add_chapter">Add Chapter</button><br><br>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script> 
+    $(document).ready(function(){
+      var domainLocal = "http://localhost:5000"
+      var domain = "https://pragaticlasses.co.in"
+      var myform = $(".myform")
+
+      var new_chapters = $(".new_chapters")
+      var idx = 0
+
+      $(".add_chapter").click(()=>{
+        ++idx
+        var inputToAppend = `<form class="newChapter" action="/post" method="post"><label for="name">Chapter Name</label>
+                            <input type="text" id="name" name="chapter_name">
+                            <label for="=subject_id">Chapter ID:</label>
+                            <input type="text" id="lname" name="chapter_id">
+                            <a id="remove-id" class="remove_element" href="javascript:void(0);">Delete Subject</a>
+                            <input type="submit" value="Add" id="mybutton"><br><br></form>`
+
+        new_chapters.append(inputToAppend)
+        $(".add_chapter").prop("disabled",true)
+      })
+
+      $(new_chapters).on('click', '.remove_element', function(e){
+        e.preventDefault();
+        $(this).parent('form').remove(); 
+        $(".add_chapter").prop("disabled",false)
+      });
+
+      $(new_chapters).on("submit",".newChapter", function(e){
+        e.preventDefault();
+        $("#mybutton").prop("value","Adding")
+        $("#mybutton").prop('disabled', true);
+        $("#remove_element").remove()
+        
+
+        var data = $(this).serialize().replace(/\+/g,'%20');
+        var url = domain+"/superadmin/subject/<%=subject._id%>/chapters/add"
+        $.ajax({
+          type: "POST",
+          url: url,
+          data: data,
+          success: function(response){
+             console.log(response);
+             $("#mybutton").prop("value","Added")
+             location.reload()
+          }
+        });
+      });
+
+
+      $(".death").click(function(e){
+        e.preventDefault()
+        if (confirm("Sure you want to delete?")) {
+          var extension = $(this).attr('data-id'); 
+          console.log(extension);
+
+          $.ajax({
+            url: "/superadmin/subject/<%=subject._id%>/chapters/" + extension,
+            type:'DELETE',  
+            success: function(result){
+              window.location.href='/superadmin/subject/<%=subject._id%>/chapters/edit';
+            }
+          })
+
+        } else {
+
+        }
+      });
+
+      $(".update").click(function(e){
+        e.preventDefault()
+        var extension = $(this).attr('data-id'); 
+        var data = $(this).parent('form').serialize().replace(/\+/g,'%20');
+
+        var url = "/superadmin/subject/<%=subject._id%>/chapters/"+extension+"/edit"
+        console.log(url)
+
+        $.ajax({
+          url: url,
+          type:'POST',  
+          data:data,
+          success: function(result){
+            //window.location.href='/superadmin/subject/<%=subject._id%>/chapters/edit';
+            location.reload()
+          }
+        })
+      });
+
+    });
+  </script>
+</body>
+</html>

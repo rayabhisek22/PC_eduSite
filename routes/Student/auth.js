@@ -100,6 +100,7 @@ router.get("/acc", isLoggedIn, isStudent,  function(req, res){
                      {
                        return handleError(err); 
                      }
+                     console.log(data)
                      res.render("./Student/acc", { user:data });
        }); 
         
