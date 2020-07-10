@@ -719,10 +719,10 @@ footer {
   justify-content: center;
 }
 .contact {
-  color: #9b02a3;
   font-size: 20px;
   margin-bottom: 50px;
   padding: 50px;
+  z-index: 100;
 }
 .contact-one {
   display: flex;
