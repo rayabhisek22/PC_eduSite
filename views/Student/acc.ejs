@@ -3,201 +3,209 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>Pragati Classes</title>
-    <style>
-      .cs
-      {
-        height: 300px;
-        width:300px;
-      }
-      .doubt
-      {
-        padding-top: 50px;
-        padding-bottom: 50px;
-        
-      }
-      .test
-      {
-        padding-top:70px;
-        padding-bottom:50px;
-      }
-      .navbar
-      {
-        background-image: linear-gradient(to right, #f6e47f, #ff621a);
-      }
-      .profile
-      {
-        padding-top: 100px;
-        padding-bottom:50px;
-        background-image: linear-gradient(to right, #f6e47f, #ff621a);
-      }
-
-      .profileImage 
-      {
-        height:200px;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        
-      }
-      .attrib
-      {
-        color: black;
-        font-size: 32px;
-        
-      }
-
-      .card
-      {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-
-
-      @media only screen and (max-width: 901px) {
-       .attrib
-       {
-         text-align: center;
-       }
-       .profileCont
-       {
-         text-align:center; 
-       }
-
-       .title
-       {
-         text-align: center;
-       }
-
-       .card 
-       {
-         text-align: center;
-         margin-top: 60px;
-       }
-      }
-    </style>
+    <title>Student Portal</title>
+    <link rel="stylesheet" href="/css/studentportal.css" />
   </head>
   <body>
-    
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a style="font-size: 22px;" class="navbar-brand" href="#"
-        ><%= user.name %></a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#test">Ask doubt</a>
-          </li>
-          <li class="nav-item">
-             <a class="nav-link" href = "#test">Resource  Hub</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href = "/student/logout">Logout</a>
-         </li>
-
-         
-        
-
-
-
-          
-
-
-
-          
-
-        </ul>
-      </div>
-    </nav>
-
-    <section class = "profile">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 profileCont">
-              <img src = "/assets/images/profile.jpg" class="image-fluid profileImage">
+    <main class="main">
+      <div class="profile">
+        <div class="profile__photo">
+          <img
+            style="width: 180px; height: 180px;"
+            src="./assets/images/user.png"
+            alt="Profile image"
+          />
+        </div>
+        <div class="profile__details">
+          <h1 style="border-bottom: 1px solid #000;">Student Details</h1>
+          <div class="profile__details-info">
+            <li style="font-size: 35px; list-style: none;">
+              <ul>
+                Name: <%=user.name%>
+              </ul>
+              <ul>
+                Class: Class
+              </ul>
+              <ul>
+                Batch: Batch
+              </ul>
+            </li>
+            <li style="font-size: 35px; list-style: none;">
+              <ul>
+                Username: Username
+              </ul>
+              <ul>
+                Email: Email
+              </ul>
+              <ul>
+                Password: *************
+                <img
+                  style="height: 12px; width: 25px; cursor: pointer;"
+                  src="./assets/images/show-password.png"
+                  alt=""
+                />
+              </ul>
+            </li>
+            <li style="font-size: 35px; list-style: none;">
+              <ul>
+                College: College
+              </ul>
+              <ul>
+                Address: Address
+              </ul>
+            </li>
           </div>
-          <div class="col-md-9">
-            <div class="card">
-            
-                 <div class="card-header">
-                       Personal Details
-                 </div>
-            
-              <div class="card-body">
-                <p><small class="title">EMAIL</small></p>
-                <p class="attrib"><%= user.email %></p>
-                <p></p>
+        </div>
+      </div>
+      <div class="profile__achievements">
+        <div class="profile__achievements-img1">
+          <img
+            class="achimg"
+            src="./assets/images/ach2.jpg"
+            style="width: 90px; height: 90px; border-radius: 50%;"
+            alt=""
+          />
+        </div>
+        <div class="ach" style="font-size: 35px; color: #fff;">
+          Achievements:
+        </div>
+        <ul class="ach-star" style="color: Gold; font-size: 30px;">
+          Gold: 4
+        </ul>
+        <ul class="ach-star" style="color: Silver; font-size: 30px;">
+          Silver: 1
+        </ul>
+        <ul class="ach-star" style="color: Bronze; font-size: 30px;">
+          Bronze: 0
+        </ul>
 
-                <p><small class="title">CONTACT NUMBER</small></p>
-                <p class="attrib"><%= user.contact %></p>
-                <p></p>
-                <p><small class="title">MOTHER'S NAME</small></p>
-                <p class="attrib"><%= user.mother %></p>
-                <p></p>
-
-                <p><small class="title">FATHER'S NAME</small></p>
-                <p class="attrib"><%= user.father %></p>
-                <p></p>
-
-
+        <img
+          class="achimg"
+          src="./assets/images/ach1.png"
+          style="
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            transform: rotate(-45deg);
+          "
+          alt=""
+        />
+      </div>
+      <div class="profile-body">
+        <div class="profile-body__one">
+          <h1
+            style="
+              text-align: center;
+              border-bottom: 1px solid #000;
+              padding-bottom: 15px;
+            "
+          >
+            Your Test History
+          </h1>
+          <li style="list-style: none; font-size: 40px;">
+            <ul>
+              Test 49
+              <a href="#" class="view-details">View Details</a>
+            </ul>
+            <ul>
+              Test 50
+              <a href="#" class="view-details">View Details</a>
+            </ul>
+            <ul>
+              Test 51
+              <a href="#" class="view-details">View Details</a>
+            </ul>
+            <ul>
+              Test 52
+              <a href="#" class="view-details">View Details</a>
+            </ul>
+            <ul>
+              Test 53
+              <a href="#" class="view-details">View Details</a>
+            </ul>
+          </li>
+        </div>
+        <div class="profile-body__two">
+          <h1
+            class="success"
+            style="
+              margin-left: 10px;
+              color: #fff;
+              font-weight: 500;
+              font-size: 30px;
+            "
+          >
+            Success Mantra
+            <div
+              class="daily-practice"
+              style="margin-left: 190px; font-size: 40px;"
+            >
+              &#8618; Daily Practice!!!
+            </div>
+          </h1>
+          <div
+            class="question-box"
+            style="text-align: center; margin-right: 200px;"
+          >
+            <li style="font-size: 45px; list-style: none;">
+              <ul>
+                <a href="#" class="clickhere">Practice Questions</a>
+              </ul>
+              <ul>
+                <a href="#" class="clickhere">Attempt Test</a>
+              </ul>
+              <ul>
+                <a href="#" class="clickhere">View/Submit Assignments</a>
+              </ul>
+            </li>
+          </div>
+          <div class="card">
+            <div class="box">
+              <div class="percent">
+                <svg>
+                  <circle cx="70" cy="70" r="70"></circle>
+                  <circle cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div class="number">
+                  <h2>85<span>%</span></h2>
+                </div>
               </div>
-              
+              <h2 class="text">Progress</h2>
             </div>
           </div>
-
         </div>
-
+        <div class="profile-body__three">
+          <h1
+            style="
+              text-align: center;
+              border-bottom: 1px solid #000;
+              padding-bottom: 10px;
+            "
+          >
+            Notifications
+          </h1>
+          <li>
+            <a href="#" class="notification-view"
+              >Teacher A has uploaded notes of Bio diversity
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notification-view"
+              >Teacher A has uploaded notes of Bio diversity
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notification-view"
+              >Teacher A has uploaded notes of Bio diversity
+            </a>
+          </li>
+          <li>
+            <a href="#" class="notification-view"
+              >Teacher A has uploaded notes of Bio diversity
+            </a>
+          </li>
+        </div>
       </div>
-    </section>
-
-    <section class="test">
-           <div class="container">
-             
-              <div class="row">
-                 <div class="col-md-6 text-center">
-                  <img src = "/assets/images/growth.png" class = "img-fluid cs">
-                    <h1>Test Performance</h1>
-                    <p>Track your progress with tests. Feature in progress. Coming soon!</p>
-                 </div>
-                 <div class="col-md-6 text-center">
-                       <img src = "/assets/images/doubt.png" class = "img-fluid cs">
-                       <h1>Doubt Corner</h1>
-                       <p>Clear your doubts in the blink on an eye. Comping soon!</p>
-                 </div>
-              </div>
-           </div>
-    </section>
-  
-   
-  
- 
-
-
+    </main>
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </html>

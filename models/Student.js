@@ -9,6 +9,9 @@ var Student = new Schema({
 	email :String, 
 	father:String, 
 	mother:String, 
+	class: String,
+	batch: String,
+	subject: [{type: Schema.Types.ObjectId, ref: 'Subject'}]
 
 }); 
 

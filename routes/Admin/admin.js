@@ -107,13 +107,13 @@ router.post("/faculty/edit/:id",  isLoggedIn, isAdmin,(req, res) => {
     updatedFaculty.email = req.body.email;
     updatedFaculty.contact = req.body.contact;
  
-    Faculty.update({_id:req.params.id}, updatedFaculty, (err) => {
+    Faculty.updateOne({_id:req.params.id}, updatedFaculty, (err) => {
         if (err)
         {
             console.log(err); 
             return; 
         }
-        res.redirect('/admin/faculty/edit/' + req.params.id);
+        res.redirect('/admin/faculty/');
     });     
 
 }); 
@@ -187,13 +187,13 @@ router.post("/students/edit/:id",  isLoggedIn, isAdmin,(req, res) => {
     updatedStudent.contact = req.body.contact;
     updatedStudent.father = req.body.father;
     updatedStudent.mother = req.body.mother;
-    Student.update({_id:req.params.id}, updatedStudent, (err) => {
+    Student.updateOne({_id:req.params.id}, updatedStudent, (err) => {
         if (err)
         {
             console.log(err); 
             return; 
         }
-        res.redirect('/admin/students/edit/' + req.params.id);
+        res.redirect('/admin/students/');
     });     
 
 }); 

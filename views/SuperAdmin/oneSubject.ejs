@@ -1,0 +1,37 @@
+<html>
+    <head></head>
+    <body>
+        
+<h1> Edit Suject </h1>
+<form method = "POST" action="/superadmin/subject/edit/<%= subject._id %>">
+  
+  <label for="name">Name:</label><br>
+  <input type="text" id="name" name="name" value = <%= subject.name %>><br><br>
+  <label for="=subject_id">Course ID:</label><br>
+  <input type="text" id="lname" name="subject_id" value = <%= subject.subject_id %>><br><br>
+  <input type="submit" value="Submit">
+</form> 
+<a href="/superadmin/subject/<%=subject._id%>/chapters/edit">Add/Update Chapters</a><br><br><br>
+
+<input type="submit" class="death" value="Delete Subject" data-id = <%= subject._id %>></button>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script> 
+        $(document).ready(function(){
+        $(".death").click(function(){
+
+        if (confirm("Sure you want to delete?")) {
+        var extension = $(".death").attr('data-id'); 
+        console.log(extension);
+        $.ajax({url: "/superadmin/subject/edit/" + extension,type:'DELETE',  success: function(result){
+        window.location.href='/superadmin/subject/';
+        }});
+        } else {
+
+        }
+
+        });
+        });
+        </script>
+    </body>
+
+    </html>
