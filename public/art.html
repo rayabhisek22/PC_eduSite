@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <link rel="stylesheet" href="css/artstyle.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="vendors/css/normalize.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+        <title>pragati art</title>
+    </head>
+    <body>
+        <div id="blur">
+            <header>
+                <img src="images/8e2c143c-185e-405b-b376-72ccfe23492e.png" style="height: 100px; padding-top: 20px; padding-left: 20px;">
+                <h1 class="animate__animated animate__fadeIn animate__delay-0.5s animate__duration-0.2s">ARTS</h1>
+                <p style="text-align: center; color: #ebf5fc; padding-top: 28px; font-size: 20px;" class="animate__animated animate__fadeIn animate__delay-0.8s animate__duration-0.2s">Creativity take courage.</p>
+            </header>
+            <div class="container">
+                <ul>
+                    <li><a href="#" class="animate__animated animate__bounceIn animate__delay-1s animate__duration-0.5s" onclick="toggle()"><img src="images/WhatsApp%20Image%202020-07-10%20at%2000.40.59.jpeg"><div class="fa">WORLD WAR I</div></a></li>
+                </ul>
+                <ul>
+                    <li><a href="http://pragaticlasses.co.in/" target="_blank" class="animate__animated animate__bounceIn animate__delay-1s animate__duration-0.5s" style="height: 50px; width: 180px; margin-top: 70px;"><div class="fa">Go Back to Home</div></a></li>
+                    <li><a href="index.html" class="animate__animated animate__bounceIn animate__delay-1s animate__duration-0.5s" style="height: 50px; width: 180px; margin-top: 70px;"><div class="fa">Go Back to Resource</div></a></li>
+                </ul>
+            </div> 
+        </div> 
+        <div id="popup">
+            <img src="images/WhatsApp%20Image%202020-07-10%20at%2000.40.59.jpeg" style="float: left; width: 200px; margin-left: 10px; margin-right: 20px; margin-bottom: 23px;">
+            <div class="heading" style="color: rgba(0, 0, 0, 0.53); text-align: center; font-size: 30px; padding-bottom: 20px; letter-spacing: 1px; word-spacing: 2px;"><strong>WORLD WAR I</strong></div>
+            <p style="color: color: rgba(0, 0, 0, 0.53); line-height: 150%; font-size: 18px;">World War I was one of the great watersheds of 20th-century geopolitical history. It led to the fall of four great imperial dynasties  (in Germany, Russia, Austria-Hungary, and Turkey), resulted in the Bolshevik Revolution in Russia, and, in its destabilization of European society, laid the groundwork for World War II.
+            </p>
+            <a href="#" onclick="toggle()">Close</a>
+            <a href="pdf/The%20world%20war%20I.docx.pdf">Continue</a>
+        </div>
+        
+        <script type="text/javascript">
+            function toggle(){
+                var blur = document.getElementById('blur');
+                blur.classList.toggle('active');
+                var popup = document.getElementById('popup');
+                popup.classList.toggle('active');
+            }
+        </script>
+        
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        
+    </body>
+</html>    

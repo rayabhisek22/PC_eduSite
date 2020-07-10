@@ -806,44 +806,20 @@ footer {
     align-items: center;
   }
 
-  .blogs-sub1 {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5rem !important;
-    margin-left: 0px !important;
+  .blogs {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 30px;
   }
 
-  .blogs-sub1-1 {
-    width: 100%;
-    padding: 2rem !important;
-    margin-top: -100px;
+  .blogs-sub-1 {
+    background-color: red;
+    width: 45%;
+    height: 300px;
   }
-  .blogs-sub1-2 {
-    width: 100%;
-    margin-top: -100px;
-  }
-  .blogs-sub1-3 {
-    width: 100%;
-  }
-  .blogs-sub2 {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  .blogs-sub2-1 {
-    width: 100%;
-    padding: 2rem !important;
-    margin-top: 50px;
-  }
-  .blogs-sub2-2 {
-    width: 100%;
-    padding: 2rem !important;
-    margin-top: -100px;
-  }
-  .blogs-sub2-3 {
-    width: 100%;
-    padding: 2rem !important;
+  .blogs-sub-2 {
+    background-color: green;
+    width: 45%;
   }
 }
 @media (max-width: 760px) {

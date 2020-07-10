@@ -8,34 +8,55 @@
     <link rel="stylesheet" type="text/css" href="./css/admissionPortal.css" />
   </head>
   <body>
-    <div id="sign-up_Modal" class="Modal">
-      <div class="modal-content">
-        <div class="modal-header">
-          <span id="closeBtn" class="close">&times;</span>
-          <h2>Admission to Pragati Classes</h2>
-        </div>
-        <div class="form">
-          <div class="inputfield">
-            <label>Full Name</label>
-            <input type="text" class="input" />
+    <div class="slideshow">
+      <div class="slide"></div>
+
+      <div id="sign-up_Modal" class="Modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span id="closeBtn" class="close">&times;</span>
+            <h2>Admission to Pragati Classes</h2>
           </div>
-          <div class="inputfield">
-            <label>School/College</label>
-            <input type="text" class="input" />
-          </div>
-          <div class="inputfield">
-            <label>Full Name</label>
-            <input type="text" class="input" />
-          </div>
-          <!-- <div class="inputfield">
+          <div class="form">
+            <div class="inputfield">
+              <label>Full Name</label>
+              <input type="text" class="input" />
+            </div>
+            <div class="inputfield">
+              <label>Class</label>
+              <div class="custom_select">
+                <select>
+                  <option value="">Select</option>
+                  <option value="seven">VII</option>
+                  <option value="eight">VIII</option>
+                  <option value="nine">IX</option>
+                  <option value="ten">X</option>
+                  <option value="eleven">XI</option>
+                  <option value="twelve">XII</option>
+                </select>
+              </div>
+            </div>
+            <div class="inputfield">
+              <label>School/College</label>
+              <input type="text" class="input" />
+            </div>
+            <div class="inputfield">
+              <label>Father's name</label>
+              <input type="text" class="input" />
+            </div>
+            <div class="inputfield">
+              <label>Mother's name</label>
+              <input type="text" class="input" />
+            </div>
+            <!-- <div class="inputfield">
             <label>Create Username</label>
             <input type="text" class="input" />
           </div> -->
-          <div class="inputfield">
-            <label>Date of Birth</label>
-            <input type="Date" class="input" />
-          </div>
-          <!-- <div class="inputfield">
+            <div class="inputfield">
+              <label>Date of Birth</label>
+              <input type="Date" class="input" />
+            </div>
+            <!-- <div class="inputfield">
             <label>Create Password</label>
             <input type="password" class="input" />
           </div>
@@ -43,42 +64,43 @@
             <label>Confirm Password</label>
             <input type="password" class="input" />
           </div> -->
-          <div class="inputfield">
-            <label>Gender</label>
-            <div class="custom_select">
-              <select>
-                <option value="">Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
+            <div class="inputfield">
+              <label>Gender</label>
+              <div class="custom_select">
+                <select>
+                  <option value="">Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
             </div>
-          </div>
-          <div class="inputfield">
-            <label>Email Address</label>
-            <input type="Email" class="input" />
-          </div>
-          <div class="inputfield">
-            <label>Phone Number</label>
-            <input type="text" class="input" />
-          </div>
-          <div class="inputfield">
-            <label>Address</label>
-            <textarea class="textarea"></textarea>
-          </div>
-          <div class="inputfield">
-            <label>Postal Code</label>
-            <input type="text" class="input" />
-          </div>
-          <div class="inputfield terms">
-            <label class="check">
-              <input type="checkbox" />
-              <span class="checkmark"></span>
-            </label>
-            <p><a href="#">I agree to the terms and conditions</a></p>
-          </div>
-          <div class="inputfield">
-            <input type="submit" value="Sign Up" class="btn" />
+            <div class="inputfield">
+              <label>Email Address</label>
+              <input type="Email" class="input" />
+            </div>
+            <div class="inputfield">
+              <label>Phone Number</label>
+              <input type="text" class="input" />
+            </div>
+            <div class="inputfield">
+              <label>Address</label>
+              <textarea class="textarea"></textarea>
+            </div>
+            <div class="inputfield">
+              <label>Postal Code</label>
+              <input type="text" class="input" />
+            </div>
+            <div class="inputfield terms">
+              <label class="check">
+                <input type="checkbox" />
+                <span class="checkmark"></span>
+              </label>
+              <p><a href="#">I agree to the terms and conditions</a></p>
+            </div>
+            <div class="inputfield">
+              <input type="submit" value="Send information" class="btn" />
+            </div>
           </div>
         </div>
       </div>
