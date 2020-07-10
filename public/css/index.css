@@ -839,6 +839,9 @@ footer {
   .contact-one .contact-email {
     width: 150px;
   }
+  .loader {
+    display: none;
+  }
 }
 
 @media only screen and (max-width: 901px) {
