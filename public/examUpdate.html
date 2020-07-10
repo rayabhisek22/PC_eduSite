@@ -1,0 +1,316 @@
+<html>
+  <head>
+    <title>information</title>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        overflow-x: hidden;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        box-sizing: border-box;
+        background-color: #330000;
+      }
+      .image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80%;
+        object-fit: cover;
+        opacity: 0.25;
+      }
+      .main_btn {
+        padding: 2px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        top: 40px;
+        cursor: pointer;
+        border-radius: 100%;
+      }
+      .model {
+        width: 80vw;
+        position: relative;
+        top: 30%;
+        left: 10vw;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        transform: translateY(-30%) scale(0);
+        transition: 800ms ease-in-out;
+      }
+      .model.active {
+        transform: translateY(-30%) scale(1);
+      }
+
+      .title {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-size: 120%;
+        font-weight: bold;
+      }
+      .close-button {
+        width: 30px;
+        font-size: 150%;
+        cursor: pointer;
+        position: absolute;
+        left: 300px;
+        top: 200px;
+      }
+      .model-body {
+        padding: 13px;
+      }
+      .model-header1,
+      .model-header2,
+      .model-header3,
+      .model-header4,
+      .model-header5,
+      .model-header6,
+      .model-header7 {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        width: 20%;
+        padding: 12px;
+        border-top-right-radius: 10px;
+        border-top-left-radius: 10px;
+        border-radius: 50%;
+        margin: 2px;
+        background-color: violet;
+        border: 1px dashed black;
+      }
+      .model-header1 {
+        left: -8%;
+        top: 0%;
+      }
+      .model-header2 {
+        left: 7%;
+        top: 20%;
+      }
+      .model-header3 {
+        left: 22%;
+      }
+      .model-header4 {
+        left: 39%;
+      }
+      .model-header5 {
+        left: 57%;
+        top: -130px;
+      }
+      .model-header6 {
+        left: 72%;
+        top: -270px;
+      }
+      .model-header7 {
+        left: 86%;
+        top: -400px;
+      }
+
+      #overlay {
+        opacity: 0;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #87ceeb;
+        pointer-events: none;
+        transition: 800ms ease-in-out;
+      }
+      #overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .examportal {
+        padding: 2px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        top: 55%;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .exam {
+        color: black;
+      }
+      #myDiv {
+        -webkit-animation: mymove 5s;
+        animation: mymove 5s;
+      }
+      @-webkit-keyframes mymove {
+        50% {
+          text-shadow: 10px 20px 30px green;
+          opacity: 0;
+        }
+      }
+      @keyframes mymove {
+        50% {
+          text-shadow: 10px 20px 30px green;
+          opacity: 0;
+        }
+      }
+      .image2 {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: 0.5s ease;
+        backface-visibility: hidden;
+      }
+      .middle {
+        transition: 0.5 ease;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+      }
+      .examportal:hover .image2 {
+        opacity: 0.3;
+      }
+      .examportal:hover .middle {
+        opacity: 1;
+      }
+      .text {
+        background-color: black;
+        color: red;
+        font-size: 25px;
+        padding: 16px 32px;
+        border-radius: 100px;
+      }
+      .large {
+        font-size: 150px;
+        background-color: blue;
+        border-radius: 100px;
+      }
+      .large:hover {
+        font-size: 190px;
+      }
+
+      @media screen and (max-width: 699px) and (min-width: 320px) {
+        .title {
+          font-size: 60%;
+          font-weight: bold;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image">
+      <img src="./assets/images/background.jpg" width="100%" height="200%" />
+    </div>
+    <button class="main_btn" data-target-button="#model">
+      <span class="glyphicon glyphicon-fire large"></span>
+    </button>
+
+    <div class="model" id="model">
+      <div class="model-header1">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">JEE MAIN</p></a>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-header2">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">SRMJEE</p></a>
+        </div>
+      </div>
+      <div class="model-header3">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">WEB JEE</p></a>
+        </div>
+      </div>
+      <div class="model-header4">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">JEE advanced</p></a>
+        </div>
+      </div>
+      <div class="model-header5">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">NEET</p></a>
+        </div>
+      </div>
+      <div class="model-header6">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">AIIMS</p></a>
+        </div>
+      </div>
+      <div class="model-header7">
+        <div class="title">
+          <a href="section.html"><p id="myDiv">BHU</p></a>
+        </div>
+      </div>
+    </div>
+    <div id="overlay"></div>
+
+    <section class="exam">
+      <div class="examportal">
+        <h1>Exam portal</h1>
+        <img class="img-circle image2" src="./assets/images/exam.jpg" />
+        <div class="middle">
+          <div class="text">
+            <a href="https://pc.unnamedcreators.in/home"> Get ready to exam</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      const mainButton = document.querySelectorAll("[data-target-button]");
+      const closeButton = document.querySelectorAll("[data-close-button]");
+      const overlay = document.querySelector("#overlay");
+      mainButton.forEach((button) => {
+        button.addEventListener("click", () => {
+          const model = document.querySelector(button.dataset.targetButton);
+          if (model == null) return;
+          model.classList.add("active");
+          overlay.classList.add("active");
+        });
+      });
+      closeButton.forEach((button) => {
+        button.addEventListener("click", () => {
+          const model = button.closest(".model");
+          if (model == null) return;
+          model.classList.remove("active");
+          overlay.classList.remove("active");
+        });
+      });
+      overlay.addEventListener("click", () => {
+        const model = document.querySelector("#model");
+        if (model == null) return;
+        model.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+    </script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

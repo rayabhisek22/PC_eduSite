@@ -24,10 +24,6 @@ mongoose.connect(
   }
 );
 
-app.get("/notices", (req, res) => {
-  res.render("notices");
-});
-
 //App config=======================================
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
@@ -37,6 +33,7 @@ app.use(express.json());
 //Routes===========================================
 app.use(express.static("public"));
 var indexRoutes = require("./routes/index");
+
 app.use(indexRoutes);
 
 //Application listen at port 8080

@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!-- checkpoint - stop -->
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,15 +11,15 @@
     />
 
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Notable&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Notable&amp;display=swap"
       rel="stylesheet"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;display=swap"
       rel="stylesheet"
     />
     <link
@@ -26,11 +27,67 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
     />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galada&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arvo&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/index.css" />
+
     <title>Pragati Classes</title>
     <style></style>
   </head>
   <body>
+    <!-- background music -->
+    <audio id="myaudio" controls autoplay hidden loop>
+      <source
+        src="./assets/musics/shubham_karoti_kalyanam.mp3"
+        type="audio/mpeg"
+      />
+      <source
+        src="./assets/musics/shubham_karoti_kalyanam.m4a"
+        type="audio/ogg"
+      />
+      Your browser does not support the audio element.
+    </audio>
+
+    <script>
+      window.addEventListener("load", function () {
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.15;
+      });
+    </script>
+
+    <!-- background music ends here -->
+
+    <!-- background vedio -->
+    <div>
+      <video class="" style="opacity: 35%;" autoplay muted loop id="myVideo">
+        <source src="./assets/videos/bg.mp4" type="video/mp4" />
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+    <!-- background vedio ends -->
+
+    <!-- Pre-loader -->
+    <!-- <div class="loader">
+      <img src="./assets/gif/preloading_gif.gif" alt="Loading..." />
+    </div> -->
+    <!-- Pre-loader ends here -->
+
     <div class="logo-section">
       <div class="logo">
         <div>
@@ -47,10 +104,23 @@
           </h1>
         </div>
       </div>
-      <div class="date" style="color: #fff; font-size: 30px; padding: 2rem;">
-        <div class="date" id="printDate"></div>
-        <div class="date" id="printDay"></div>
-        <div class="date" id="printTime"></div>
+      <div id="clock-show" style="text-align: center; padding: 1em 0;">
+        <h4>
+          <a
+            style="text-decoration: none;"
+            href="https://www.zeitverschiebung.net/en/city/1273294"
+          ></a
+          ><span style="color: gray; opacity: 0;"
+            >Current local time in<br />Delhi, India</span
+          >
+        </h4>
+        <iframe
+          src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FKolkata"
+          width="100%"
+          height="90"
+          frameborder="0"
+          seamless
+        ></iframe>
       </div>
     </div>
     <div class="typing">
@@ -58,7 +128,10 @@
         Welcome to Pragati Classes
       </p>
     </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark"
+      style="opacity: 70%;"
+    >
       <div style="display: flex;" class="search">
         <input
           class="input-course"
@@ -73,16 +146,19 @@
           "
         />
         <button
+          class="search-botton"
           style="
             border-style: none;
             border-radius: 40px;
             margin-left: 10px;
             width: 50px;
+            hover: blue;
           "
         >
           Search
         </button>
       </div>
+
       <button
         class="navbar-toggler"
         type="button"
@@ -132,7 +208,7 @@
             <a
               class="nav-link stryke"
               style="font-size: 15px; color: white;"
-              href="./noticeBoard.html"
+              href="/notice"
               >Notices</a
             >
           </li>
@@ -141,7 +217,7 @@
             <a
               class="nav-link stryke"
               style="font-size: 15px; color: white;"
-              href="./mediaGallery.html"
+              href="#"
               >Media Gallery</a
             >
           </li>
@@ -150,7 +226,7 @@
             <a
               class="nav-link stryke"
               style="font-size: 15px; color: white;"
-              href="./admissionPortal.html"
+              href="#"
               >Admission Portal</a
             >
           </li>
@@ -169,16 +245,16 @@
               class="nav-link stryke"
               style="font-size: 15px; color: white;"
               href="#"
-              >Resources</a
+              >Achievements</a
             >
-            >
+            &gt;
           </li>
 
           <li class="nav-item">
             <a
               class="nav-link stryke"
               style="font-size: 15px; color: white;"
-              href="./founders.html"
+              href="#"
               >Board of Founders</a
             >
           </li>
@@ -203,147 +279,135 @@
         </ul>
       </div>
     </nav>
-    <section class="pseudonav">
-      <div class="container">
-        <div
-          style="
-            margin: 2rem auto;
-            display: flex;
-            justify-content: space-evenly;
-          "
-          class="row text-center"
-        >
-          <div class="opt-div">
-            <a class="opt" href="./noticeBoard.html">Notices</a>
-          </div>
-          <div class="opt-div">
-            <a class="opt" href="">Media Gallery</a>
-          </div>
 
-          <div class="opt-div">
-            <a class="opt" href="">Admission Portal</a>
-          </div>
+    <!-- SHIVA -->
 
-          <div class="opt-div">
-            <a class="opt" href="">Exams update</a>
-          </div>
-          <div class="opt-div">
-            <a class="opt" href="">Achievements</a>
-          </div>
-          <div class="opt-div">
-            <a class="opt" href="">Board of Founders</a>
-          </div>
-          <div class="opt-div">
-            <a class="opt" href="">General Doubts</a>
-          </div>
-
-          <div class="opt-div">
-            <a class="opt" href="">Upcoming events</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section
-      class="carousel-sec"
-      style="padding: 10rem 25rem; margin-bottom: 5rem; background-color: #fff;"
+    <!-- navigation bar -->
+    <nav
+      style="opacity: 90%;"
+      class="second_nav navbar navbar-expand-lg navbar-light bg-dark"
+      id="nav_two"
     >
-      <div
-        id="carouselExampleControls"
-        class="carousel slide"
-        data-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              style="height: 400px;"
-              class="d-block w-100"
-              src="./assets/images/carousel1.jpeg"
-              alt="First slide"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              style="height: 400px;"
-              class="d-block w-100"
-              src="./assets/images/carousel2.jpeg"
-              alt="Second slide"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              style="height: 400px;"
-              class="d-block w-100"
-              src="./assets/images/carousel3.jpeg"
-              alt="Third slide"
-            />
-          </div>
+      <div class="container">
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="./noticeBoard.html"
+              ><strong>Notices</strong></a
+            ></i
+          >
         </div>
-        <a
-          class="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="./mediaGallery.html" style="font-size: 13px;"
+              ><strong>Media Gallery</strong></a
+            ></i
+          >
+        </div>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="./admissionPortal.html" style="font-size: 11px;"
+              ><strong>Admission Portal</strong></a
+            ></i
+          >
+        </div>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="./examUpdate.html" style="font-size: 13px;"
+              ><strong>Exams update</strong></a
+            ></i
+          >
+        </div>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="#"><strong>Achievements</strong></a></i
+          >
+        </div>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="./founders.html" style="font-size: 15px;"
+              ><strong>Founders</strong></a
+            ></i
+          >
+        </div>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="./generalDoubts.html" style="font-size: 12px;"
+              ><strong>General Doubts</strong></a
+            ></i
+          >
+        </div>
+        <div class="block">
+          <i class="hovicon effect-1 sub-a"
+            ><a class="" href="#" style="font-size: 11px;"
+              ><strong>Upcoming events</strong></a
+            ></i
+          >
+        </div>
+      </div>
+    </nav>
+
+    <div class="iframe-container">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/EkHcUK7KNp8"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="" style="height: 5px;"></div>
+
+    <section class="side_bar">
+      <div class="menu">
+        <div class="side_bar_item">
+          <a class="" href="./mainCenter.html">Main Center</a>
+        </div>
+        <div class="side_bar_item"><a class="" href="#">Result Portal</a></div>
+        <div class="side_bar_item"><a class="" href="#">Leaderboard</a></div>
+        <div class="side_bar_item">
+          <a class="" href="#">Scholarship Test</a>
+        </div>
+        <div class="side_bar_item"><a class="" href="#">FAQ</a></div>
+        <div class="side_bar_item">
+          <a class="" href="./aboutUs.html">About Us</a>
+        </div>
       </div>
     </section>
-    <div style="height: 50px; background-color: #1287a5;"></div>
-    <div class="main-section" style="padding: 10rem;">
-      <div class="sidebar">
-        <a style="width: 300px;" class="sidebar-item" href="#"
-          >Online Platform</a
-        >
-        <br />
-        <a class="sidebar-item" href="#">Main Center</a>
-        <br />
 
-        <a class="sidebar-item" href="#">Result Portal</a>
-        <br />
+    <div style="height: 50px; background-color: none;"></div>
 
-        <a class="sidebar-item" href="#">Leaderboard</a>
-        <br />
-
-        <a class="sidebar-item" href="#">Scholarship Test</a>
-        <br />
-        <a class="sidebar-item" href="#">Useful Resources</a>
-        <br />
-
-        <a class="sidebar-item" href="#">FAQ</a>
-        <br />
-
-        <a class="sidebar-item" href="#">About Us</a>
-      </div>
-      <div class="large-main">
-        <div class="video-div">
-          <iframe
-            class="vid"
-            width="100%"
-            height="500"
-            src="https://www.youtube.com/embed/EkHcUK7KNp8"
-            frameborder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-      </div>
+    <div class="iframe-container">
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/EkHcUK7KNp8"
+        frameborder="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
-    <div style="height: 50px; background-color: #1287a5;"></div>
+    <!-- </div> -->
+    <div style="height: 50px; background-color: none;"></div>
+
+    <div class="full-size-image">
+      <img src="./assets/images/sample_image_one.jpg" alt="Sample Image One" />
+    </div>
+    <div class="full-size-image">
+      <img src="./assets/images/sample_image_two.jpg" alt="Sample Image Two" />
+    </div>
+    <div class="full-size-image">
+      <img
+        src="./assets/images/sample_image_three.jpg"
+        alt="Sample Image Three"
+      />
+    </div>
 
     <h1
-      style="margin: 5rem; text-align: center; font-size: 30px; color: #192a56;"
+      style="margin: 5rem; text-align: center; font-size: 30px; color: #5c9dff;"
     >
-      Fulfil your dreams with Pragati Classes...
+      <strong> Fulfil your dreams with Pragati Classes...</strong>
     </h1>
     <div class="blogs">
       <div class="blogs-sub1">
@@ -450,14 +514,19 @@
 
     <h1
       id="contact"
-      style="margin-bottom: 50px; text-align: center; margin-top: 100px;"
+      style="
+        color: #9b02a3;
+        margin-bottom: 50px;
+        text-align: center;
+        margin-top: 100px;
+      "
     >
-      Get in Touch
+      <strong> Get in Touch</strong>
     </h1>
 
     <div class="contact-us">
       <div class="contact">
-        <form action="#">
+        <form class="sticky-top" action="#">
           <div style="margin-bottom: 50px;" class="contact-one">
             <div class="contact-name">
               <label>First Name</label>
@@ -491,20 +560,27 @@
         </form>
       </div>
     </div>
-    <footer>
+    <footer class="sticky-top">
       <div class="footer-container">
         <div class="left-col">
           <div style="font-size: 50px;"><span>Pragati</span>Classes</div>
 
           <div class="social-media">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/pragatikalain"
+              ><i class="fab fa-facebook-f" aria-hidden="true"></i
+            ></a>
+            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a
+              href="https://www.youtube.com/channel/UCd0o-UbulaMf5D-_n2PIsgw?view_as=subscriber"
+              ><i class="fab fa-youtube" aria-hidden="true"></i
+            ></a>
+            <a href="#"
+              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
+            ></a>
           </div>
           <p class="rights-text" style="font-size: 15px;">
-            &copy; &nbsp; 2020 Pragati classes All Rights Reserved.
+            © &nbsp; 2020 Pragati classes All Rights Reserved.
           </p>
         </div>
         <div class="center box">
@@ -513,15 +589,18 @@
           </h2>
           <div class="content">
             <div class="place">
-              <span class="fas fa-map-marker-alt"></span>
-              <span class="text" style="font-size: 20px;">Kalain, Silchar</span>
+              <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
+              <span class="text" style="font-size: 20px;"
+                >Near HS school,Kalain <br />
+                Opposite to IICA computer centre</span
+              >
             </div>
             <div class="phone">
-              <span class="fas fa-phone-alt"></span>
+              <span class="fas fa-phone-alt" aria-hidden="true"></span>
               <span class="text" style="font-size: 20px;">012......</span>
             </div>
             <div class="email">
-              <span class="fas fa-envelope"></span>
+              <span class="fas fa-envelope" aria-hidden="true"></span>
               <span class="text" style="font-size: 20px;">abc@example.com</span>
             </div>
           </div>
@@ -537,69 +616,91 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      var date = new Date();
+      const elementDate = document.getElementById("printDate");
+      const elementDay = document.getElementById("printDay");
+      const elementTime = document.getElementById("printTime");
+      const listOfDays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+
+      function printDate() {
+        var day = date.getDate();
+        var month = date.getMonth();
+        var year = date.getFullYear();
+
+        elementDate.innerHTML = day + " / " + month + " / " + year;
+      }
+
+      function printDay() {
+        date = new Date();
+        var numberOfDay = date.getDay();
+        var day = listOfDays[numberOfDay];
+        elementDay.innerHTML = day;
+      }
+
+      function printTime() {
+        date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        if (seconds < 10) {
+          seconds = "0" + seconds;
+        }
+        if (minutes < 10) {
+          minutes = "0" + minutes;
+        }
+        if (hours > 12) {
+          hours = hours - 12;
+          elementTime.innerHTML =
+            hours + " : " + minutes + " : " + seconds + "  PM ";
+        } else if (hours < 12) {
+          elementTime.innerHTML =
+            hours + " : " + minutes + " : " + seconds + "  AM ";
+        } else if ((hours = 12)) {
+          elementTime.innerHTML =
+            hours + " : " + minutes + " : " + seconds + "  PM ";
+        }
+      }
+
+      setInterval(function () {
+        printTime();
+        printDate();
+        printDay();
+      }, 1000);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <!-- preloader -->
+    <script>
+      window.addEventListener(
+        "load",
+        function () {
+          setTimeout(animation, 2000);
+          setTimeout(otherOperation, 7000);
+        },
+        false
+      );
+
+      function animation() {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+      }
+      function otherOperation() {
+        const stick = document.querySelector(".second_nav");
+        stick.className += " sticky-top";
+      }
+    </script>
   </body>
-  <script>
-    var date = new Date();
-    const elementDate = document.getElementById("printDate");
-    const elementDay = document.getElementById("printDay");
-    const elementTime = document.getElementById("printTime");
-    const listOfDays = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-
-    function printDate() {
-      var day = date.getDate();
-      var month = date.getMonth();
-      var year = date.getFullYear();
-
-      elementDate.innerHTML = day + " / " + month + " / " + year;
-    }
-
-    function printDay() {
-      date = new Date();
-      var numberOfDay = date.getDay();
-      var day = listOfDays[numberOfDay];
-      elementDay.innerHTML = day;
-    }
-
-    function printTime() {
-      date = new Date();
-      var hours = date.getHours();
-      var minutes = date.getMinutes();
-      var seconds = date.getSeconds();
-
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
-      if (minutes < 10) {
-        minutes = "0" + minutes;
-      }
-      if (hours > 12) {
-        hours = hours - 12;
-        elementTime.innerHTML =
-          hours + " : " + minutes + " : " + seconds + "  PM ";
-      } else if (hours < 12) {
-        elementTime.innerHTML =
-          hours + " : " + minutes + " : " + seconds + "  AM ";
-      } else if ((hours = 12)) {
-        elementTime.innerHTML =
-          hours + " : " + minutes + " : " + seconds + "  PM ";
-      }
-    }
-
-    setInterval(function () {
-      printTime();
-      printDate();
-      printDay();
-    }, 1000);
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </html>

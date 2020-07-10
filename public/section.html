@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>sections</title>
+    <style type="text/css">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+      }
+      .creator {
+        color: red;
+        bottom: 20%;
+      }
+
+      .main_btn1,
+      .main_btn2,
+      .main_btn3,
+      .main_btn4,
+      .main_btn5,
+      .main_btn6,
+      .main_btn7 {
+        padding: 4px;
+        position: absolute;
+        left: 50%;
+        width: 80%;
+        height: 130px;
+        border: 2px solid white;
+        background-color: #fff;
+        transform: translateX(-50%);
+        text-align: left;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .main_btn1 {
+        top: 120px;
+      }
+      .main_btn2 {
+        top: 250px;
+      }
+      .main_btn3 {
+        top: 380px;
+      }
+      .main_btn4 {
+        top: 510px;
+      }
+      .main_btn5 {
+        top: 640px;
+      }
+      .main_btn6 {
+        top: 770px;
+      }
+      .main_btn7 {
+        top: 900px;
+      }
+      .model {
+        width: 80vw;
+        position: relative;
+        top: 30%;
+        left: 10vw;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        z-index: 10;
+        transform: translateY(-30%) scale(0);
+        transition: 200ms ease-in-out;
+      }
+      .model.active {
+        transform: translateY(-30%) scale(1);
+      }
+
+      .title {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        font-size: 30px;
+        font-weight: bold;
+        color: skyblue;
+        -webkit-animation: mymove 5s;
+        animation: mymove 5s;
+      }
+      @-webkit-keyframes mymove {
+        50% {
+          text-shadow: 10px 20px 30px green;
+          opacity: 0;
+        }
+      }
+      @keyframes mymove {
+        50% {
+          text-shadow: 10px 20px 30px green;
+          opacity: 0;
+        }
+      }
+      .close-button {
+        width: 30px;
+        font-size: 150%;
+        cursor: pointer;
+        margin-right: 5px;
+      }
+      .model-body {
+        padding: 13px;
+      }
+      .model-header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        top: -150px;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
+        background-color: #fff;
+      }
+      .model-body {
+        background-color: #fff;
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        top: -11vh;
+        padding-bottom: 40px;
+        padding-left: 4%;
+        padding-right: 4%;
+        font-size: 105%;
+        border-bottom-right-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+      #overlay {
+        opacity: 0;
+        position: fixed;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        pointer-events: none;
+        transition: 200ms ease-in-out;
+      }
+      #overlay.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+      .heading {
+        left: 50%;
+        padding: 5px;
+        width: 100%;
+        height: 100px;
+        background-color: #8789be;
+        text-align: center;
+        font-size: 80px;
+        color: #fff;
+        font-weight: 900;
+      }
+      .text {
+        font-size: 30px;
+        font-weight: 600;
+        color: blue;
+        margin-bottom: 5px;
+        animation: hovertext 1.5s ease-in infinite;
+      }
+      @keyframes hovertext {
+        0% {
+          color: blue;
+          font-size: 40px;
+        }
+        100% {
+          color: skyblue;
+          font-size: 40px;
+        }
+      }
+      .text {
+        color: red;
+        font-size: 20px;
+        font-weight: 600;
+        position: relative;
+      }
+
+      .link {
+        color: red;
+        left: 20px;
+      }
+      @media screen and (max-width: 699px) and (min-width: 320px) {
+        .heading {
+          width: 97%;
+          left: 80%;
+          font-size: 50px;
+          padding: 6px;
+          background-color: skyblue;
+        }
+      }
+      .box {
+        background-color: skyblue;
+        width: 280%;
+        left: -80%;
+        height: 10px;
+        position: relative;
+        margin-top: 15px;
+        padding: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="heading">INFORMATION</h1>
+    <button class="main_btn1" data-target-button="#model">
+      <p class="text">JEE ADVANCED</p>
+      <h4 id="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Ab facilis voluptate quam iste qui,
+        dignissimos dicta? Consequatur assumenda, eligendi necessitatibus, optio
+        ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam.Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit. Ab facilis voluptate quam iste qui,
+        dignissimos dicta? Consequatur assumenda, eligendi necessitatibus, optio
+        ducimus ipsum laboriosam numquam soluta dolore recusandae in veniam.
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.
+        <a href="examupdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <button class="main_btn2" data-target-button="#model">
+      <p class="text">Story to NITS</p>
+      <h4 class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam.
+        <a href="examupdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <button class="main_btn3" data-target-button="#model">
+      <p class="text">Story to NITS</p>
+      <h4 class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam.
+        <a href="examupdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <button class="main_btn4" data-target-button="#model">
+      <p class="text">Story to NITS</p>
+      <h4 class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam.
+        <a href="examupdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <button class="main_btn5" data-target-button="#model">
+      <p class="text">Story to NITS</p>
+      <h4 class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam.
+        <a href="examupdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <button class="main_btn6" data-target-button="#model">
+      <p class="text">Story to NITS</p>
+      <h4 class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+      >
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam.
+        <a href="examupdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <button class="main_btn7" data-target-button="#model">
+      <p class="text">Story to NITS</p>
+      <h4 class="text2">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus
+      </h4>
+      >
+    </button>
+    <div class="model" id="model">
+      <div class="model-header">
+        <div class="title">
+          Example Model
+          <div class="box"></div>
+        </div>
+        <button data-close-button="close-button" class="close-button">
+          &times;
+        </button>
+      </div>
+      <div class="model-body">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab facilis
+        voluptate quam iste qui, dignissimos dicta? Consequatur assumenda,
+        eligendi necessitatibus, optio ducimus ipsum laboriosam numquam soluta
+        dolore recusandae in veniam.Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Ab facilis voluptate quam iste qui, dignissimos dicta?
+        Consequatur assumenda, eligendi necessitatibus, optio ducimus ipsum
+        laboriosam numquam soluta dolore recusandae in veniam. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Ab facilis voluptate quam iste
+        qui, dignissimos dicta? Consequatur assumenda, eligendi necessitatibus,
+        optio ducimus ipsum laboriosam numquam soluta dolore recusandae in
+        veniam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab
+        facilis voluptate quam iste qui, dignissimos dicta? Consequatur
+        assumenda, eligendi necessitatibus, optio ducimus ipsum laboriosam
+        numquam soluta dolore recusandae in veniam.
+        <a href="./examUpdate.html" class="link">go home</a>
+      </div>
+    </div>
+    <div id="overlay"></div>
+
+    <script type="text/javascript">
+      const mainButton = document.querySelectorAll("[data-target-button]");
+      const closeButton = document.querySelectorAll("[data-close-button]");
+      const overlay = document.querySelector("#overlay");
+      mainButton.forEach((button) => {
+        button.addEventListener("click", () => {
+          const model = document.querySelector(button.dataset.targetButton);
+          if (model == null) return;
+          model.classList.add("active");
+          overlay.classList.add("active");
+        });
+      });
+      closeButton.forEach((button) => {
+        button.addEventListener("click", () => {
+          const model = button.closest(".model");
+          if (model == null) return;
+          model.classList.remove("active");
+          overlay.classList.remove("active");
+        });
+      });
+      overlay.addEventListener("click", () => {
+        const model = document.querySelector("#model");
+        if (model == null) return;
+        model.classList.remove("active");
+        overlay.classList.remove("active");
+      });
+    </script>
+  </body>
+</html>
