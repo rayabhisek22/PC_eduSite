@@ -812,7 +812,7 @@ footer {
     margin-top: 30px;
   }
 
-  .blogs-sub-1 {
+  /* .blogs-sub-1 {
     background-color: red;
     width: 45%;
     height: 300px;
@@ -820,7 +820,7 @@ footer {
   .blogs-sub-2 {
     background-color: green;
     width: 45%;
-  }
+  } */
 }
 @media (max-width: 760px) {
   .contact-one .contact-name {
