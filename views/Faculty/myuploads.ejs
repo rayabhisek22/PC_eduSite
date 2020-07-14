@@ -1,0 +1,74 @@
+<html>
+<head></head>
+<body>
+	<a href="/faculty/acc">Back</a>
+	<h1>My Uploads</h1>
+	<h2>Videos</h2>
+
+	<ol>
+		<%faculty.videos.forEach((video)=>{%>
+			<li><b>Title:</b> <a href=<%=video.link%>><%=video.title%></a></li>
+			<ul>			
+				<li><b>Chapter:</b> <%=video.chapter%></li>
+				<li><b>Subject</b>: <%=video.subject%></li>
+				<li><b>Date of upload:</b> <%=video.date%></li>
+			</ul>
+			<button id="video" name="data-id" value="<%=video._id%>/<%=video.chapterId%>/">Delete</button><br><br>
+		<%})%>
+
+	</ol>
+
+	<br><br>
+
+	<h2>Notes</h2>
+
+	<ol>
+		<%faculty.notes.forEach((note)=>{%>
+			<li><b>Title:</b> <a href=<%=note.link%>><%=note.title%></a></li>
+			<ul>			
+				<li><b>Chapter:</b> <%=note.chapter%></li>
+				<li><b>Subject</b>: <%=note.subject%></li>
+				<li><b>Date of upload:</b> <%=note.date%></li>
+			</ul>
+			<button id="note" name="data-id" value="<%=note._id%>/<%=note.chapterId%>/">Delete</button><br><br>
+		<%})%>
+		
+	</ol>
+</body>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<script> 
+	$(document).ready(function(){
+		$("#video").click(function() {
+			var mybutton = $(this)
+		    var data_id = $(this).val();
+
+		    mybutton.prop("value","DELETING")
+		    mybutton.prop("disabled",true)
+
+		    fetch("/faculty/<%=faculty._id%>/video/delete/"+data_id,{
+		    	method: "DELETE"
+		    }).then((response)=>{
+		    	mybutton.prop("value","DELETED")
+		    	location.reload()
+		    })
+		});
+
+		$("#note").click(function() {
+		    var mybutton = $(this)
+		    var data_id = $(this).val();
+
+		    mybutton.prop("value","DELETING")
+		    mybutton.prop("disabled",true)
+
+		    fetch("/faculty/<%=faculty._id%>/note/delete/"+data_id,{
+		    	method: "DELETE"
+		    }).then((response)=>{
+		    mybutton.prop("value","DELETED")
+		    	location.reload()
+		    })
+		});
+
+	});
+</script>
+<html>

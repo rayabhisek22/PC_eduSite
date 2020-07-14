@@ -1,0 +1,46 @@
+<h1>Upload Portal for subject: <%=subject.name%></h1>
+<b>Course Id: <%= subject.subject_id %></b>
+
+<h2>Upload Video</h2>
+<form action="/faculty/upload/<%= subject.subject_id %>/chapter/videos" method="POST">
+	<select required name="chapter">
+	  <option disabled selected value="">Select Chapter</option>
+	  <% subject.chapters.forEach((chap)=>{ %> 
+	  	<option value= <%= chap._id %> > <%= chap.chapter_name %>(<%=chap.chapter_id%>) </option>
+	  <% }) %>
+	</select><br><br>
+
+	<label for="link">Video Link</label><br>
+  	<input type="text" id="link" name="link" required><br>
+
+  	<label for="title">Video Title</label><br>
+  	<input type="text" id="title" name="title" required><br><br>
+
+	<input type = "submit" value="Upload Video">
+</form>
+<br>
+<hr>
+<br>
+<h2>Upload Notes</h2>
+<form enctype="multipart/form-data" action="/faculty/upload/<%= subject.subject_id %>/chapter/notes" method="POST">
+	<select required name="chapter">
+	  <option disabled selected value="">Select Chapter</option>
+	  <% subject.chapters.forEach((chap)=>{ %> 
+	  	<option value= <%= chap._id %> > <%= chap.chapter_name %>(<%=chap.chapter_id%>) </option>
+	  <% }) %>
+	</select><br><br>
+
+	<select required name="type">
+	  <option disabled selected value="">Select File type</option>
+	  	<option value= "pdf">pdf</option>
+	  	<option value= "image">image</option>
+	</select><br><br>
+
+	<label for="link">Select Note file (pdf/image)</label><br>
+  	<input type="file" id="link" name="note" required><br><br>
+
+  	<label for="title">Note Title</label><br>
+  	<input type="text" id="title" name="title" required><br><br>
+
+	<input type = "submit" value="Upload Note">
+</form>

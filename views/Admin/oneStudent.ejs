@@ -7,17 +7,34 @@
   
   <label for="lname">Name:</label><br>
   <input type="text" id="lname" name="name" value = <%= person.name %>><br><br>
-  <label for="lname">Email:</label><br>
-  <input type="email" id="lname" name="email" value = <%= person.email %>><br><br>
+  <label for="lemail">Email:</label><br>
+  <input type="email" id="lemail" name="email" value = <%= person.email %> ><br><br>
   <label for="lname">Contact Number:</label><br>
-  <input type="text" id="lname" name="contact" value = <%= person.contact %>><br><br>
+  <input type="text" id="lname" name="contact" value = <%= person.contact %> ><br><br>
   <label for="lname">Father's Name:</label><br>
-  <input type="text" id="lname" name="father" value = <%= person.father %>><br>
+  <input type="text" id="lname" name="father" value = <%= person.father %> ><br><br>
   <label for="lname">Mother's Name:</label><br>
-  <input type="text" id="lname" name="mother" value = <%= person.mother %>><br>
+  <input type="text" id="lname" name="mother" value = <%= person.mother %> ><br><br>
+  <label for="lname">Address:</label><br>
+  <input type="text" id="lname" name="address" value = <%= person.address %> ><br><br>
+  <label for="lname">College/School:</label><br>
+  <input type="text" id="lname" name="college" value = <%= person. college%> ><br><br>
+  <label for="lname">Class:</label><br>
+  <input type="text" id="lname" name="class" value = <%= person.class %> ><br><br>
+  <label for="lname">Batch:</label><br>
+  <input type="text" id="lname" name="batch" value = <%= person.batch %> ><br><br>
+
+  <label for="lname">Select subject</label><br>
+
+  <% subject.forEach((subject1)=>{ %> 
+    <% if(person.subject.indexOf(subject1._id) != -1){ %>    
+      <input type="checkbox" id="lname" name="subject[]" value="<%= subject1._id %>" checked> <%= subject1.subject_id %> (<%=subject1.name%>) <br><br>
+    <% }else{ %>
+    <input type="checkbox" id="lname" name="subject[]" value="<%= subject1._id %>"> <%= subject1.subject_id %> (<%=subject1.name%>) <br><br>
+  <% }}) %>
+
   <input type="submit" value="Submit">
 </form> 
-
 
 <input type="submit" class="death" value="Delete Student" data-id = <%= person._id %>></button>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

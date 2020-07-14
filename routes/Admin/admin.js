@@ -1,8 +1,12 @@
 const express = require('express'); 
 const router = express.Router(); 
 const Auth = require('./auth'); 
-const Faculty = require('../../models/Faculty');
+const Notes = require('../../models/Notes'); 
+const Videos= require('../../models/Videos');
+const Faculty = require('../../models/Faculty') 
 const Student = require('../../models/Student'); 
+const Subject = require('../../models/Subject'); 
+const Chapter = require('../../models/Chapter'); 
 const User = require('../../models/User');
 const bcrypt = require('bcryptjs');
 router.use(Auth);
@@ -118,28 +122,36 @@ router.post("/faculty/edit/:id",  isLoggedIn, isAdmin,(req, res) => {
 
 }); 
 
-router.delete("/faculty/edit/:id", isLoggedIn, isAdmin, (req, res)=>{
-    Faculty.deleteOne({_id : req.params.id},(err)=>{
-      if (err)
-      {
-          console.log(err); 
-          return; 
-      }
-      else
-      {
-          res.send('success');
-      }
-    } );
-}); 
+
 
 
 
 router.get("/students/add", isLoggedIn, isAdmin, (req, res)=>{
-    res.render('./Admin/addStudent'); 
+  Subject.find({}, (err,data)=>{
+        if (err)
+        {
+            console.log(err); 
+            return; 
+        }
+       res.render('./Admin/addStudent',{subject:data}); 
+    });
 }); 
 
 router.post("/students/add",  isLoggedIn, isAdmin,(req, res)=>{
-    let newStudent = new Student({ name:req.body.name, email:req.body.email, contact:req.body.contact, father:req.body.father, mother:req.body.mother }); 
+    let newStudent = new Student({ 
+      name:req.body.name,
+      email:req.body.email, 
+      contact:req.body.contact, 
+      father:req.body.father, 
+      mother:req.body.mother,
+      address: req.body.address,
+      college:req.body.college,
+      batch: req.body.batch, 
+      class: req.body.class
+    }); 
+
+    newStudent.subject = req.body.subject
+
     newStudent.save((err) => {
            if (err)
            {
@@ -170,23 +182,33 @@ router.post("/students/add",  isLoggedIn, isAdmin,(req, res)=>{
 }); 
 
 router.get("/students/edit/:id", isLoggedIn, isAdmin, (req, res) => {
-    Student.findById(req.params.id, (err, person) => {
-        if (err)
-        {
-            console.log(err); 
-            return; 
-        }
-        res.render('./Admin/oneStudent', { person:person });
-    }); 
+    Student.findById(req.params.id,(err, person)=>{
+      if (err)
+      {
+          console.log(err); 
+          return; 
+      }
+      Subject.find({},(err,subject)=>{
+      res.render('./Admin/oneStudent', { person:person, subject:subject });
+      })   
+    })   
+
 }); 
 
 router.post("/students/edit/:id",  isLoggedIn, isAdmin,(req, res) => {
-    let updatedStudent = {}; 
-    updatedStudent.name = req.body.name; 
-    updatedStudent.email = req.body.email;
-    updatedStudent.contact = req.body.contact;
-    updatedStudent.father = req.body.father;
-    updatedStudent.mother = req.body.mother;
+    let updatedStudent = { 
+      name:req.body.name,
+      email:req.body.email, 
+      contact:req.body.contact, 
+      father:req.body.father, 
+      mother:req.body.mother,
+      address: req.body.address,
+      college:req.body.college,
+      batch: req.body.batch, 
+      class: req.body.class
+    }; 
+
+    updatedStudent.subject = req.body.subject
     Student.updateOne({_id:req.params.id}, updatedStudent, (err) => {
         if (err)
         {
@@ -198,19 +220,6 @@ router.post("/students/edit/:id",  isLoggedIn, isAdmin,(req, res) => {
 
 }); 
 
-router.delete("/students/edit/:id", isLoggedIn, isAdmin, (req, res)=>{
-    Student.deleteOne({_id : req.params.id},(err)=>{
-      if (err)
-      {
-          console.log(err); 
-          return; 
-      }
-      else
-      {
-          res.send('success');
-      }
-    } );
-}); 
 
 
 

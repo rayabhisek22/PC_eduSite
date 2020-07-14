@@ -40,5 +40,5 @@ app.use(indexRoutes);
 var port = 5000 | process.env.PORT;
 app.listen(port, (err) => {
   if (err) console.log(err);
-  else console.log("Server started at port 5000");
+  else console.log("Server started at port "+port);
 });

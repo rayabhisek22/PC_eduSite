@@ -7,12 +7,10 @@ var Chapter = new Schema({
 	chapter_id: String,
 	chapter_name: String,
 	notes: [{
-		link: String,
-		title: String
+		type: Schema.Types.ObjectId, ref: 'Notes'
 	}],
 	videos: [{
-		link: String,
-		title: String
+		type: Schema.Types.ObjectId, ref: 'Videos'
 	}]
 }); 
 

@@ -1,0 +1,6 @@
+<h1>Subjects</h1>
+<ol>
+	<%student.subject.forEach((sub)=>{%>
+		<li><a href="/student/subject/<%=sub._id%>"><%= sub.name %>(<%= sub.subject_id %>)</a></li>
+	<%})%>
+</ol>

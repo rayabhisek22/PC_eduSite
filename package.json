@@ -18,6 +18,8 @@
     "express-messages": "^1.0.1",
     "express-session": "^1.17.0",
     "express-validator": "^6.6.0",
+    "formidable": "^1.2.2",
+    "googleapis": "^52.1.0",
     "messages": "^0.1.0",
     "method-override": "^3.0.0",
     "mongoose": "^5.8.0",

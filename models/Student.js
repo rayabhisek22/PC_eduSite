@@ -11,6 +11,8 @@ var Student = new Schema({
 	mother:String, 
 	class: String,
 	batch: String,
+	college: String,
+	address: String,
 	subject: [{type: Schema.Types.ObjectId, ref: 'Subject'}]
 
 }); 

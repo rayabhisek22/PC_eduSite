@@ -6,7 +6,7 @@
     <div class = list>
         <ul>
             <% for(var eachSubject of subject) { %>
-            <li><a href = "/superadmin/subject/edit/<%= eachSubject._id %>"><%= eachSubject.name %></a></li>
+            <li><a href = "/superadmin/subject/edit/<%= eachSubject._id %>"><%= eachSubject.subject_id %> (<%= eachSubject.name%>)</a></li>
             <% } %>
         </ul>
     </div>

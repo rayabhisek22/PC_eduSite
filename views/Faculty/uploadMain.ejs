@@ -1,0 +1,12 @@
+<h1>Upload Portal</h1>
+
+<form action="/faculty/upload/subject">
+	<select required name="subject">
+	  <option disabled selected value="">Select Subject</option>
+	  <% subject.forEach((sub)=>{ %> 
+	  	<option value= <%= sub._id %> > <%= sub.subject_id %> </option>
+	  <% }) %>
+	</select>
+	<input type = "submit">
+</form>
+

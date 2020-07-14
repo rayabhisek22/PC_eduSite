@@ -1,4 +1,4 @@
-
+<a href="/superadmin/">Back</a>
 <h1> Add Student </h1>
 <form method = "POST" action="/superadmin/students/add">
   <label for="fname">Username:</label><br>
@@ -12,8 +12,23 @@
   <label for="lname">Contact Number:</label><br>
   <input type="text" id="lname" name="contact"><br><br>
   <label for="lname">Father's Name:</label><br>
-  <input type="text" id="lname" name="father"><br>
+  <input type="text" id="lname" name="father"><br><br>
   <label for="lname">Mother's Name:</label><br>
-  <input type="text" id="lname" name="mother"><br>
+  <input type="text" id="lname" name="mother"><br><br>
+  <label for="lname">Address:</label><br>
+  <input type="text" id="lname" name="address"><br><br>
+  <label for="lname">College/School:</label><br>
+  <input type="text" id="lname" name="college"><br><br>
+  <label for="lname">Class:</label><br>
+  <input type="text" id="lname" name="class"><br><br>
+  <label for="lname">Batch:</label><br>
+  <input type="text" id="lname" name="batch"><br><br>
+
+  <label for="lname">Select subject</label><br>
+
+  <%subject.forEach((subject1)=>{%>     
+    <input type="checkbox" id="lname" name="subject[]" value="<%=subject1._id%>"><%=subject1.subject_id%>(<%=subject1.name%>)<br><br>
+  <%})%>
+
   <input type="submit" value="Submit">
 </form> 

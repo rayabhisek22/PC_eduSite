@@ -1,7 +1,9 @@
 const express = require('express'); 
 const router = express.Router(); 
 const Auth = require('./auth'); 
-const Faculty = require('../../models/Faculty');
+const Notes = require('../../models/Notes'); 
+const Videos= require('../../models/Videos');
+const Faculty = require('../../models/Faculty') 
 const Student = require('../../models/Student'); 
 const Subject = require('../../models/Subject'); 
 const Chapter = require('../../models/Chapter'); 
@@ -144,6 +146,9 @@ router.delete("/faculty/edit/:id", isLoggedIn, isAdmin, (req, res)=>{
       }
       else
       {
+          User.deleteOne({faculty_id:req.params.id},(req,res)=>{
+            
+          })
           res.send('success');
       }
     } );
@@ -217,11 +222,31 @@ router.delete("/subject/edit/:id", isLoggedIn, isAdmin, (req, res)=>{
 
 
 router.get("/students/add", isLoggedIn, isAdmin, (req, res)=>{
-    res.render('./SuperAdmin/addStudent'); 
+  Subject.find({}, (err,data)=>{
+        if (err)
+        {
+            console.log(err); 
+            return; 
+        }
+       res.render('./SuperAdmin/addStudent',{subject:data}); 
+    });     
 }); 
 
 router.post("/students/add",  isLoggedIn, isAdmin,(req, res)=>{
-    let newStudent = new Student({ name:req.body.name, email:req.body.email, contact:req.body.contact, father:req.body.father, mother:req.body.mother }); 
+    let newStudent = new Student({ 
+      name:req.body.name,
+      email:req.body.email, 
+      contact:req.body.contact, 
+      father:req.body.father, 
+      mother:req.body.mother,
+      address: req.body.address,
+      college:req.body.college,
+      batch: req.body.batch, 
+      class: req.body.class
+    }); 
+
+    newStudent.subject = req.body.subject
+
     newStudent.save((err) => {
            if (err)
            {
@@ -252,23 +277,33 @@ router.post("/students/add",  isLoggedIn, isAdmin,(req, res)=>{
 }); 
 
 router.get("/students/edit/:id", isLoggedIn, isAdmin, (req, res) => {
-    Student.findById(req.params.id, (err, person) => {
-        if (err)
-        {
-            console.log(err); 
-            return; 
-        }
-        res.render('./SuperAdmin/oneStudent', { person:person });
-    }); 
-}); 
+    Student.findById(req.params.id,(err, person)=>{
+      if (err)
+      {
+          console.log(err); 
+          return; 
+      }
+      Subject.find({},(err,subject)=>{
+      res.render('./SuperAdmin/oneStudent', { person:person, subject:subject });
+      })   
+    })   
+
+  }); 
 
 router.post("/students/edit/:id",  isLoggedIn, isAdmin,(req, res) => {
-    let updatedStudent = {}; 
-    updatedStudent.name = req.body.name; 
-    updatedStudent.email = req.body.email;
-    updatedStudent.contact = req.body.contact;
-    updatedStudent.father = req.body.father;
-    updatedStudent.mother = req.body.mother;
+    let updatedStudent = { 
+      name:req.body.name,
+      email:req.body.email, 
+      contact:req.body.contact, 
+      father:req.body.father, 
+      mother:req.body.mother,
+      address: req.body.address,
+      college:req.body.college,
+      batch: req.body.batch, 
+      class: req.body.class
+    }; 
+
+    updatedStudent.subject = req.body.subject
     Student.updateOne({_id:req.params.id}, updatedStudent, (err) => {
         if (err)
         {
@@ -288,7 +323,10 @@ router.delete("/students/edit/:id", isLoggedIn, isAdmin, (req, res)=>{
           return; 
       }
       else
-      {
+      {   
+          User.deleteOne({student_id:req.params.id},(req,res)=>{
+
+          })
           res.send('success');
       }
     } );
@@ -394,6 +432,74 @@ router.delete("/subject/:sid/chapters/:cid",isLoggedIn, isAdmin, (req,res)=>{
         }
       })
     }
+  })
+})
+
+router.get("/subject/:sid",isLoggedIn,isAdmin,(req,res)=>{
+  Subject.findById(req.params.sid)
+      .populate({ 
+           path: 'chapters',
+           populate: {
+             path: 'videos',
+             model: Videos
+           }          
+        })
+      .populate({ 
+           path: 'chapters',
+           populate:{
+            path: 'notes',
+            model: Notes
+           }
+        })
+      .exec((err,subject)=>{
+        if(err) console.log(err)
+        else{
+          res.render("./SuperAdmin/thissubject",{subject:subject})
+        }
+      })
+})
+
+router.delete("/:fid/video/delete/:vid/:cid",(req,res)=>{
+  console.log("In fun")
+  Faculty.findById(req.params.fid,(err,faculty)=>{
+    if(err) console.log(err)
+    var idx = faculty.videos.indexOf(req.params.vid)
+    faculty.videos.splice(idx,1);
+    faculty.save((err,f)=>{
+      if(err) console.log(err)
+      Videos.findByIdAndRemove(req.params.vid,(err)=>{
+        if(err) console.log(err)
+        else{
+          Chapter.findById(req.params.cid,(err,chapter)=>{
+            idx = chapter.videos.indexOf(req.params.vid)
+            chapter.videos.splice(idx,1)
+            chapter.save()
+          })
+          res.status(200).json({status:"success"})
+        }
+      })
+    })
+  })
+})
+
+router.delete("/:fid/note/delete/:nid/:cid",(req,res)=>{
+  Faculty.findById(req.params.fid,(err,faculty)=>{
+    var idx = faculty.notes.indexOf(req.params.nid)
+    faculty.notes.splice(idx,1);
+    faculty.save((err,f)=>{
+      if(err) console.log(err)
+      Notes.findByIdAndRemove(req.params.nid,(err)=>{
+        if(err) console.log(err)
+        else{
+          Chapter.findById(req.params.cid,(err,chapter)=>{
+            idx = chapter.notes.indexOf(req.params.nid)
+            chapter.notes.splice(idx,1)
+            chapter.save()
+          })
+          res.status(200).json({status:"success"})
+        }
+      })
+    })
   })
 })
 
