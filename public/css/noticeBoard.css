@@ -14,14 +14,14 @@ body {
 
 .heading {
   font-size: 35px;
-  padding: 1rem;
   border: 1px solid;
   text-align: center;
-  background-color: #ffff;
+  color: #ffff;
   border-radius: 5px;
-  background-image: linear-gradient(to right bottom, #f6e47f, #ff631ab0);
-
+  background-image: linear-gradient(to right bottom, #0a3d62, #8b78e6);
   font-weight: 700;
+  margin-top: 100px;
+  padding: 10px;
 }
 
 .container {
@@ -69,7 +69,7 @@ body {
   border: 1px solid black;
   margin-bottom: 20px;
   text-align: center;
-  background-image: linear-gradient(to right bottom, #f6e47f, #ff631a7e);
+  background-image: linear-gradient(to right bottom, #01cbc6, #8b78e6);
 }
 
 .student-notice {

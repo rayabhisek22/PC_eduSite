@@ -1,29 +1,119 @@
 <!-- checkpoint - stop -->
 
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    />
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Notable&amp;display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Notable&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
+    />
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <link rel="stylesheet" href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" />
-    <link rel="stylesheet" type="text/css" href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Arvo&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+      media="all"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Galada&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Arvo&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/index.css" />
 
     <title>Pragati Classes</title>
     <style></style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <!-- phone view -->
+
+    <div class="phone__nav">
+      <div class="phone__nav-options">
+        <a onclick="openNav()" href="#">
+          <i class="phone__nav-options-a fa fa-bars"></i>
+        </a>
+        <a href="./index.html">
+          <i class="phone__nav-options-a fa fa-home"></i>
+        </a>
+
+        <a href="#">
+          <i class="phone__nav-options-a fa fa-graduation-cap"></i>
+        </a>
+        <a href="./studentportal.html">
+          <i class="phone__nav-options-a fa fa-user"></i>
+        </a>
+        <a href="./teacherPortal.html">
+          <i class="phone__nav-options-a fa fa-chalkboard-teacher"></i>
+        </a>
+        <a href="./admissionPortal.html">
+          <i class="phone__nav-options-a fa fa-university"></i>
+        </a>
+        <a href="./noticeBoard.html">
+          <i class="phone__nav-options-a fa fa-bell"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- sidenav -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./resources.html">Resources</a>
+      <a href="./mediaGallery.html">Media Gallery</a>
+      <a href="#">FAQ</a>
+      <a href="#">Result Portal</a>
+      <a href="./generalDoubts.html">General Doubts</a>
+      <a href="./aboutUs.html">About Us</a>
+    </div>
+
+    <!-- sidenav-end -->
+
+    <!-- search-bar -->
+    <div class="search__courses">
+      <input
+        class="search__courses-input"
+        type="text"
+        placeholder="Search for courses"
+      />
+      <a href="#">
+        <i class="search-icon fa fa-search"></i>
+      </a>
+    </div>
+
     <!--background music -->
     <audio id="myaudio" controls autoplay hidden loop>
       <source
@@ -38,43 +128,36 @@
     </audio>
 
     <script>
-        window.addEventListener("load", function() {
-            var audio = document.getElementById("myaudio");
-            audio.volume = 0.15;
-        });
+      window.addEventListener("load", function () {
+        var audio = document.getElementById("myaudio");
+        audio.volume = 0.15;
+      });
     </script>
 
-    <!-- background music ends here -->
-
-    <!-- background vedio -->
-    <!-- <div>
-        <video class="" style="opacity: 35%;" autoplay muted loop id="myVideo">
-            <source src="./assets/videos/bg.mp4" type="video/mp4" />
-            Your browser does not support HTML5 video.
-        </video>
-    </div> -->
-    <!-- background vedio ends -->
-
-    <!-- Pre-loader -->
-    <div class="loader">
-        <img src="./assets/gif/preloading_gif.gif" alt="Loading..." />
-    </div>
-    <!-- Pre-loader ends here -->
-
     <div class="logo-section">
-        <div class="logo">
-            <div>
-                <img class="logoimg" src="./assets/images/logo1.jpeg" style="height: 200px; width: 200px;" alt="" />
-            </div>
-            <div>
-                <h1 class="PC" style="margin: 3rem; font-size: 70px; color: #fff;">
-                    Pragati Classes, Kalain
-                </h1>
-            </div>
+      <div class="logo">
+        <div>
+          <img
+            class="logoimg"
+            src="./assets/images/logo1.jpeg"
+            style="height: 200px; width: 200px;"
+            alt=""
+          />
         </div>
-        <div id="clock-show" style="text-align: center; padding: 1em 0;">
-            <h4>
-                <a style="text-decoration: none;" href="https://www.zeitverschiebung.net/en/city/1273294"></a><span style="color: gray; opacity: 0;">Current local time in<br />Delhi, India</span
+        <div>
+          <h1 class="PC" style="margin: 3rem; font-size: 70px; color: #fff;">
+            Pragati Classes
+          </h1>
+        </div>
+      </div>
+      <div id="clock-show" style="text-align: center; padding: 1em 0;">
+        <h4>
+          <a
+            style="text-decoration: none;"
+            href="https://www.zeitverschiebung.net/en/city/1273294"
+          ></a
+          ><span style="color: gray; opacity: 0;"
+            >Current local time in<br />Delhi, India</span
           >
         </h4>
         <iframe
@@ -95,7 +178,11 @@
       class="navbar navbar-expand-lg navbar-dark bg-dark"
       style="opacity: 70%;"
     >
-      <div style="display: flex; padding-left: 30px;" class="search">
+      <div
+        class="only-for-desktop"
+        style="display: flex; padding-left: 30px;"
+        class="search"
+      >
         <input
           class="input-course"
           type="text"
@@ -132,11 +219,15 @@
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" style="font-size: 15px; color: white;" href="/student/login">Student Portal &nbsp; &nbsp;</a
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              style="font-size: 15px; color: white;"
+              href="/student/login"
+              >Student Portal &nbsp; &nbsp;</a
             >
           </li>
           <li class="nav-item">
@@ -333,87 +424,139 @@
       <div class="menu">
         <div class="side_bar_item">
           <a class="" href="./mainCenter.html">Main Center</a>
-                </div>
-                <div class="side_bar_item">
-                    <a class="" href="./resources.html">Resources</a>
-                </div>
-                <div class="side_bar_item"><a class="" href="#">Leaderboard</a></div>
-                <div class="side_bar_item">
-                    <a class="" href="#">Scholarship Test</a>
-                </div>
-                <div class="side_bar_item"><a class="" href="#">FAQ</a></div>
-                <div class="side_bar_item">
-                    <a class="" href="./aboutUs.html">About Us</a>
-                </div>
         </div>
-        </section>
+        <div class="side_bar_item">
+          <a class="" href="./resources.html">Resources</a>
+        </div>
+        <div class="side_bar_item"><a class="" href="#">Leaderboard</a></div>
+        <div class="side_bar_item">
+          <a class="" href="#">Scholarship Test</a>
+        </div>
+        <div class="side_bar_item"><a class="" href="#">FAQ</a></div>
+        <div class="side_bar_item">
+          <a class="" href="./aboutUs.html">About Us</a>
+        </div>
+      </div>
+    </section>
 
-        <div style="height: 50px; background-color: none;"></div>
+    <div style="height: 50px; background-color: none;"></div>
 
-        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" style="
+    <div
+      id="carouselExampleControls"
+      class="carousel slide"
+      data-ride="carousel"
+      style="
         margin-top: 70px;
         height: 90vh;
         margin-left: 20px;
         margin-right: 20px;
-      ">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img class="d-block w-100" src="./assets/images/onee.jpeg" alt="First slide" />
-                    <!--Important-->
-                </div>
+      "
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            class="d-block w-100"
+            src="./assets/images/onee.jpeg"
+            alt="First slide"
+          />
+          <!--Important-->
+        </div>
 
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="./assets/images/twoo.jpeg" alt="Second slide" />
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="./assets/images/threee.jpeg" alt="Third slide" />
-                </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="./assets/images/twoo.jpeg"
+            alt="Second slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="./assets/images/threee.jpeg"
+            alt="Third slide"
+          />
+        </div>
 
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="./assets/images/x1.jpeg" alt="Third slide" />
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block w-100" src="./assets/images/x2.jpeg" alt="Third slide" />
-                </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="./assets/images/x1.jpeg"
+            alt="Third slide"
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            class="d-block w-100"
+            src="./assets/images/x2.jpeg"
+            alt="Third slide"
+          />
+        </div>
+      </div>
+
+      <a
+        class="carousel-control-prev"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a
+        class="carousel-control-next"
+        href="#carouselExampleControls"
+        role="button"
+        data-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <!-- ====== START ABOUT ======  -->
+
+    <section class="about padding" id="about">
+      <div class="container">
+        <div class="row">
+          <!-- START ABOUT PICTURE -->
+          <div class="col-lg-6 mb-5" style="display: flex; flex-wrap: wrap;">
+            <img
+              src="images/about.jpg"
+              alt="About picture"
+              class="about-image1"
+            />
+          </div>
+          <!-- END ABOUT PICTURE -->
+
+          <!-- START ABOUT CONTENT -->
+          <div class="col-lg-6 about-content">
+            <div class="hr-title">
+              <h2
+                class="heading-primary mb-2"
+                style="font-weight: bold; font-size: 3em;"
+              >
+                About Us
+              </h2>
+              <div class="headerhr"></div>
             </div>
 
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        <!-- ====== START ABOUT ======  -->
-
-        <section class="about padding" id="about">
-            <div class="container">
-                <div class="row">
-                    <!-- START ABOUT PICTURE -->
-                    <div class="col-lg-6 mb-5" style="display: flex; flex-wrap: wrap;">
-                        <img src="images/about.jpg" alt="About picture" class="about-image1" />
-                    </div>
-                    <!-- END ABOUT PICTURE -->
-
-                    <!-- START ABOUT CONTENT -->
-                    <div class="col-lg-6 about-content">
-                        <div class="hr-title">
-                            <h2 class="heading-primary mb-2" style="font-weight: bold; font-size: 3em;">
-                                About Us
-                            </h2>
-                            <div class="headerhr"></div>
-                        </div>
-
-                        <p class="mb-3">
-                            We all know that Kota, Rajasthan is known as the engineer and MBBS producing factory in India. But why to go Kota when you have best coaching experience here itself in your own town? Our notes and study material are well designed to give you complete
-                            experience of Competitive exams like NEET, JEE, CEE and what not? For the betterment of the students we have designed our modules as per top coaching institutes of India(particularly Kota). We have in fact spent a lot regarding
-                            this matter. So, there’s nothing to worry regarding the study materials, they are designed taking reference from the modules of Allen-Resonance-Cengage(The top Coaching institutes). We also have mentorship plan that is, 3 student
-                            per mentor. Thus ensuring that each student gets equal importance and gets a better understanding of each topics.....
-                        </p>
-                        <p>Wanna read more.....</p>
-                        <a href="./aboutUs.html"><button class="btn btn-success">Read More...</button></a
+            <p class="mb-3">
+              We all know that Kota, Rajasthan is known as the engineer and MBBS
+              producing factory in India. But why to go Kota when you have best
+              coaching experience here itself in your own town? Our notes and
+              study material are well designed to give you complete experience
+              of Competitive exams like NEET, JEE, CEE and what not? For the
+              betterment of the students we have designed our modules as per top
+              coaching institutes of India(particularly Kota). We have in fact
+              spent a lot regarding this matter. So, there’s nothing to worry
+              regarding the study materials, they are designed taking reference
+              from the modules of Allen-Resonance-Cengage(The top Coaching
+              institutes). We also have mentorship plan that is, 3 student per
+              mentor. Thus ensuring that each student gets equal importance and
+              gets a better understanding of each topics.....
+            </p>
+            <p>Wanna read more.....</p>
+            <a href="./aboutUs.html"
+              ><button class="btn btn-success">Read More...</button></a
             >
           </div>
           <!-- END ABOUT CONTENT -->
@@ -464,47 +607,49 @@
               <h2>Science and Technology</h2>
               <p>To explore the world of science</p>
               <a href="./science.html" target="_blank"><span>ENTER!</span></a>
-                    </div>
-                </div>
-                <!-- END ABOUT ITEM -->
+            </div>
+          </div>
+          <!-- END ABOUT ITEM -->
 
-                <!-- START ABOUT ITEM -->
-                <div class="about-item col-lg-6 col-md-6 mx-auto">
-                    <div class="text-center">
-                        <img src="images/dev2.jpg" style="
+          <!-- START ABOUT ITEM -->
+          <div class="about-item col-lg-6 col-md-6 mx-auto">
+            <div class="text-center">
+              <img
+                src="images/dev2.jpg"
+                style="
                   border-radius: 50%;
                   height: 130px;
                   width: 130px;
                   margin-bottom: 30px;
-                " />
-                        <h2>Arts</h2>
-                        <p class="art">To explore the world of art</p>
-                        <a href="./art.html" target="_blank"><span>ENTER!</span></a>
-                    </div>
-                </div>
-                <!-- END ABOUT ITEM -->
+                "
+              />
+              <h2>Arts</h2>
+              <p class="art">To explore the world of art</p>
+              <a href="./art.html" target="_blank"><span>ENTER!</span></a>
             </div>
-            <br />
-            <div class="row" style="
+          </div>
+          <!-- END ABOUT ITEM -->
+        </div>
+        <br />
+        <div
+          class="row"
+          style="
             margin: auto;
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
             padding-left: 40%;
             padding-right: 40%;
-          ">
-                <p style="display: flex;">
-                    <a href="./resources.html"><button class="btn btn-success">Resources</button></a
+          "
+        >
+          <p style="display: flex;">
+            <a href="./resources.html"
+              ><button class="btn btn-success">Resources</button></a
             >
           </p>
         </div>
       </div>
     </section>
-
-    <!-- <div class="iframe-container">
-       
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/tbnEd8Nq5fM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </div> -->
 
     <section
       class="about padding"
@@ -740,112 +885,116 @@
             <a href="https://www.facebook.com/pragatikalain"
               ><i class="fab fa-facebook-f" aria-hidden="true"></i
             ></a>
-                    <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
-                    <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.youtube.com/channel/UCd0o-UbulaMf5D-_n2PIsgw?view_as=subscriber"><i class="fab fa-youtube" aria-hidden="true"></i
+            <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+            <a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a
+              href="https://www.youtube.com/channel/UCd0o-UbulaMf5D-_n2PIsgw?view_as=subscriber"
+              ><i class="fab fa-youtube" aria-hidden="true"></i
             ></a>
-                    <a href="#"><i class="fab fa-linkedin-in" aria-hidden="true"></i
+            <a href="#"
+              ><i class="fab fa-linkedin-in" aria-hidden="true"></i
             ></a>
-            </div>
-            <p class="rights-text" style="font-size: 15px;">
-                © &nbsp; 2020 Pragati classes All Rights Reserved.
-            </p>
-    </div>
-    <div class="center box">
-        <h2 style="font-size: 25px !important; margin-bottom: 20px;">
+          </div>
+          <p class="rights-text" style="font-size: 15px;">
+            © &nbsp; 2020 Pragati classes All Rights Reserved.
+          </p>
+        </div>
+        <div class="center box">
+          <h2 style="font-size: 25px !important; margin-bottom: 20px;">
             Address
-        </h2>
-        <div class="content">
+          </h2>
+          <div class="content">
             <div class="place">
-                <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
-                <span class="text" style="font-size: 20px;">Near HS school,Kalain <br />
+              <span class="fas fa-map-marker-alt" aria-hidden="true"></span>
+              <span class="text" style="font-size: 20px;"
+                >Near HS school,Kalain <br />
                 Opposite to IICA computer centre</span
               >
             </div>
             <div class="phone">
               <span class="fas fa-phone-alt" aria-hidden="true"></span>
-                <span class="text" style="font-size: 20px;">+91 8822341175</span>
+              <span class="text" style="font-size: 20px;">+91 8822341175</span>
             </div>
             <div class="email">
-                <span class="fas fa-envelope" aria-hidden="true"></span>
-                <span class="text" style="font-size: 20px;">
+              <span class="fas fa-envelope" aria-hidden="true"></span>
+              <span class="text" style="font-size: 20px;">
                 prastutiofficialclasses2020@gmail.com
               </span>
             </div>
+          </div>
         </div>
-    </div>
 
-    <div class="right-col">
-        <h1 style="margin-top: -50px; margin-bottom: 20px;">Contact us</h1>
-        <div style="margin-bottom: 10px;" class="border"></div>
-        <form action="post" class="newsletter-form">
+        <div class="right-col">
+          <h1 style="margin-top: -50px; margin-bottom: 20px;">Contact us</h1>
+          <div style="margin-bottom: 10px;" class="border"></div>
+          <form action="post" class="newsletter-form">
             <input type="text" class="txtb" placeholder="Enter Your Email" />
             <input type="submit" class="btn" value="submit" />
-        </form>
-    </div>
-    </div>
+          </form>
+        </div>
+      </div>
     </footer>
 
     <script>
-        var date = new Date();
-        const elementDate = document.getElementById("printDate");
-        const elementDay = document.getElementById("printDay");
-        const elementTime = document.getElementById("printTime");
-        const listOfDays = [
-            "Sunday",
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday",
-        ];
+      var date = new Date();
+      const elementDate = document.getElementById("printDate");
+      const elementDay = document.getElementById("printDay");
+      const elementTime = document.getElementById("printTime");
+      const listOfDays = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
 
-        function printDate() {
-            var day = date.getDate();
-            var month = date.getMonth();
-            var year = date.getFullYear();
+      function printDate() {
+        var day = date.getDate();
+        var month = date.getMonth();
+        var year = date.getFullYear();
 
-            elementDate.innerHTML = day + " / " + month + " / " + year;
+        elementDate.innerHTML = day + " / " + month + " / " + year;
+      }
+
+      function printDay() {
+        date = new Date();
+        var numberOfDay = date.getDay();
+        var day = listOfDays[numberOfDay];
+        elementDay.innerHTML = day;
+      }
+
+      function printTime() {
+        date = new Date();
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var seconds = date.getSeconds();
+
+        if (seconds < 10) {
+          seconds = "0" + seconds;
         }
-
-        function printDay() {
-            date = new Date();
-            var numberOfDay = date.getDay();
-            var day = listOfDays[numberOfDay];
-            elementDay.innerHTML = day;
+        if (minutes < 10) {
+          minutes = "0" + minutes;
         }
-
-        function printTime() {
-            date = new Date();
-            var hours = date.getHours();
-            var minutes = date.getMinutes();
-            var seconds = date.getSeconds();
-
-            if (seconds < 10) {
-                seconds = "0" + seconds;
-            }
-            if (minutes < 10) {
-                minutes = "0" + minutes;
-            }
-            if (hours > 12) {
-                hours = hours - 12;
-                elementTime.innerHTML =
-                    hours + " : " + minutes + " : " + seconds + "  PM ";
-            } else if (hours < 12) {
-                elementTime.innerHTML =
-                    hours + " : " + minutes + " : " + seconds + "  AM ";
-            } else if ((hours = 12)) {
-                elementTime.innerHTML =
-                    hours + " : " + minutes + " : " + seconds + "  PM ";
-            }
+        if (hours > 12) {
+          hours = hours - 12;
+          elementTime.innerHTML =
+            hours + " : " + minutes + " : " + seconds + "  PM ";
+        } else if (hours < 12) {
+          elementTime.innerHTML =
+            hours + " : " + minutes + " : " + seconds + "  AM ";
+        } else if ((hours = 12)) {
+          elementTime.innerHTML =
+            hours + " : " + minutes + " : " + seconds + "  PM ";
         }
+      }
 
-        setInterval(function() {
-            printTime();
-            printDate();
-            printDay();
-        }, 1000);
+      setInterval(function () {
+        printTime();
+        printDate();
+        printDay();
+      }, 1000);
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
@@ -853,25 +1002,35 @@
 
     <!-- preloader -->
     <script>
-        window.addEventListener(
-            "load",
-            function() {
-                setTimeout(animation, 2000);
-                setTimeout(otherOperation, 7000);
-            },
-            false
-        );
+      window.addEventListener(
+        "load",
+        function () {
+          setTimeout(animation, 2000);
+          setTimeout(otherOperation, 7000);
+        },
+        false
+      );
 
-        function animation() {
-            const loader = document.querySelector(".loader");
-            loader.className += " hidden"; // class "loader hidden"
-        }
+      function animation() {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+      }
 
-        function otherOperation() {
-            const stick = document.querySelector(".second_nav");
-            stick.className += " sticky-top";
-        }
+      function otherOperation() {
+        const stick = document.querySelector(".second_nav");
+        stick.className += " sticky-top";
+      }
     </script>
-</body>
 
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+      }
+
+      /* Set the width of the side navigation to 0 */
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+      }
+    </script>
+  </body>
 </html>

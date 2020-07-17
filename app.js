@@ -11,7 +11,7 @@ const url =
   "mongodb+srv://pragati:pragati123@cluster0.fqhit.mongodb.net/PC?retryWrites=true&w=majority";
 const urlLocal = "mongodb://localhost:27017/PC";
 mongoose.connect(
-  url,
+  urlLocal,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -40,5 +40,5 @@ app.use(indexRoutes);
 var port = 5000 | process.env.PORT;
 app.listen(port, (err) => {
   if (err) console.log(err);
-  else console.log("Server started at port "+port);
+  else console.log("Server started at port " + port);
 });
