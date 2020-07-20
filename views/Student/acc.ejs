@@ -24,34 +24,34 @@
                 Name: <%=user.name%>
               </ul>
               <ul>
-                Class: Class
+                Class: <%=user.class%>
               </ul>
               <ul>
-                Batch: Batch
+                Batch: <%=user.batch%>
               </ul>
             </li>
             <li style="font-size: 35px; list-style: none;">
               <ul>
-                Username: Username
+                Username: <%=user.user%>
               </ul>
               <ul>
-                Email: Email
+                Email: <%=user.email%>
               </ul>
-              <ul>
-                Password: *************
+              <!-- <ul>
+                Password: 
                 <img
                   style="height: 12px; width: 25px; cursor: pointer;"
                   src="./assets/images/show-password.png"
                   alt=""
                 />
-              </ul>
+              </ul> -->
             </li>
             <li style="font-size: 35px; list-style: none;">
               <ul>
-                College: College
+                College: <%=user.college%>
               </ul>
               <ul>
-                Address: Address
+                Address: <%=user.address%>
               </ul>
             </li>
           </div>
@@ -79,7 +79,18 @@
           Bronze: 0
         </ul>
         <ul>
-          <a href="/student/subject">Subject</a>
+          <a
+            style="
+              text-decoration: none;
+              color: white;
+              font-size: 25px;
+              background-color: #e83350;
+              padding: 10px;
+              border-radius: 15px;
+            "
+            href="/student/subject"
+            >Subjects</a
+          >
         </ul>
 
         <img
@@ -110,22 +121,6 @@
               Test 49
               <a href="#" class="view-details">View Details</a>
             </ul>
-            <ul>
-              Test 50
-              <a href="#" class="view-details">View Details</a>
-            </ul>
-            <ul>
-              Test 51
-              <a href="#" class="view-details">View Details</a>
-            </ul>
-            <ul>
-              Test 52
-              <a href="#" class="view-details">View Details</a>
-            </ul>
-            <ul>
-              Test 53
-              <a href="#" class="view-details">View Details</a>
-            </ul>
           </li>
         </div>
         <div class="profile-body__two">
@@ -152,10 +147,14 @@
           >
             <li style="font-size: 45px; list-style: none;">
               <ul>
-                <a href="#" class="clickhere">Practice Questions</a>
+                <a href="http://pc.unnamedcreators.in/home" class="clickhere"
+                  >Practice Questions</a
+                >
               </ul>
               <ul>
-                <a href="#" class="clickhere">Attempt Test</a>
+                <a href="http://pc.unnamedcreators.in/home" class="clickhere"
+                  >Attempt Test</a
+                >
               </ul>
               <ul>
                 <a href="#" class="clickhere">View/Submit Assignments</a>
@@ -187,21 +186,6 @@
           >
             Notifications
           </h1>
-          <li>
-            <a href="#" class="notification-view"
-              >Teacher A has uploaded notes of Bio diversity
-            </a>
-          </li>
-          <li>
-            <a href="#" class="notification-view"
-              >Teacher A has uploaded notes of Bio diversity
-            </a>
-          </li>
-          <li>
-            <a href="#" class="notification-view"
-              >Teacher A has uploaded notes of Bio diversity
-            </a>
-          </li>
           <li>
             <a href="#" class="notification-view"
               >Teacher A has uploaded notes of Bio diversity

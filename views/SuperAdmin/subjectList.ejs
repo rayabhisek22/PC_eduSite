@@ -1,16 +1,43 @@
 <head>
-    <title><%= title %></title>
+  <title><%= title %></title>
 </head>
+
+<style>
+  body {
+    padding: 50px;
+  }
+
+  .add-subject-btn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  .subject {
+    text-decoration: none;
+    font-size: 20px;
+  }
+</style>
 <body>
-    <h1>SUBJECT LIST</h1>
-    <div class = list>
-        <ul>
-            <% for(var eachSubject of subject) { %>
-            <li><a href = "/superadmin/subject/edit/<%= eachSubject._id %>"><%= eachSubject.subject_id %> (<%= eachSubject.name%>)</a></li>
-            <% } %>
-        </ul>
-    </div>
-    <br>
-    <br>
-    <h3><a href = "/superadmin/subject/add">Add Subject</a></h3>
+  <h1>SUBJECT LIST</h1>
+  <div class="list">
+    <ul>
+      <% for(var eachSubject of subject) { %>
+      <li>
+        <a
+          class="subject"
+          href="/superadmin/subject/edit/<%= eachSubject._id %>"
+          ><%= eachSubject.subject_id %> (<%= eachSubject.name%>)</a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <h3>
+    <a class="add-subject-btn" href="/superadmin/subject/add">Add Subject</a>
+  </h3>
 </body>
