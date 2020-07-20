@@ -1,16 +1,38 @@
 <head>
-    <title><%= title %></title>
+  <title><%= title %></title>
 </head>
+
+<style>
+  body {
+    padding: 50px;
+  }
+
+  .add-student-btn {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    text-decoration: none;
+    font-size: 25px;
+  }
+
+  .student {
+    text-decoration: none;
+  }
+</style>
 <body>
-    <h1>STUDENT LIST</h1>
-    <div class = list>
-        <ul>
-            <% for(var person of people) { %>
-            <li><a href = "/admin/students/edit/<%= person._id %>"><%= person.name %></a></li>
-            <% } %>
-        </ul>
-    </div>
-    <br>
-    <br>
-    <h3><a href = "/admin/students/add">Add Student</a></h3>
+  <h1>STUDENT LIST</h1>
+  <div class="list">
+    <ul>
+      <% for(var person of people) { %>
+      <li>
+        <a class="student" href="/admin/students/edit/<%= person._id %>"
+          ><%= person.name %></a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <h3><a class="add-student-btn" href="/admin/students/add">Add Student</a></h3>
 </body>
