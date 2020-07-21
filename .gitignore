@@ -108,3 +108,5 @@ token.json
 
 routes/credentials.json
 routes/token.json
+
+.env
