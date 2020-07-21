@@ -1,4 +1,6 @@
 const express = require("express");
+const dotenv = require("dotenv");
+dotenv.config({ path: "./.env" });
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -7,8 +9,7 @@ const LocalStrategy = require("passport-local");
 const app = express();
 
 //Database config===================================
-const url =
-  "mongodb+srv://pragati:pragati123@cluster0.fqhit.mongodb.net/PC?retryWrites=true&w=majority";
+const url = process.env.MONGODB_URL;
 const urlLocal = "mongodb://localhost:27017/PC";
 mongoose.connect(
   url,
