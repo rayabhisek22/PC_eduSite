@@ -1,6 +1,8 @@
 <style>
   .links {
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
     top: 30%;
     left: 50%;
@@ -29,6 +31,24 @@
     border-radius: 10px;
     padding: 5px;
   }
+
+  .go-back-home {
+    text-decoration: none;
+    font-size: 30px;
+    background-color: rgba(26, 26, 87, 0.705);
+    font-weight: 600;
+    color: white;
+    border-radius: 10px;
+    padding: 5px;
+    margin: 10px 0 0 10px;
+  }
+
+  @media (max-width: 750px) {
+    .links {
+      flex-direction: column;
+      margin-top: 100px;
+    }
+  }
 </style>
 
 <div class="links">
@@ -38,4 +58,5 @@
   <a class="links-option" href="/superadmin/subject">SUBJECTS</a>
 </div>
 
+<a class="go-back-home" href="/">Home</a>
 <a class="logout-btn" href="/superadmin/logout">Logout</a>

@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>MySubject</title>
-</head>
-<body>
-	<h1>Subject: <%=subject.name%> (<%=subject.subject_id%>)</h1>
-	<h2>Chapters:</h2>
-	<ol>
-		<% subject.chapters.forEach((chapter)=>{ %>
-			<li><%=chapter.chapter_name%></li>
-			<ul>
-				<li>Chapter Id: <%= chapter.chapter_id %></li>
-				<li>Notes:</li>
-				<ol>
-				<% chapter.notes.forEach((note)=>{ %>
-					<li><a href="<%=note.link%>"><%=note.title%></a></li>
-					Uploaded By: <%=note.faculty%> at <%=note.date%>
-				<%}) %>
-				</ol>
+  <head>
+    <title>MySubject</title>
+  </head>
+  <body>
+    <h1>Subject: <%=subject.name%> (<%=subject.subject_id%>)</h1>
+    <h2>Chapters:</h2>
+    <ol>
+      <% subject.chapters.forEach((chapter)=>{ %>
+      <li><%=chapter.chapter_name%></li>
+      <ul>
+        <li>Chapter Id: <%= chapter.chapter_id %></li>
+        <li>Notes:</li>
+        <ol>
+          <% chapter.notes.forEach((note)=>{ %>
+          <li><a href="<%=note.link%>"><%=note.title%></a></li>
+          Uploaded By: <%=note.faculty%> at <%=note.date%> <%}) %>
+        </ol>
 
-				<li>Videos:</li>
-				<ol>
-				<% chapter.videos.forEach((video)=>{ %>
-					<li><a href="<%=video.link%>"><%=video.title%></a></li>
-					Uploaded By: <%=video.faculty%> at <%=video.date%>
-				<%}) %>
-				</ol>
-			</ul>
-		<% }) %>
-	</ol>
-
-
-</body>
+        <li>Videos:</li>
+        <ol>
+          <% chapter.videos.forEach((video)=>{ %>
+          <li><a href="<%=video.link%>"><%=video.title%></a></li>
+          Uploaded By: <%=video.faculty%> at <%=video.date%> <%}) %>
+        </ol>
+      </ul>
+      <% }) %>
+    </ol>
+  </body>
 </html>
