@@ -330,8 +330,6 @@
       </div>
     </nav>
 
-    <!-- SHIVA -->
-
     <!-- navigation bar -->
     <nav
       style="opacity: 90%;"
@@ -751,24 +749,29 @@
 
     <div class="contact-us">
       <div class="contact">
-        <form class="sticky-top" action="#">
+        <form action="/email" method="POST" class="sticky-top">
           <div style="margin-bottom: 50px;" class="contact-one">
             <div class="contact-name">
               <label>First Name</label>
               <br />
-              <input class="contact-input" type="text" name="name" />
+              <input
+                class="contact-input"
+                type="text"
+                for="fname"
+                name="fname"
+              />
             </div>
             <div class="contact-email">
               <label>Last Name</label>
               <br />
-              <input class="contact-input" type="email" name="email" />
+              <input class="contact-input" type="text" name="lname" />
             </div>
           </div>
           <div class="contact-one">
             <div class="contact-name">
               <label>Phone Number </label>
               <br />
-              <input class="contact-input" type="text" name="name" />
+              <input class="contact-input" type="text" name="phone" />
             </div>
             <div class="contact-email">
               <label>Email</label>
@@ -779,7 +782,7 @@
           <div class="contact-two">
             <label>Message</label>
             <br />
-            <input class="contact-input" type="text" name="name" />
+            <input class="contact-input" type="text" name="message" />
           </div>
           <button class="contact-submit" type="submit">Submit</button>
         </form>
