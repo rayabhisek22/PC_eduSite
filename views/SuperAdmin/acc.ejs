@@ -1,26 +1,42 @@
 <style>
-  .links {
+  body {
+    background-color: #f5bcba;
+  }
+  .links1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-top: 100px;
+  }
+  .links2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
   }
 
   .links-option {
     text-decoration: none;
     font-size: 30px;
     margin: 20px;
-    background-color: #e83350;
+    background-color: #487eb0;
     color: white;
     padding: 10px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
     border-radius: 10px;
+    box-shadow: 5px 5px 2px #47535e;
+    transition: all 0.2s;
+  }
+
+  .links-option:hover {
+    transform: scale(1.1);
   }
 
   .logout-btn {
     position: absolute;
+    padding: 12px;
     right: 5%;
     top: 5%;
     text-decoration: none;
@@ -34,12 +50,13 @@
 
   .go-back-home {
     text-decoration: none;
+    position: absolute;
     font-size: 30px;
     background-color: rgba(26, 26, 87, 0.705);
     font-weight: 600;
     color: white;
     border-radius: 10px;
-    padding: 5px;
+    padding: 12px;
     margin: 10px 0 0 10px;
   }
 
@@ -50,13 +67,16 @@
     }
   }
 </style>
+<a class="go-back-home" href="/">Home</a>
 
-<div class="links">
+<div class="links1">
   <a class="links-option" href="/superadmin/students">Students List</a>
   <a class="links-option" href="/superadmin/faculty">Teachers List</a>
+</div>
+
+<div class="links2">
   <a class="links-option" href="/superadmin/management">Staff</a>
   <a class="links-option" href="/superadmin/subject">SUBJECTS</a>
 </div>
 
-<a class="go-back-home" href="/">Home</a>
 <a class="logout-btn" href="/superadmin/logout">Logout</a>

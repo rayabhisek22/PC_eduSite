@@ -1,0 +1,78 @@
+.container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+.container h2 {
+  position: relative;
+  width: 23rem;
+  color: hotpink;
+  margin: 20px 0;
+}
+
+.container h2::after {
+  position: absolute;
+  content: "";
+  width: 67px;
+  height: 2px;
+  right: 5px;
+  background-color: hotpink;
+  bottom: 0;
+}
+
+.accordion {
+  width: 100%;
+  padding: 0 5px;
+  border: 2px solid #6db5ff;
+  cursor: pointer;
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 30px;
+}
+
+.accordion i {
+  color: #6db5ff;
+  transition: all 0.5s ease-in;
+}
+.accordion .fa-minus {
+  display: none;
+}
+.active,
+.accordion:hover {
+  background-color: #6db5ff;
+  color: white;
+  transition: all 0.5s ease-in;
+  border: 2px solid #dddddd;
+}
+.active .fa-minus {
+  display: block;
+}
+.active .fa-plus {
+  display: none;
+}
+.accordion h5 {
+  font-size: 20px;
+  margin: 0;
+  color: #001733;
+  padding-left: 5px;
+}
+.active i,
+.active h5,
+.accordion:hover i,
+.accordion:hover h5 {
+  color: white;
+}
+.panal {
+  padding: 0 15px;
+  border-left: 1px solid #6db5ff;
+  margin-left: 25px;
+  font-size: 14px;
+  text-align: justify;
+  overflow: hidden;
+  transition: all 0.5s ease-in;
+  max-height: 0;
+}

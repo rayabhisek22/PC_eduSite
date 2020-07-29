@@ -1,5 +1,6 @@
 const express = require("express"),
   passport = require("passport"),
+  flash = require("connect-flash"),
   LocalStrategy = require("passport-local").Strategy;
 
 const router = express.Router();
@@ -9,6 +10,7 @@ const Faculty = require("../../models/Faculty");
 //PASSPORT CONFIGURATION===========
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
+const { body, validationResult } = require("express-validator");
 
 router.use(
   session({
@@ -57,6 +59,12 @@ router.get("*", function (req, res, next) {
   next();
 });
 
+router.use(flash());
+router.use(function (req, res, next) {
+  res.locals.messages = require("express-messages")(req, res);
+  next();
+});
+
 //AUTH ROUTES===================
 //login
 router.get("/login", ifLoggedIn, (req, res) => {
@@ -67,21 +75,24 @@ router.post(
   passport.authenticate("local", {
     successRedirect: "/faculty/acc",
     failureRedirect: "/faculty/login",
+    failureFlash: true,
   }),
   (req, res) => {}
 );
 
 //logout
-router.get("/logout", isLoggedIn, isTeacher, function (req, res) {
+router.get("/logout", function (req, res) {
   req.logout();
   res.redirect("/");
 });
 
 router.get("/acc", isLoggedIn, isTeacher, function (req, res) {
+  console.log("hii");
   Faculty.findOne({ _id: req.user.faculty_id }, (err, data) => {
     if (err) {
       return handleError(err);
     }
+    console.log(data);
     res.render("./Faculty/acc", { user: data });
   });
 });
@@ -93,18 +104,19 @@ function isTeacher(req, res, next) {
   res.redirect("/faculty/login");
 }
 
-function ifLoggedIn(req, res, next) {
-  if (!req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect("/faculty/acc");
-}
 //middleware for login
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
   res.redirect("/faculty/login");
+}
+
+function ifLoggedIn(req, res, next) {
+  if (!req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/faculty/acc");
 }
 
 module.exports = router;

@@ -1,7 +1,19 @@
 <html>
     <head></head>
     <body>
-        
+      <a
+      style="
+        text-decoration: none;
+        color: white;
+        border-radius: 15px;
+        padding: 5px;
+        font-size: 20px;
+        background-color: red;
+        margin-bottom: 20px;
+      "
+      href="/superadmin/acc"
+      >Superadmin Home</a
+    >
 <h1> Edit Faculty Member </h1>
 <form method = "POST" action="/superadmin/faculty/edit/<%= person._id %>">
   
@@ -21,7 +33,6 @@
     <script> 
         $(document).ready(function(){
         $(".death").click(function(){
-
         if (confirm("Sure you want to delete?")) {
         var extension = $(".death").attr('data-id'); 
         console.log(extension);
@@ -29,9 +40,7 @@
         window.location.href='/superadmin/faculty/';
         }});
         } else {
-
         }
-
         });
         });
         </script>

@@ -13,7 +13,7 @@ const app = express();
 const url = process.env.MONGODB_URL;
 const urlLocal = "mongodb://localhost:27017/PC";
 mongoose.connect(
-  urlLocal,
+  url,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -51,17 +51,16 @@ transporter.verify((error, success) => {
 });
 
 app.post("/email", (req, res) => {
-  const fname = req.body.fname;
-  const lname = req.body.lname;
+  const name = req.body.name;
   const email = req.body.email;
   const phone = req.body.phone;
+  const subject = req.body.subject;
   const message = req.body.message;
-  const content = `name: ${
-    fname + " " + lname
-  } \n email: ${email} \n phone: ${phone} \n message: ${message} `;
+  const content = `name: ${name}
+ \n email: ${email} \n phone: ${phone} \n message: ${message} `;
 
   const mail = {
-    from: fname,
+    from: name,
     to: process.env.EMAIL,
     subject: "New Message from Pragati Classes (Contact Form)",
     text: content,

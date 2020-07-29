@@ -3,196 +3,132 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Student Portal</title>
-    <link rel="stylesheet" href="/css/studentportal.css" />
+    <!-- font-awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/studentPortal.css" />
+    <title>Student Portal | Pragati Classes</title>
   </head>
   <body>
-    <main class="main">
-      <div class="profile">
-        <div class="profile__photo">
-          <img
-            style="width: 180px; height: 180px;"
-            src="./assets/images/user.png"
-            alt="Profile image"
-          />
-        </div>
-        <div class="profile__details">
-          <h1 style="border-bottom: 1px solid #000;">Student Details</h1>
-          <div class="profile__details-info">
-            <li style="font-size: 35px; list-style: none;">
-              <ul>
-                Name: <%=user.name%>
-              </ul>
-              <ul>
-                Class: <%=user.class%>
-              </ul>
-              <ul>
-                Batch: <%=user.batch%>
-              </ul>
-            </li>
-            <li style="font-size: 35px; list-style: none;">
-              <ul>
-                Username: <%=user.user%>
-              </ul>
-              <ul>
-                Email: <%=user.email%>
-              </ul>
-              <!-- <ul>
-                Password: 
-                <img
-                  style="height: 12px; width: 25px; cursor: pointer;"
-                  src="./assets/images/show-password.png"
-                  alt=""
-                />
-              </ul> -->
-            </li>
-            <li style="font-size: 35px; list-style: none;">
-              <ul>
-                College: <%=user.college%>
-              </ul>
-              <ul>
-                Address: <%=user.address%>
-              </ul>
-            </li>
-          </div>
-        </div>
-      </div>
-      <div class="profile__achievements">
-        <div class="profile__achievements-img1">
-          <img
-            class="achimg"
-            src="./assets/images/ach2.jpg"
-            style="width: 90px; height: 90px; border-radius: 50%;"
-            alt=""
-          />
-        </div>
-        <div class="ach" style="font-size: 35px; color: #fff;">
-          Achievements:
-        </div>
-        <ul class="ach-star" style="color: Gold; font-size: 30px;">
-          Gold: 4
-        </ul>
-        <ul class="ach-star" style="color: Silver; font-size: 30px;">
-          Silver: 1
-        </ul>
-        <ul class="ach-star" style="color: Bronze; font-size: 30px;">
-          Bronze: 0
-        </ul>
-        <ul>
-          <a
-            style="
-              text-decoration: none;
-              color: white;
-              font-size: 25px;
-              background-color: #e83350;
-              padding: 10px;
-              border-radius: 15px;
-            "
-            href="/student/subject"
-            >Subjects</a
-          >
-        </ul>
+    <!-- nav-bar -->
+    <div class="phone__nav">
+      <div class="phone__nav-options">
+        <a onclick="openNav()" href="#">
+          <i class="phone__nav-options-a fa fa-bars"></i>
+        </a>
+        <a href="/">
+          <i class="phone__nav-options-a fa fa-home"></i>
+        </a>
 
-        <img
-          class="achimg"
-          src="./assets/images/ach1.png"
-          style="
-            width: 90px;
-            height: 90px;
-            border-radius: 50%;
-            transform: rotate(-45deg);
-          "
-          alt=""
-        />
+        <a href="http://pc.unnamedcreators.in/home">
+          <i class="phone__nav-options-a fa fa-graduation-cap"></i>
+        </a>
+        <a href="./noticeBoard.html">
+          <i class="phone__nav-options-a fa fa-bell"></i>
+        </a>
       </div>
-      <div class="profile-body">
-        <div class="profile-body__one">
-          <h1
-            style="
-              text-align: center;
-              border-bottom: 1px solid #000;
-              padding-bottom: 15px;
-            "
-          >
-            Your Test History
-          </h1>
-          <li style="list-style: none; font-size: 40px;">
-            <ul>
-              Test 49
-              <a href="#" class="view-details">View Details</a>
-            </ul>
-          </li>
-        </div>
-        <div class="profile-body__two">
-          <h1
-            class="success"
-            style="
-              margin-left: 10px;
-              color: #fff;
-              font-weight: 500;
-              font-size: 30px;
-            "
-          >
-            Success Mantra
-            <div
-              class="daily-practice"
-              style="margin-left: 190px; font-size: 40px;"
-            >
-              &#8618; Daily Practice!!!
+    </div>
+
+    <!-- sidenav -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./mediaGallery.html">Media</a>
+      <a href="./mainCenter.html">Main Center</a>
+      <a href="./founders.html">Founders</a>
+      <a href="./generalDoubts.html">General Doubts</a>
+      <a href="./resources.html">Resources</a>
+      <a href="./upcomingEvents.html">Upcoming Events</a>
+      <a href="./aboutUs.html">About Us</a>
+      <a href="./faq.html">FAQ</a>
+    </div>
+
+    <!-- student-details -->
+    <div class="student__profile">
+      <p class="student__profile__heading">Student Details</p>
+      <a href="/student/logout" class="logout-btn">Logout</a>
+      <li class="student__profile__details">Name: <%=user.name%></li>
+      <li class="student__profile__details">Class: <%=user.email%></li>
+      <li class="student__profile__details">Batch: <%=user.batch%></li>
+      <li class="student__profile__details">username: <%=user.username%></li>
+      <li class="student__profile__details">
+        Reg no: <%= user.registration_no %>
+      </li>
+    </div>
+
+    <!-- student-portal-main-options -->
+    <div class="student__main-section">
+      <a href="#" class="student__main-section-option subjects">Subjects</a>
+      <a
+        href="https://classroom.google.com/"
+        class="student__main-section-option classroom"
+        >Classroom</a
+      >
+      <a
+        href="https://meet.google.com/"
+        class="student__main-section-option meeting"
+        >Meeting</a
+      >
+      <a href="#" class="student__main-section-option notebook">Notebook</a>
+      <a
+        href="https://www.google.com/calendar/"
+        class="student__main-section-option calender"
+        >Calender</a
+      >
+      <a href="#" class="student__main-section-option notice">Notice</a>
+    </div>
+    <div class="divider"></div>
+    <!-- student-portal-practice-section -->
+    <section class="student__practice">
+      <div class="student__practice-one">
+        <a href="http://pc.unnamedcreators.in" class="anchor-card">
+          <div class="student__practice-one-1 exam-card first">
+            <div class="student__practice-one-1-pic">
+              <img class="main-img" src="../assets/images/exam.jpg" alt="" />
             </div>
-          </h1>
-          <div
-            class="question-box"
-            style="text-align: center; margin-right: 200px;"
-          >
-            <li style="font-size: 45px; list-style: none;">
-              <ul>
-                <a href="http://pc.unnamedcreators.in/home" class="clickhere"
-                  >Practice Questions</a
-                >
-              </ul>
-              <ul>
-                <a href="http://pc.unnamedcreators.in/home" class="clickhere"
-                  >Attempt Test</a
-                >
-              </ul>
-              <ul>
-                <a href="#" class="clickhere">View/Submit Assignments</a>
-              </ul>
-            </li>
+            <div class="student__practice-one-1-title">Attempt Test</div>
           </div>
-          <div class="card">
-            <div class="box">
-              <div class="percent">
-                <svg>
-                  <circle cx="70" cy="70" r="70"></circle>
-                  <circle cx="70" cy="70" r="70"></circle>
-                </svg>
-                <div class="number">
-                  <h2>85<span>%</span></h2>
-                </div>
-              </div>
-              <h2 class="text">Progress</h2>
+        </a>
+        <a href="http://pc.unnamedcreators.in" class="anchor-card">
+          <div class="student__practice-one-2 exam-card">
+            <div class="student__practice-one-1-pic">
+              <img
+                class="main-img"
+                src="../assets/images/question.jpg"
+                alt=""
+              />
             </div>
+            <div class="student__practice-one-1-title">Practice Questions</div>
           </div>
-        </div>
-        <div class="profile-body__three">
-          <h1
-            style="
-              text-align: center;
-              border-bottom: 1px solid #000;
-              padding-bottom: 10px;
-            "
-          >
-            Notifications
-          </h1>
-          <li>
-            <a href="#" class="notification-view"
-              >Teacher A has uploaded notes of Bio diversity
-            </a>
-          </li>
-        </div>
+        </a>
       </div>
-    </main>
+      <div class="student__practice-two">
+        <a href="http://pc.unnamedcreators.in" class="anchor-card">
+          <div class="student__practice-one-2 exam-card">
+            <div class="student__practice-one-1-pic">
+              <img class="main-img" src="../assets/images/report.jpg" alt="" />
+            </div>
+            <div class="student__practice-one-1-title">Test Report</div>
+          </div>
+        </a>
+      </div>
+    </section>
   </body>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
 </html>

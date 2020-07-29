@@ -323,8 +323,6 @@
         border-radius: 0.6em;
       }
 
-  
-
       .page-content {
         min-height: 100vh;
         font-size: 40px;
@@ -462,12 +460,10 @@
         }
       }
 
-      #formsSection 
-      {
-
-          padding-top: 9%;
-          padding-bottom:9%;
-          background-image: linear-gradient(to right, #f6e47f, #ff621a);
+      #formsSection {
+        padding-top: 9%;
+        padding-bottom: 9%;
+        background-image: linear-gradient(to right, #f6e47f, #ff621a);
       }
 
       footer .btn {
@@ -488,20 +484,18 @@
         opacity: 0.7;
       }
 
-
-      form
-      {
-          background-color: white;
-          margin-top: 30px;
-          padding-top:30px;
-          padding-bottom: 50px;
-          padding-right:20px;
-          padding-left:20px;
-          border: 0.1px solid grey;
-          border-radius:5%;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      form {
+        background-color: white;
+        margin-top: 30px;
+        padding-top: 30px;
+        padding-bottom: 50px;
+        padding-right: 20px;
+        padding-left: 20px;
+        border: 0.1px solid grey;
+        border-radius: 5%;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
-
     </style>
   </head>
   <body>
@@ -572,17 +566,26 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 15px; color: white;" href="/student/login"
+            <a
+              class="nav-link"
+              style="font-size: 15px; color: white;"
+              href="/student/login"
               >Student Portal &nbsp; &nbsp;</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 15px; color: white;" href="/faculty/login"
+            <a
+              class="nav-link"
+              style="font-size: 15px; color: white;"
+              href="/faculty/login"
               >TCH staff &nbsp; &nbsp;</a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="font-size: 15px; color: white;" href="/management/login"
+            <a
+              class="nav-link"
+              style="font-size: 15px; color: white;"
+              href="/management/login"
               >MNG staff &nbsp; &nbsp;</a
             >
           </li>
@@ -639,72 +642,84 @@
         </ul>
       </div>
     </nav>
-    
-    <section id = "formsSection">
+
+    <section id="formsSection">
       <div class="container">
-          <div class="row text-center">
-               <div class="col-md-4">
-                   
-                    <form method = "POST" action = "/student/login">
-                        <h3>Students</h3>
-                        <br>
-                        <input type = "text" class="form-control" name = "username" placeholder="Student ID">
-                        <br>
-                        <input type = "password" class="form-control" name = "password" placeholder="Password">
-                        <br>
-                        <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                    </form>
-               </div>
-
-               <div class="col-md-4">
-                <form method = "POST" action = "/faculty/login">
-                    <h3>Faculty</h3>
-                    <br>
-                    <input type = "text" class="form-control" placeholder="Faculty ID" name = "username">
-                    <br>
-                    <input type = "password" class="form-control" placeholder="Password" name = "password">
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                </form>
-            </div>
-
-            <div class="col-md-4">
-                <form method = "POST" action = "/management/login">
-                    <h3>Management Staff</h3>
-                    <br>
-                    <input type = "text" class="form-control" placeholder="Staff ID" name = "username">
-                    <br>
-                    <input type = "password" class="form-control" placeholder="Password" name = "password">
-                    <br>
-                    <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
-                </form>
-
-            </div>
-              
-                
-               
-
+        <div class="row text-center">
+          <div class="col-md-4">
+            <form method="POST" action="/student/login">
+              <h3>Students</h3>
+              <br />
+              <input
+                type="text"
+                class="form-control"
+                name="username"
+                placeholder="Student ID"
+              />
+              <br />
+              <input
+                type="password"
+                class="form-control"
+                name="password"
+                placeholder="Password"
+              />
+              <br />
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Login
+              </button>
+            </form>
           </div>
 
+          <div class="col-md-4">
+            <form method="POST" action="/faculty/login">
+              <h3>Faculty</h3>
+              <br />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Faculty ID"
+                name="username"
+              />
+              <br />
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                name="password"
+              />
+              <br />
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Login
+              </button>
+            </form>
+          </div>
+
+          <div class="col-md-4">
+            <form method="POST" action="/management/login">
+              <h3>Management Staff</h3>
+              <br />
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Staff ID"
+                name="username"
+              />
+              <br />
+              <input
+                type="password"
+                class="form-control"
+                placeholder="Password"
+                name="password"
+              />
+              <br />
+              <button type="submit" class="btn btn-primary btn-lg btn-block">
+                Login
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </section>
-   
-  
-    
-
-
-    
-    
- 
-     
-       
-
-    
-
- 
-
-
-
 
     <footer>
       <div class="footer-container">

@@ -1,64 +1,168 @@
+<!-- checkpoint -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Founders | Pragati Classes</title>
-    <link rel="stylesheet" href="./css/founders.css" />
+    <title>Our Founders</title>
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poly:ital@1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/css">
+      .founder-name {
+        font-family: "El Messiri", sans-serif;
+        text-align: center;
+      }
+      .founder-text {
+        text-align: center;
+      }
+      .founder-quote {
+        font-family: "Poly", serif;
+      }
+      .thumbnail {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .thumbnail img {
+        border-radius: 50%;
+        height: 500px;
+        width: 80%;
+      }
+      .baguetteBox-button {
+        background-color: transparent !important;
+      }
+      blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 10px;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+      }
+      blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.25em;
+        vertical-align: -0.4em;
+      }
+    </style>
   </head>
   <body>
-    <div class="team" id="team">
-      <div class="container">
-        <h3 class="title">The founders of Pragati Classes</h3>
-        <div class="team-grids">
-          <div class="col-xs-4 team-grid">
-            <div class="pic">
-              <div class="stack twisted">
-                <img
-                  src="./assets/images/founder1.jpeg"
-                  alt=" "
-                  class="img-responsive"
-                />
-                <div class="message">
-                  Mr. Kriti Mohan Chanda,<br />
-                  Director Main Platform
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-4 team-grid">
-            <div class="pic">
-              <div class="stack twisted">
-                <img
-                  src="./assets/images/founder2.jpeg"
-                  alt=" "
-                  class="img-responsive"
-                />
-                <div class="message">
-                  Mr. Abhishek Das, <bt /> Director Online Platform Prastuti
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-4 team-grid">
-            <div class="pic">
-              <div class="stack twisted">
-                <img
-                  src="./assets/images/founder3.jpeg"
-                  alt=" "
-                  class="img-responsive"
-                />
-                <div class="message">
-                  Mr Binayak Choudhury <br />
-                  Administrative Officer
-                </div>
-              </div>
+    <div class="container">
+      <div class="tz-gallery">
+        <div class="row">
+          <!-- 1st image begin-->
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="thumbnail">
+              <figure>
+                <a class="" href="./assets/images/image-1.jpg">
+                  <img
+                    class="img-thumbnail"
+                    style="margin-left: 55px;"
+                    src="./assets/images/image-1.jpg"
+                  />
+                </a>
+                <figcaption class="founder-name">
+                  <h4>Mr. Kriti Mohan Chanda</h4>
+                  <h5>Director Main Platform</h5>
+                </figcaption>
+              </figure>
             </div>
           </div>
 
-          <div class="clearfix"></div>
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="thumbnail">
+              <figure>
+                <a class="" href="./assets/images/image-2.jpg">
+                  <img
+                    class="img-thumbnail"
+                    style="margin-left: 55px;"
+                    src="./assets/images/image-2.jpg"
+                  />
+                </a>
+                <figcaption class="founder-name">
+                  <h4>Mr. Abhishek Das</h4>
+                  <h5>Director Online Platform Prastuti</h5>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-12 col-12">
+            <div class="thumbnail">
+              <figure>
+                <a class="" href="./assets/images/image-3.jpg">
+                  <img
+                    class="img-thumbnail"
+                    style="margin-left: 55px;"
+                    src="./assets/images/image-3.jpg"
+                  />
+                </a>
+                <figcaption class="founder-name">
+                  <h4>Mr Binayak Choudhury</h4>
+                  <h5>Administrative Officer</h5>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
         </div>
       </div>
+      <blockquote>
+        <p style="font-family: 'EB Garamond', serif;">
+          Being from an under-developed region of Assam myself, We have always
+          harboured the thought that something needs to be done to tap the
+          hidden potential in these promising children. This is the need of the
+          hour. We live in an era of competition, and thus, proper guidance and
+          mentoring have become necessary to ensure that students get to study
+          in the premier institutions of the country. Also, the market has
+          become littered with numerous coaching institutes that lack
+          credibility but charge lack of rupees, and fail to provide proper
+          instruction or deliver satisfaction.
+        </p>
+        <p style="font-family: 'EB Garamond', serif;">
+          In response to this, Pragati classes was started, with the idea to
+          impart quality education to students. I, along with some of my
+          friends, joined hands and shelled out all the means we could, so that
+          we could bring this novel platform before you – a platform whose
+          inception and operation revolves around the idea that lack of finances
+          should not be a hindrance to the insatiable thirst for wisdom. When
+          Corona was ravaging the nation, we sponsored and backed an amazing
+          platform, "Pragyan Abhiyan", which provided online classes, completely
+          free of cost – which soon became a hit. From 1 June 2020, we
+          officially started our work or mission, the mission of having the
+          students of Pragati classes in every top institutes of not only India
+          but of World.
+        </p>
+      </blockquote>
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+      baguetteBox.run(".tz-gallery");
+    </script>
   </body>
 </html>

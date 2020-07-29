@@ -1031,6 +1031,6 @@ footer {
   }
   .logo {
     display: flex !important;
-    flex-direction: column !important;
+    /* flex-direction: column !important; */
   }
 }

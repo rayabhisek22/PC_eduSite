@@ -1,16 +1,33 @@
 <head>
-    <title><%= title %></title>
+  <title><%= title %></title>
 </head>
 <body>
-    <h1><%= title %></h1>
-    <div class = list>
-        <ul>
-            <% for(var person of people) { %>
-            <li><a href = "/superadmin/management/edit/<%= person._id %>"><%= person.name %></a></li>
-            <% } %>
-        </ul>
-    </div>
-    <br>
-    <br>
-    <h3><a href = "/superadmin/management/add">Add Management Staff</a></h3>
+  <a
+    style="
+      text-decoration: none;
+      color: white;
+      border-radius: 15px;
+      padding: 5px;
+      font-size: 20px;
+      background-color: red;
+      margin-bottom: 20px;
+    "
+    href="/superadmin/acc"
+    >Superadmin Home</a
+  >
+  <h1><%= title %></h1>
+  <div class="list">
+    <ul>
+      <% for(var person of people) { %>
+      <li>
+        <a href="/superadmin/management/edit/<%= person._id %>"
+          ><%= person.name %></a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <h3><a href="/superadmin/management/add">Add Management Staff</a></h3>
 </body>
