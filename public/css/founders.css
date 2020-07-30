@@ -1,6 +1,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  overflow-x: hidden !important;
+}
 body {
   font-size: 100%;
   background: #fff;

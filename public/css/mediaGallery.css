@@ -12,6 +12,7 @@
 html,
 body {
   min-height: 100%;
+  overflow-x: hidden !important;
 }
 body {
   background-image: radial-gradient(mintcream 0%, lightgray 100%);
