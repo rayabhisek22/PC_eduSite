@@ -32,6 +32,102 @@
       html {
         scroll-behavior: smooth;
       }
+
+      .header__logo {
+        background-color: #fff;
+        border: 1px solid #116466;
+        position: relative;
+        margin-top: 5rem;
+        margin: 3rem -2rem -2rem -2rem;
+      }
+
+      .pc__logo {
+        margin: 1rem 0 0 2rem;
+        height: 150px;
+        width: 150px;
+      }
+
+      .tagline {
+        text-align: center;
+        font-size: 3rem;
+        font-family: "Dancing Script", cursive;
+      }
+
+      .name {
+        font-size: 3rem;
+        font-weight: 800 !important;
+      }
+
+      .clock-show {
+        position: absolute;
+        bottom: 10rem;
+        right: 0rem;
+      }
+
+      .phone__nav {
+        background-color: #242582;
+        color: white;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        /* text-align: center; */
+        align-items: center;
+        box-shadow: 10px 10px 10px #2b2b527c;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        /* width: 100%; */
+        width: 100vw !important;
+        z-index: 10000000;
+      }
+      /* .fa-bars {
+  margin-left: 2vw;
+} */
+
+      .phone__nav-options-a {
+        color: rgba(255, 255, 255, 0.692);
+        font-size: 25px;
+        padding: 0px 20px;
+      }
+
+      /* side-nav */
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 99999999999;
+        top: 0;
+        left: 0;
+        background-color: #2b2b52;
+        overflow-x: hidden;
+        padding-top: 60px;
+        transition: 0.5s;
+      }
+
+      /* The navigation menu links */
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+        border-bottom: 1px solid #242582;
+      }
+
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
       .pseudonav {
         padding-top: 20px;
         background-image: linear-gradient(to right, #f6e47f, #ff621a);
@@ -496,153 +592,76 @@
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
           0 6px 20px 0 rgba(0, 0, 0, 0.19);
       }
+      @media (max-width: 600px) {
+        .clock-show {
+          font-size: 1rem !important;
+          /* margin-right: -7rem !important; */
+          top: 3rem !important;
+        }
+        .name {
+          font-size: 1.5rem;
+          margin-left: 2.6rem;
+          margin-top: -0.8rem;
+        }
+        .tagline {
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
   <body>
-    <div class="logo-section">
+    <div class="header__logo">
       <div class="logo">
-        <div>
-          <img
-            src="./assets/images/logo1.jpeg"
-            style="height: 200px; width: 200px;"
-            alt=""
-          />
-        </div>
-        <div>
-          <h1 style="margin: 3rem; font-size: 70px; color: #fff;">
-            Pragati Classes, Kalain
-          </h1>
-        </div>
+        <img class="pc__logo" src="../assets/images/logo.jpeg" alt="logo" />
       </div>
-      <div class="date" style="color: #fff; font-size: 30px; padding: 2rem;">
-        <div class="date" id="printDate"></div>
-        <div class="date" id="printDay"></div>
-        <div class="date" id="printTime"></div>
+      <div class="clock-show">
+        <iframe
+          class="clock-iframe"
+          src="https://www.zeitverschiebung.net/clock-widget-iframe-v2?language=en&size=small&timezone=Asia%2FKolkata"
+          width="100%"
+          height="90"
+          frameborder="0"
+          seamless
+        ></iframe>
+      </div>
+      <h1 class="tagline">"Empowering children to reach their potential"</h1>
+    </div>
+    <div class="phone__nav">
+      <div class="phone__nav-options">
+        <a onclick="openNav()" href="#">
+          <i class="phone__nav-options-a fa fa-bars"></i>
+        </a>
+
+        <a href="/">
+          <i class="phone__nav-options-a fa fa-home"></i>
+        </a>
+        <a href="http://pc.unnamedcreators.in">
+          <i class="phone__nav-options-a fa fa-graduation-cap"></i>
+        </a>
+        <a href="./faculty/login">
+          <i class="phone__nav-options-a fa fa-chalkboard-teacher"></i>
+        </a>
+
+        <a href="./noticeBoard.html">
+          <i class="phone__nav-options-a fa fa-bell"></i>
+        </a>
       </div>
     </div>
-    <div class="typing">
-      <p class="line anim-typewriter">
-        Welcome to Pragati Classes
-      </p>
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <!-- <a style="font-size: 22px;" class="navbar-brand" href="#"
-        >Pragati Classes</a
-      > -->
-      <div style="display: flex;" class="search">
-        <input
-          type="text"
-          placeholder="Search here for courses"
-          style="
-            width: 400px;
-            border-radius: 40px;
-            border-style: none;
-            height: 30px;
-            padding: 10px;
-          "
-        />
-        <button
-          style="
-            border-style: none;
-            border-radius: 40px;
-            margin-left: 10px;
-            width: 50px;
-          "
-        >
-          Search
-        </button>
-      </div>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
+
+    <!-- sidenav -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              style="font-size: 15px; color: white;"
-              href="/student/login"
-              >Student Portal &nbsp; &nbsp;</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              style="font-size: 15px; color: white;"
-              href="/faculty/login"
-              >TCH staff &nbsp; &nbsp;</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              style="font-size: 15px; color: white;"
-              href="/management/login"
-              >MNG staff &nbsp; &nbsp;</a
-            >
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link"
-              style="font-size: 15px; color: white;"
-              href="#contact"
-              >Contact Us &nbsp; &nbsp;</a
-            >
-          </li>
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Notices</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Media Gallery</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Result Portal</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Admission Portal</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Board of Founders</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Exam update</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Achievements</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Leaderboard</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">General Doubts</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Scholarship Test</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link stryke" href="#">Upcoming Events</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
+      <a href="./mediaGallery.html">Media</a>
+      <a href="./mainCenter.html">Main Center</a>
+      <a href="./founders.html">Founders</a>
+      <a href="./generalDoubts.html">General Doubts</a>
+      <a href="./resources.html">Resources</a>
+      <a href="./upcomingEvents.html">Upcoming Events</a>
+      <a href="./aboutUs.html">About Us</a>
+      <a href="./faq.html">FAQ</a>
+    </div>
     <section id="formsSection">
       <div class="container">
         <div class="row text-center">
@@ -744,15 +763,20 @@
           <div class="content">
             <div class="place">
               <span class="fas fa-map-marker-alt"></span>
-              <span class="text" style="font-size: 20px;">Kalain, Silchar</span>
+              <span class="text" style="font-size: 20px;"
+                >&nbsp;Near HS school,Kalain <br />
+                &nbsp;Opposite to IICA computer centre</span
+              >
             </div>
             <div class="phone">
               <span class="fas fa-phone-alt"></span>
-              <span class="text" style="font-size: 20px;">012......</span>
+              <span class="text" style="font-size: 20px;">+91 8822341175</span>
             </div>
             <div class="email">
               <span class="fas fa-envelope"></span>
-              <span class="text" style="font-size: 20px;">abc@example.com</span>
+              <span class="text" style="font-size: 20px;"
+                >prastutiofficialclasses2020@gmail.com</span
+              >
             </div>
           </div>
         </div>
@@ -769,66 +793,15 @@
       </div>
     </footer>
   </body>
+
   <script>
-    var date = new Date();
-    const elementDate = document.getElementById("printDate");
-    const elementDay = document.getElementById("printDay");
-    const elementTime = document.getElementById("printTime");
-    const listOfDays = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-
-    function printDate() {
-      var day = date.getDate();
-      var month = date.getMonth();
-      var year = date.getFullYear();
-
-      elementDate.innerHTML = day + " / " + month + " / " + year;
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
     }
 
-    function printDay() {
-      date = new Date();
-      var numberOfDay = date.getDay();
-      var day = listOfDays[numberOfDay];
-      elementDay.innerHTML = day;
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
     }
-
-    function printTime() {
-      date = new Date();
-      var hours = date.getHours();
-      var minutes = date.getMinutes();
-      var seconds = date.getSeconds();
-
-      if (seconds < 10) {
-        seconds = "0" + seconds;
-      }
-      if (minutes < 10) {
-        minutes = "0" + minutes;
-      }
-      if (hours > 12) {
-        hours = hours - 12;
-        elementTime.innerHTML =
-          hours + " : " + minutes + " : " + seconds + "  PM ";
-      } else if (hours < 12) {
-        elementTime.innerHTML =
-          hours + " : " + minutes + " : " + seconds + "  AM ";
-      } else if ((hours = 12)) {
-        elementTime.innerHTML =
-          hours + " : " + minutes + " : " + seconds + "  PM ";
-      }
-    }
-
-    setInterval(function () {
-      printTime();
-      printDate();
-      printDay();
-    }, 1000);
   </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
