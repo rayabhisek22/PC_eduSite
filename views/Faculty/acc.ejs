@@ -3,149 +3,352 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- font-awesome -->
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./css/index.css" />
-    <title>Pragati Classes - Faculty Portal</title>
-    <style>
-      body {
-        background-image: linear-gradient(to right, #141436bb, #2b2b52);
-      }
-      .navbar {
-        background-image: linear-gradient(to right, #8b78e6, #5e47d39f);
-      }
-
-      .profile {
-        padding-top: 100px;
-        padding-bottom: 50px;
-      }
-
-      .profileImage {
-        height: 200px;
-        border-radius: 50%;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-      .attrib {
-        color: black;
-        font-size: 32px;
-      }
-
-      .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-          0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      }
-
-      .aa,
-      .aa:link,
-      .aa:visited {
-        background-color: #e83350;
-        margin: 10px;
-        border-radius: 10px;
-        color: white;
-        padding: 10px;
-      }
-
-      .aa:hover {
-        text-decoration: none;
-      }
-
-      @media only screen and (max-width: 901px) {
-        .attrib {
-          text-align: center;
-        }
-        .profileCont {
-          text-align: center;
-        }
-
-        .title {
-          text-align: center;
-        }
-
-        .card {
-          text-align: center;
-          margin-top: 60px;
-        }
-      }
-    </style>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <title>Teacher Portal</title>
   </head>
+
+  <style>
+    /* Color Shades
+#384BA1 
+#222D61 
+#536FED 
+#465DC7
+#4E69E0
+#ffffff
+#000000
+
+*/
+
+    * {
+      box-sizing: border-box;
+      font-size: 62.5%;
+    }
+
+    html {
+      overflow-x: hidden !important;
+    }
+
+    body {
+      box-sizing: inherit;
+      padding: 1rem;
+      margin: 0;
+      background-image: linear-gradient(to left top, #fff, #536fed);
+    }
+
+    .main {
+      padding: 1rem;
+      font-size: 3rem;
+      height: 100vh;
+      width: 100%;
+      font-size: 10rem;
+    }
+
+    .profile {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 25rem;
+      width: 100%;
+    }
+
+    .profile__photo {
+      margin: 1rem;
+      height: 18rem;
+      border-radius: 50%;
+      width: 18rem;
+    }
+
+    .profile__details {
+      margin: 1rem 1rem 1rem 0;
+      height: 23rem;
+      flex: 1;
+      background-color: rgba(255, 255, 255, 0.897);
+      padding: 1rem;
+      font-size: 30px;
+      border-radius: 20px;
+    }
+
+    .profile__details-info {
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .profile__achievements {
+      height: 10rem;
+      margin: 1rem 0rem 1rem 0rem;
+      font-size: 30px;
+      text-align: center;
+      background-color: white;
+      padding: 3rem;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      border-radius: 10px;
+      background-image: linear-gradient(to top right, #222d61, #536fed);
+      box-shadow: inset 0rem 0rem 2rem #384ba1;
+    }
+
+    .notification-view {
+      color: white;
+      font-size: 20px;
+      text-decoration: none;
+      margin-bottom: 10px;
+    }
+
+    .view-details,
+    .view-details:link,
+    .view-details:visited {
+      text-decoration: none;
+      color: #465dc7;
+      margin-left: 10px;
+      font-size: 15px;
+    }
+
+    .view-details:hover {
+      text-decoration: underline;
+    }
+
+    .profile-body {
+      display: flex;
+      height: 37rem;
+      width: 100%;
+    }
+
+    .profile-body__one {
+      height: 37rem;
+      width: 35rem;
+      background-color: rgba(255, 255, 255, 0.897);
+
+      border: 1px solid #000;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .profile-body__two {
+      position: relative;
+      margin: 0 1rem 0 1rem;
+      height: 37rem;
+      width: 800px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+      box-shadow: inset 0rem 0rem 2rem #384ba1;
+
+      background-color: #4e69e0;
+    }
+    .profile-body__three {
+      border-radius: 10px;
+      height: 37rem;
+      width: 35rem;
+      padding: 2rem;
+      background-color: #384ba1;
+      border: 1px solid #fff;
+      box-shadow: inset 0rem 0rem 2rem #384ba1;
+    }
+
+    .clickhere,
+    .clickhere:link,
+    .clickhere:visited {
+      text-decoration: none;
+      padding: 10px;
+      color: white;
+      background-image: linear-gradient(to right bottom, #222d61, #536fed);
+      border-radius: 20px;
+      text-align: center;
+      border: 1px solid #fff;
+      box-shadow: inset 0rem 0rem 2rem #384ba1;
+    }
+
+    /* Progress-section */
+
+    .card {
+      position: absolute;
+      top: 20px;
+      right: 0;
+      width: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 215px;
+      border-radius: 20px;
+      text-align: center;
+      overflow: hidden;
+      transition: 0.5s;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+      transform: translateY(-10px);
+      border: 1px solid #fff;
+    }
+
+    .percent {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      box-shadow: inset 0 0 50px #000;
+      background: #222;
+      z-index: 1000;
+    }
+
+    .percent .number {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+    }
+
+    .percent .number h2 {
+      color: #777;
+      font-weight: 700;
+      font-size: 40px;
+      transition: 0.5s;
+    }
+
+    .card:hover .percent .number h2 {
+      color: #fff;
+      font-size: 60px;
+    }
+
+    .percent .number h2 span {
+      font-size: 24px;
+      color: #777;
+    }
+
+    .card:hover .percent .number h2 span {
+      color: #fff;
+    }
+
+    .text {
+      position: relative;
+      color: #777;
+      margin-top: 20px;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.5s;
+    }
+
+    .card:hover .text {
+      color: #fff;
+    }
+
+    svg {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      z-index: 1000;
+    }
+
+    svg circle {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke: #191919;
+      stroke-width: 10;
+      stroke-linecap: round;
+      transform: translate(5px, 5px);
+    }
+
+    svg circle:nth-child(2) {
+      stroke-dasharray: 440;
+      stroke-dashoffset: 440;
+    }
+
+    .card:nth-child(3) svg circle:nth-child(2) {
+      stroke-dashoffset: calc(440 - (440 * 85) / 100);
+      stroke: #fff200;
+    }
+  </style>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
-      <a href="/" class="home-btn aa">Home</a>
-      <a style="font-size: 22px;" class="navbar-brand" href="#"
-        ><%= user.name %></a
-      >
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavDropdown"
-        aria-controls="navbarNavDropdown"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link aa" href="/faculty/upload">Upload</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link aa" href="#">My Students</a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link aa" href="/faculty/myuploads">My Content</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link aa" href="/faculty/logout">Logout</a>
-          </li>
-        </ul>
+    <!-- nav-bar -->
+    <div class="phone__nav">
+      <div class="phone__nav-options">
+        <a onclick="openNav()" href="#">
+          <i class="phone__nav-options-a fa fa-bars"></i>
+        </a>
+        <a href="./index.html">
+          <i class="phone__nav-options-a fa fa-home"></i>
+        </a>
+
+        <a href="http://pc.unnamedcreators.in/home">
+          <i class="phone__nav-options-a fa fa-graduation-cap"></i>
+        </a>
+        <a href="./noticeBoard.html">
+          <i class="phone__nav-options-a fa fa-bell"></i>
+        </a>
       </div>
-    </nav>
+    </div>
 
-    <section class="profile">
-      <div class="container">
-        <div class="row">
-          <!-- <div class="col-md-3 profileCont">
-            <img
-              src="/assets/images/profile.jpg"
-              class="image-fluid profileImage"
-            />
-          </div> -->
-          <div class="col-md-9">
-            <div class="card">
-              <div class="card-header">
-                Personal Details
-              </div>
+    <!-- sidenav -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+        >&times;</a
+      >
+      <a href="./resources.html">Resources</a>
+      <a href="./mediaGallery.html">Media Gallery</a>
+      <a href="#">FAQ</a>
+      <a href="#">Result Portal</a>
+      <a href="./generalDoubts.html">General Doubts</a>
+      <a href="./aboutUs.html">About Us</a>
+    </div>
 
-              <div class="card-body">
-                <p><small class="title">EMAIL</small></p>
-                <p class="attrib"><%= user.email %></p>
-                <p></p>
+    <!-- teacher-details -->
+    <div class="teacher__profile">
+      <p class="teacher__profile__heading">Teacher Details</p>
+      <a href="/faculty/logout" class="logout-btn">Logout</a>
+      <li class="teacher__profile__details">Name: <%=user.name%></li>
+      <!-- <li class="teacher__profile__details">Class: XI</li> -->
+      <li class="teacher__profile__details">Subject: <%=user.subject%></li>
+      <li class="teacher__profile__details">username: <%=user.username%></li>
+      <li class="teacher__profile__details">
+        Reg no: <%=user.registration_no%>
+      </li>
+    </div>
 
-                <p><small class="title">CONTACT NUMBER</small></p>
-                <p class="attrib"><%= user.contact %></p>
-                <p></p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- teacher-portal-main-options -->
+    <div class="teacher__main-section">
+      <a href="#" class="teacher__main-section-option subjects">Upload</a>
+      <a
+        href="https://classroom.google.com/"
+        class="teacher__main-section-option classroom"
+        >Classroom</a
+      >
+      <a
+        href="https://meet.google.com/"
+        class="teacher__main-section-option meeting"
+        >Meeting</a
+      >
+      <a href="#" class="teacher__main-section-option notebook">Notebook</a>
+      <a
+        href="https://www.google.com/calendar/"
+        class="teacher__main-section-option calender"
+        >Calender</a
+      >
+      <a href="#" class="teacher__main-section-option notice">Notice</a>
+    </div>
+    <div class="divider"></div>
+    <!-- teacher-portal-practice-section -->
   </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+    }
+  </script>
 </html>
