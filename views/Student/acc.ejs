@@ -13,9 +13,271 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/css/studentPortal.css" />
+    <!-- <link rel="stylesheet" href="/css/studentPortal.css" /> -->
     <title>Student Portal | Pragati Classes</title>
   </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-size: 62.5%;
+    }
+
+    html {
+      overflow-x: hidden !important;
+    }
+
+    body {
+      box-sizing: inherit;
+      padding: 2rem;
+      margin: 0;
+      font-family: "Roboto", sans-serif;
+      background-color: #c2cad0;
+      background-repeat: no-repeat;
+      overflow-x: hidden;
+      background: linear-gradient(to bottom right, #3c4bbd 15%, transparent),
+        radial-gradient(
+            circle at 100% 0%,
+            rgba(255, 255, 255, 0.2) 10%,
+            transparent 20%
+          )
+          center center / 15px 15px,
+        linear-gradient(to bottom right, #3c4bbd, #57add8);
+    }
+
+    /* nav-section */
+    .phone__nav {
+      background-color: #242582;
+      color: white;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 10px 10px 10px #2b2b527c;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
+      z-index: 10;
+      display: none;
+    }
+
+    .phone__nav-options-a {
+      color: rgba(255, 255, 255, 0.692);
+      font-size: 25px;
+      padding: 0px 15px;
+    }
+
+    /* side-nav */
+    .sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 99999999999;
+      top: 0;
+      left: 0;
+      background-color: #2b2b52;
+      overflow-x: hidden;
+      padding-top: 60px;
+      transition: 0.5s;
+    }
+
+    /* The navigation menu links */
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: #818181;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+      color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+
+    /* nav-section ends */
+
+    /* student-profile starts */
+
+    .student__profile {
+      border: 1px solid black;
+      border-radius: 1rem;
+      padding: 0.5rem;
+      background-color: #116466;
+      position: relative;
+    }
+
+    .student__profile__heading {
+      font-size: 3.5rem;
+      margin-left: 1.5rem;
+      color: #fff;
+      padding: 10px 0px;
+      border-bottom: 1px solid #d9b08c;
+    }
+
+    .logout-btn {
+      top: 42px;
+      right: 30px;
+      text-decoration: none;
+      background-color: #124142;
+      color: white;
+      padding: 1rem;
+      border-radius: 30px;
+      font-size: 2.2rem;
+      box-shadow: 5px 5px 5px #1d8688;
+      position: absolute;
+    }
+
+    .student__profile__details {
+      list-style: none;
+      font-size: 2.5rem;
+      color: #fff;
+      margin: 1.5rem;
+    }
+
+    /* student-profile ends */
+
+    /* student-main-section starts */
+
+    .student__main-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 50px;
+    }
+
+    .student__main-section-option {
+      height: 200px;
+      width: 200px;
+      font-size: 25px;
+      background-color: #758aa2;
+      margin: 35px 50px;
+      color: #260b0b;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-decoration: none;
+      border-radius: 15px;
+      text-align: center;
+      padding: 20px 0;
+      border: 2.5px solid #192a56;
+      offset: 2rem;
+      box-shadow: 10px 10px 10px #116466;
+      transition: all 0.2s;
+    }
+
+    .student__main-section-option:hover {
+      transform: scale(1.05);
+    }
+
+    .subjects {
+      background: url(../assets/images/subjects.jpg);
+    }
+    .classroom {
+      background: url(../assets/images/classroom.jpg);
+    }
+    .meeting {
+      background: url(../assets/images/meeting.jpg);
+    }
+    .notebook {
+      background: url(../assets/images/notebook.jpg);
+    }
+    .calender {
+      background: url(../assets/images/calender.jpg);
+    }
+    .notice {
+      background: url(../assets/images/notice.jpg);
+    }
+
+    .divider {
+      margin-top: 50px;
+      margin-bottom: 50px;
+      border-bottom: 2px solid #116466;
+    }
+
+    .anchor-card {
+      text-decoration: none;
+    }
+
+    .exam-card {
+      height: 300px;
+      width: 300px;
+      font-size: 30px;
+      margin: 50px;
+      border-radius: 10px;
+      text-decoration: none;
+    }
+
+    .student__practice-one {
+      display: flex;
+      justify-content: center;
+    }
+
+    .student__practice-two {
+      display: flex;
+      justify-content: center;
+      margin-top: 50px;
+      margin-bottom: 100px;
+    }
+
+    .student__practice-one-1-title {
+      background-color: #116466;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 25px;
+      border-radius: 10px;
+    }
+
+    .student__practice-one-1-pic {
+      border-radius: 10px;
+    }
+
+    .main-img {
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 1000px) {
+      .student__practice-one {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .student__main-section-option {
+        height: 160px;
+        width: 160px;
+        margin: 30px 2px;
+      }
+      .first {
+        margin-bottom: 100px;
+      }
+      .phone__nav {
+        display: flex;
+      }
+      .student__profile__heading {
+        font-size: 2.5rem;
+      }
+      .logout-btn {
+        font-size: 1.5rem;
+        top: 3.5rem;
+        right: 1.5rem;
+      }
+    }
+  </style>
   <body>
     <!-- nav-bar -->
     <div class="phone__nav">
