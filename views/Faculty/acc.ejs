@@ -301,7 +301,7 @@
       >
       <a href="./resources.html">Resources</a>
       <a href="./mediaGallery.html">Media Gallery</a>
-      <a href="#">FAQ</a>
+      <a href="./faq.html">FAQ</a>
       <a href="#">Result Portal</a>
       <a href="./generalDoubts.html">General Doubts</a>
       <a href="./aboutUs.html">About Us</a>
@@ -312,7 +312,6 @@
       <p class="teacher__profile__heading">Teacher Details</p>
       <a href="/faculty/logout" class="logout-btn">Logout</a>
       <li class="teacher__profile__details">Name: <%=user.name%></li>
-      <!-- <li class="teacher__profile__details">Class: XI</li> -->
       <li class="teacher__profile__details">Subject: <%=user.subject%></li>
       <li class="teacher__profile__details">username: <%=user.username%></li>
       <li class="teacher__profile__details">
@@ -322,7 +321,9 @@
 
     <!-- teacher-portal-main-options -->
     <div class="teacher__main-section">
-      <a href="#" class="teacher__main-section-option subjects">Upload</a>
+      <a href="/faculty/upload" class="teacher__main-section-option subjects"
+        >Upload</a
+      >
       <a
         href="https://classroom.google.com/"
         class="teacher__main-section-option classroom"
@@ -342,7 +343,6 @@
       <a href="#" class="teacher__main-section-option notice">Notice</a>
     </div>
     <div class="divider"></div>
-    <!-- teacher-portal-practice-section -->
   </body>
   <script>
     function openNav() {
