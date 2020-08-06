@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
-
+let no = 500;
 const app = express();
 
 //Database config===================================
@@ -73,6 +73,35 @@ app.post("/email", (req, res) => {
       });
     } else {
       res.redirect("/");
+    }
+  });
+});
+
+app.post("/eventRegistration", (req, res) => {
+  const name = req.body.name;
+  const parentsname = req.body.parentsname;
+  const email = req.body.email;
+  const phone = req.body.phone;
+  const whatsapp = req.body.wa;
+
+  const content = `The registration details are: \n\n Name: ${name} \n Email: ${email} \n\n parentsname: ${parentsname} \nwhatsapp: ${whatsapp} \n phone: ${phone} \n Registration no: 20-A-1-${no} `;
+  const regN = `20-A-1-${no}`;
+  no = no + 1;
+  console.log(no);
+  const mail = {
+    from: name,
+    to: "eventspragati2020@gmail.com",
+    subject: "New Registration for Spardha",
+    text: content,
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: "fail",
+      });
+    } else {
+      res.render("reg", { name, parentsname, email, phone, whatsapp, regN });
     }
   });
 });
