@@ -77,21 +77,28 @@ app.post("/email", (req, res) => {
   });
 });
 
-app.post("/eventRegistration", (req, res) => {
+app.post("/admission", (req, res) => {
   const name = req.body.name;
-  const parentsname = req.body.parentsname;
+  const stream = req.body.stream;
+  const Class = req.body.class;
+  const college = req.body.college;
+  const fatherName = req.body.fatherName;
+  const motherName = req.body.motherName;
+  const DOB = req.body.DOB;
+  const age = req.body.age;
+  const gender = req.body.gender;
   const email = req.body.email;
-  const phone = req.body.phone;
-  const whatsapp = req.body.wa;
+  const phoneNumber = req.body.phoneNumber;
+  const parentsNumber = req.body.parentsNumber;
+  const address = req.body.address;
+  const postalCode = req.body.postalCode;
+  const content = `name: ${name}\n Stream: ${stream} \n Class: ${Class} \n College: ${college} \n fatherName: ${fatherName} \n motherName: ${motherName}: ${motherName} \n DOB: ${DOB} \n Age: ${age} \n Gender: ${gender} \n PhoneNumber: ${phoneNumber} \n ParentsNumber: ${parentsNumber} \n 
+ Address: ${address} \n PostalCode: ${postalCode}\nemail: ${email} \n phone: ${phoneNumber} `;
 
-  const content = `The registration details are: \n\n Name: ${name} \n Email: ${email} \n\n parentsname: ${parentsname} \nwhatsapp: ${whatsapp} \n phone: ${phone} \n Registration no: 20-A-1-${no} `;
-  const regN = `20-A-1-${no}`;
-  no = no + 1;
-  console.log(no);
   const mail = {
     from: name,
-    to: "eventspragati2020@gmail.com",
-    subject: "New Registration for Spardha",
+    to: process.env.EMAIL,
+    subject: "New Submission of Admission Form",
     text: content,
   };
 
@@ -101,10 +108,41 @@ app.post("/eventRegistration", (req, res) => {
         msg: "fail",
       });
     } else {
-      res.render("reg", { name, parentsname, email, phone, whatsapp, regN });
+      res.send(
+        "Your registration form has been successfully submitted, We will contact you soon. You can contact on +91 8822341175 for any query"
+      );
     }
   });
 });
+
+// app.post("/eventRegistration", (req, res) => {
+//   const name = req.body.name;
+//   const parentsname = req.body.parentsname;
+//   const email = req.body.email;
+//   const phone = req.body.phone;
+//   const whatsapp = req.body.wa;
+
+//   const content = `The registration details are: \n\n Name: ${name} \n Email: ${email} \n\n parentsname: ${parentsname} \nwhatsapp: ${whatsapp} \n phone: ${phone} \n Registration no: 20-A-1-${no} `;
+//   const regN = `20-A-1-${no}`;
+//   no = no + 1;
+//   console.log(no);
+//   const mail = {
+//     from: name,
+//     to: "eventspragati2020@gmail.com",
+//     subject: "New Registration for Spardha",
+//     text: content,
+//   };
+
+//   transporter.sendMail(mail, (err, data) => {
+//     if (err) {
+//       res.json({
+//         msg: "fail",
+//       });
+//     } else {
+//       res.render("reg", { name, parentsname, email, phone, whatsapp, regN });
+//     }
+//   });
+// });
 
 //Routes===========================================
 app.use(express.static("public"));
