@@ -2,27 +2,84 @@
 <html>
   <head>
     <title>MySubject</title>
+
+    <!-- font link -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+
   </head>
+  <style>
+    body{
+      background-image: linear-gradient(to right, #feca54 , #55efc4);
+      font-family: 'Playfair Display', serif;
+      margin-left: 30px;
+      margin-top: 5vh;
+      margin-bottom: 10vh;
+    }
+    
+      .subject-name{
+      font-family: 'Rye', cursive;
+      color: #0d42a3;
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    .chapters{
+      color: #750382;
+    }
+    .video-title{
+      text-align: center;
+    }
+    .video-frame{
+      margin-left: -20px;
+      margin-right: auto;
+      display: flex;
+      border-radius: 5px;
+      width: 80vw;
+      height: 500px;
+    }
+    .video-link{
+      margin-top: 5vh;
+      margin-bottom: 40vh;
+    }
+    .video-frame{
+      margin-bottom: 5vh;
+    }
+    
+  </style>
   <body>
-    <h1>Subject: <%=subject.name%> (<%=subject.subject_id%>)</h1>
-    <h2>Chapters:</h2>
+    <div class="subject-box">
+     <h1 class="subject-name">Subject: <%=subject.name%> (<%=subject.subject_id%>)</h1>
+    </div>
+    <h2 class="chapters">Chapters:</h2>
     <ol>
       <% subject.chapters.forEach((chapter)=>{ %>
-      <li><%=chapter.chapter_name%></li>
+      <li><h3> <%=chapter.chapter_name%> </h3></li>
       <ul>
         <li>Chapter Id: <%= chapter.chapter_id %></li>
         <li>Notes:</li>
         <ol>
           <% chapter.notes.forEach((note)=>{ %>
-          <li><a href="<%=note.link%>"><%=note.title%></a></li>
+          <li><a class="notes-link" href="<%=note.link%>"><%=note.title%></a></li>
           Uploaded By: <%=note.faculty%> at <%=note.date%> <%}) %>
         </ol>
 
         <li>Videos:</li>
         <ol>
           <% chapter.videos.forEach((video)=>{ %>
-          <li><a href="<%=video.link%>"><%=video.title%></a></li>
-          Uploaded By: <%=video.faculty%> at <%=video.date%> <%}) %>
+          <li>
+            <hr>
+            <h4 class="video-title"><%=video.title%></h4>
+            <br>
+            <a class="video-link" href="<%=video.link%>" target="_blank"> 
+               <iframe class="video-frame" src="<%=video.link%>">
+               </iframe>
+            </a>
+            <hr>
+            <!--  <a href="<%=video.link%>"><%=video.title%></a></li> -->
+            <h4 class="video-details"> By: <%=video.faculty%> at <%=video.date%> <%}) %> </h4>
+            <hr>
+          </li>
         </ol>
       </ul>
       <% }) %>

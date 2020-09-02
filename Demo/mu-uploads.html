@@ -7,7 +7,7 @@
 
 	<ol>
 		<%faculty.videos.forEach((video)=>{%>
-			<li><b>Title:</b><a href=<%=video.link%>><%=video.title%></a></li>
+			<li><b>Title:</b> <iframe src="<%=video.link%>" frameborder="0"></iframe> <a href=<%=video.link%>><%=video.title%></a></li>
 			<ul>			
 				<li><b>Chapter:</b> <%=video.chapter%></li>
 				<li><b>Subject</b>: <%=video.subject%></li>
