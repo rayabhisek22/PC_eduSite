@@ -8,9 +8,15 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- <link rel="stylesheet" href="/css/studentPortal.css" /> -->
     <title>Student Portal | Pragati Classes</title>
   </head>
@@ -28,7 +34,7 @@
       box-sizing: inherit;
       padding: 2rem;
       margin: 0;
-      font-family: 'Lora', serif;
+      font-family: "Lora", serif;
       background-color: #c2cad0;
       background-repeat: no-repeat;
       overflow-x: hidden;
@@ -105,7 +111,7 @@
     /* nav-section ends */
 
     /* student-profile starts */
-/* for desktop */
+    /* for desktop */
     .student__profile {
       border: 1px solid black;
       border-radius: 1rem;
@@ -180,18 +186,23 @@
     .subjects {
       background: url(../assets/images/subjects.jpg);
     }
+
     .classroom {
       background: url(../assets/images/classroom.jpg);
     }
+
     .meeting {
       background: url(../assets/images/meeting.jpg);
     }
+
     .notebook {
       background: url(../assets/images/notebook.jpg);
     }
+
     .calender {
       background: url(../assets/images/calender.jpg);
     }
+
     .notice {
       background: url(../assets/images/notice.jpg);
     }
@@ -260,31 +271,38 @@
         width: 160px;
         margin: 30px 2px;
       }
+
       .first {
         margin-bottom: 100px;
       }
+
       .phone__nav {
         display: flex;
       }
+
       .student__profile__heading {
         font-size: 2.5rem;
       }
+
       .logout-btn {
         font-size: 1.5rem;
         top: 3.5rem;
         right: 1.5rem;
       }
     }
+
     /* complaint box */
-    .student-complaint{
+    .student-complaint {
       margin-bottom: 50px;
     }
-    .student-complaint .complaint-box{
-      font-family: 'El Messiri', sans-serif;
+
+    .student-complaint .complaint-box {
+      font-family: "El Messiri", sans-serif;
     }
+
     /* mobile view */
-    @media ( max-width: 750px) {
-      .student-complaint .complaint-box{
+    @media (max-width: 750px) {
+      .student-complaint .complaint-box {
         width: 300px;
         height: 100px;
         font-size: 15px;
@@ -293,14 +311,15 @@
         margin-top: 10px;
         border-radius: 5px;
       }
-      .student-complaint .complaint-label{
+
+      .student-complaint .complaint-label {
         font-size: 15px;
         font-weight: 600;
         margin-left: 5px;
         margin-bottom: 5px;
       }
 
-      #complaint-button{
+      #complaint-button {
         width: 100px;
         height: 35px;
         color: white;
@@ -310,27 +329,30 @@
         background-color: #02b82c;
         border-radius: 5px;
       }
-      #req-email{
+
+      #req-email {
         width: 125px;
         height: 35px;
         font-size: 18px;
         border-radius: 5px;
         font-weight: bold;
-        margin-left: 10px;  
+        margin-left: 10px;
         margin-right: 65px;
       }
-      #req-email option{
+
+      #req-email option {
         width: 80px;
         height: 20px;
         font-size: 18px;
         border-radius: 5px;
         font-weight: bold;
+      }
     }
-    }
+
     /* mobile view ends */
     /* desktop view */
-    @media ( min-width: 750px) {
-      .student-complaint .complaint-box{
+    @media (min-width: 750px) {
+      .student-complaint .complaint-box {
         width: 700px;
         height: 100px;
         font-size: 18px;
@@ -339,14 +361,15 @@
         margin-top: 10px;
         border-radius: 5px;
       }
-      .student-complaint .complaint-label{
+
+      .student-complaint .complaint-label {
         font-size: 20px;
         font-weight: 600;
         margin-left: 50px;
         margin-bottom: 5px;
       }
 
-       #complaint-button{
+      #complaint-button {
         width: 130px;
         height: 40px;
         font-size: 18px;
@@ -356,27 +379,31 @@
         border-radius: 5px;
         font-weight: bold;
       }
-      #req-email{
+
+      #req-email {
         width: 125px;
         height: 35px;
         font-size: 18px;
         border-radius: 5px;
         font-weight: bold;
-        margin-left: 50px;  
+        margin-left: 50px;
         margin-right: 450px;
       }
-    #req-email option{
+
+      #req-email option {
         width: 90px;
         height: 20px;
         font-size: 18px;
         border-radius: 5px;
         font-weight: bold;
+      }
     }
-    }
+
     /* desktop view ends */
-   
+
     /* complaint box ends here */
   </style>
+
   <body>
     <!-- nav-bar -->
     <div class="phone__nav">
@@ -427,41 +454,37 @@
 
     <!-- student-portal-main-options -->
     <div class="student__main-section">
-      <a href="/student/subject" 
-      class="student__main-section-option subjects"
+      <a href="/student/subject" class="student__main-section-option subjects"
         >Subjects</a
       >
       <a
         href="https://classroom.google.com/"
-        class="student__main-section-option classroom" target="_blank"
+        class="student__main-section-option classroom"
+        target="_blank"
         >Classroom</a
       >
       <a
         href="https://meet.google.com/"
-        class="student__main-section-option meeting" target="_blank"
+        class="student__main-section-option meeting"
+        target="_blank"
         >Meeting</a
       >
       <a
         href="https://gmail.com/"
-        class="student__main-section-option meeting" target="_blank"
+        class="student__main-section-option meeting"
+        target="_blank"
         >Gmail</a
       >
-      <a href="#"
-       class="student__main-section-option notebook"
-       >Notebook</a
-       >
+      <a href="#" class="student__main-section-option notebook">Notebook</a>
       <a
         href="https://www.google.com/calendar/"
-        class="student__main-section-option calender" target="_blank"
+        class="student__main-section-option calender"
+        target="_blank"
         >Calender</a
       >
-      <a href="#" 
-      class="student__main-section-option notice"
-      >Notice</a
-      >
+      <a href="#" class="student__main-section-option notice">Notice</a>
     </div>
     <div class="divider"></div>
-    <!-- student-portal-practice-section -->
     <section class="student__practice">
       <div class="student__practice-one">
         <a href="http://pc.unnamedcreators.in" class="anchor-card">
@@ -495,28 +518,36 @@
           </div>
         </a>
       </div>
-      
     </section>
     <!-- Student complaint section -->
     <div class="student-complaint">
-      <form class="complaint-form" action="">
-        <label class="complaint-label" for="">Do you have any complaints?</label>
-        <br>
-        <textarea rows="10" cols="200" class="complaint-box" name="complaint-box" placeholder="Enter complaint here..." ></textarea>
-        <br>
-        <label class="complaint-label" for="choose-email">Who do you want to submit the complaint?</label>
-        <br>
-          <select id="req-email" name="req-email" >
-            <option value="director">Director</option>
-            <option value="sw-team">SW Team</option>
-            <option value="academics">Academics Team</option>
-            <option value="technical">Technical Team</option>
-          </select>
-
-        <input type="submit" name="submit-btn" id="complaint-button">
+      <form class="complaint-form" action="/student/complaint" method="POST">
+        <label class="complaint-label" for=""
+          >Do you have any complaints?</label
+        >
+        <br />
+        <textarea
+          rows="10"
+          cols="200"
+          class="complaint-box"
+          name="complaintBox"
+          placeholder="Enter complaint here..."
+        ></textarea>
+        <br />
+        <label class="complaint-label" for="choose-email"
+          >Who do you want to submit the complaint?</label
+        >
+        <br />
+        <select id="req-email" name="reqEmail">
+          <option value="director">Director</option>
+          <option value="swTeam">SW Team</option>
+          <option value="academics">Academics Team</option>
+          <option value="technical">Technical Team</option>
+        </select>
+        <input type="submit" name="submit-btn" id="complaint-button" />
       </form>
     </div>
-        <!-- complaint section ends -->
+    <!-- complaint section ends -->
   </body>
   <script>
     function openNav() {

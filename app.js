@@ -77,6 +77,34 @@ app.post("/email", (req, res) => {
   });
 });
 
+app.post("/student/complaint", (req, res) => {
+  const complain = req.body.complaintBox;
+  const to = req.body.reqEmail;
+  let emailSendTo;
+  if (to === "director") emailSendTo = "soureen.nits@gmail.com";
+  if (to === "swTeam") emailSendTo = "darjun2610@gmail.com";
+  if (to === "academics") emailSendTo = "abhinavptn2018@gmail.com";
+  if (to === "technical") emailSendTo = "shivaom1907@gmail.com";
+  const content = ` complain: ${complain} `;
+
+  const mail = {
+    from: "Student Pragati Classes",
+    to: to,
+    subject: "New Message from Pragati Classes (Contact Form)",
+    text: content,
+  };
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: "fail",
+      });
+    } else {
+      res.redirect("/");
+    }
+  });
+});
+
 app.post("/admission", (req, res) => {
   const name = req.body.name;
   const stream = req.body.stream;
