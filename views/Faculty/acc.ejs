@@ -9,10 +9,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
+    <!-- body font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+
     <title>Teacher Portal</title>
   </head>
 
@@ -26,7 +25,7 @@
       box-sizing: inherit;
       padding: 2rem;
       margin: 0;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Source Serif Pro', serif;
       background-color: #c2cad0;
       background-repeat: no-repeat;
       overflow-x: hidden;
@@ -127,7 +126,7 @@
       background-color: #124142;
       color: white;
       padding: 1rem;
-      border-radius: 30px;
+      border-radius: 10px;
       font-size: 2.2rem;
       box-shadow: 5px 5px 5px #1d8688;
       position: absolute;
@@ -162,7 +161,7 @@
       font-weight: 800;
       letter-spacing: 2px;
       text-decoration: none;
-      border-radius: 15px;
+      border-radius: 10px;
       text-align: center;
       padding: 20px 0;
       border: 2.5px solid #192a56;
@@ -184,6 +183,11 @@
     .meeting {
       background: url(../assets/images/meeting.jpg);
     }
+
+    .gmail{
+      background: url(../assets/images/gmail.jpg);
+    }
+
     .notebook {
       background: url(../assets/images/notebook.jpg);
     }
@@ -321,26 +325,45 @@
 
     <!-- teacher-portal-main-options -->
     <div class="teacher__main-section">
-      <a href="/faculty/upload" class="teacher__main-section-option subjects"
-        >Upload</a
+      <a href="/faculty/upload" 
+      class="teacher__main-section-option subjects"
+      target="_blank"
+      >Upload</a
       >
       <a
         href="https://classroom.google.com/"
         class="teacher__main-section-option classroom"
+        target="_blank"
         >Classroom</a
       >
       <a
         href="https://meet.google.com/"
         class="teacher__main-section-option meeting"
+        target="_blank"
         >Meeting</a
       >
-      <a href="#" class="teacher__main-section-option notebook">Notebook</a>
+      <a
+        href="https://gmail.com/"
+        class="teacher__main-section-option gmail"
+        target="_blank"
+        >Gmail</a
+      >
+      <a 
+      href="#" 
+      class="teacher__main-section-option notebook"
+      target="_blank"
+      >Notebook</a>
       <a
         href="https://www.google.com/calendar/"
         class="teacher__main-section-option calender"
+        target="_blank"
         >Calender</a
       >
-      <a href="#" class="teacher__main-section-option notice">Notice</a>
+      <a href="#" 
+      class="teacher__main-section-option notice"
+      target="_blank"
+      >Notice</a
+      >
     </div>
     <div class="divider"></div>
   </body>
