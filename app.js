@@ -100,7 +100,7 @@ app.post("/student/complaint", (req, res) => {
         msg: "fail",
       });
     } else {
-      res.redirect("/");
+      res.redirect("/student/acc");
     }
   });
 });
