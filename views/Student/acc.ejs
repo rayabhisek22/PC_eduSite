@@ -8,11 +8,9 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
     <!-- <link rel="stylesheet" href="/css/studentPortal.css" /> -->
     <title>Student Portal | Pragati Classes</title>
   </head>
@@ -30,7 +28,7 @@
       box-sizing: inherit;
       padding: 2rem;
       margin: 0;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Lora', serif;
       background-color: #c2cad0;
       background-repeat: no-repeat;
       overflow-x: hidden;
@@ -107,7 +105,7 @@
     /* nav-section ends */
 
     /* student-profile starts */
-
+/* for desktop */
     .student__profile {
       border: 1px solid black;
       border-radius: 1rem;
@@ -131,7 +129,7 @@
       background-color: #124142;
       color: white;
       padding: 1rem;
-      border-radius: 30px;
+      border-radius: 10px;
       font-size: 2.2rem;
       box-shadow: 5px 5px 5px #1d8688;
       position: absolute;
@@ -277,6 +275,68 @@
         right: 1.5rem;
       }
     }
+    /* complaint box */
+    .student-complaint{
+      margin-bottom: 50px;
+    }
+    .student-complaint .complaint-box{
+      font-family: 'El Messiri', sans-serif;
+    }
+    /* mobile view */
+    @media ( max-width: 750px) {
+      .student-complaint .complaint-box{
+        width: 300px;
+        height: 100px;
+        font-size: 15px;
+        margin-bottom: 30px;
+        margin-left: 5px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      .student-complaint .complaint-label{
+        font-size: 15px;
+        font-weight: 600;
+        margin-left: 5px;
+      }
+
+      #complaint-button{
+        width: 100px;
+        height: 35px;
+        font-size: 18px;
+        margin-left: -100px;
+        background-color: green;
+        border-radius: 10px;
+      }
+    }
+    /* mobile view ends */
+    /* desktop view */
+    @media ( min-width: 750px) {
+      .student-complaint .complaint-box{
+        width: 700px;
+        height: 100px;
+        font-size: 18px;
+        margin-bottom: 50px;
+        margin-left: 50px;
+        margin-top: 10px;
+        border-radius: 5px;
+      }
+      .student-complaint .complaint-label{
+        font-size: 20px;
+        font-weight: 600;
+        margin-left: 50px;
+      }
+
+      #complaint-button{
+        width: 130px;
+        height: 40px;
+        font-size: 18px;
+        margin-left: -130px;
+        background-color: green;
+        border-radius: 5px;
+      }
+    }
+    /* desktop view ends */
+    /* complaint box ends here */
   </style>
   <body>
     <!-- nav-bar -->
@@ -321,33 +381,45 @@
       <li class="student__profile__details">Class: <%=user.email%></li>
       <li class="student__profile__details">Batch: <%=user.batch%></li>
       <li class="student__profile__details">username: <%=user.username%></li>
-      <li class="student__profile__details">
+      <!-- <li class="student__profile__details">
         Reg no: <%= user.registration_no %>
-      </li>
+      </li> -->
     </div>
 
     <!-- student-portal-main-options -->
     <div class="student__main-section">
-      <a href="/student/subject" class="student__main-section-option subjects"
+      <a href="/student/subject" 
+      class="student__main-section-option subjects"
         >Subjects</a
       >
       <a
         href="https://classroom.google.com/"
-        class="student__main-section-option classroom"
+        class="student__main-section-option classroom" target="_blank"
         >Classroom</a
       >
       <a
         href="https://meet.google.com/"
-        class="student__main-section-option meeting"
+        class="student__main-section-option meeting" target="_blank"
         >Meeting</a
       >
-      <a href="#" class="student__main-section-option notebook">Notebook</a>
+      <a
+        href="https://gmail.com/"
+        class="student__main-section-option meeting" target="_blank"
+        >Gmail</a
+      >
+      <a href="#"
+       class="student__main-section-option notebook"
+       >Notebook</a
+       >
       <a
         href="https://www.google.com/calendar/"
-        class="student__main-section-option calender"
+        class="student__main-section-option calender" target="_blank"
         >Calender</a
       >
-      <a href="#" class="student__main-section-option notice">Notice</a>
+      <a href="#" 
+      class="student__main-section-option notice"
+      >Notice</a
+      >
     </div>
     <div class="divider"></div>
     <!-- student-portal-practice-section -->
@@ -384,7 +456,18 @@
           </div>
         </a>
       </div>
+      
     </section>
+    <!-- Student complaint section -->
+    <div class="student-complaint">
+      <form class="complaint-form" action="">
+        <label class="complaint-label" for="">Do you have any complaints?</label>
+        <br>
+        <textarea rows="10" cols="200" class="complaint-box" name="complaint-box" placeholder="Enter complaint here..." ></textarea>
+        <input type="submit" name="" id="complaint-button">
+      </form>
+    </div>
+        <!-- complaint section ends -->
   </body>
   <script>
     function openNav() {
