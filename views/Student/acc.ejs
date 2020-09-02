@@ -297,16 +297,35 @@
         font-size: 15px;
         font-weight: 600;
         margin-left: 5px;
+        margin-bottom: 5px;
       }
 
       #complaint-button{
         width: 100px;
         height: 35px;
+        color: white;
+        font-weight: bold;
         font-size: 18px;
-        margin-left: -100px;
-        background-color: green;
-        border-radius: 10px;
+        /* margin-left: -100px; */
+        background-color: #02b82c;
+        border-radius: 5px;
       }
+      #req-email{
+        width: 125px;
+        height: 35px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-left: 10px;  
+        margin-right: 65px;
+      }
+      #req-email option{
+        width: 80px;
+        height: 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
     }
     /* mobile view ends */
     /* desktop view */
@@ -324,18 +343,38 @@
         font-size: 20px;
         font-weight: 600;
         margin-left: 50px;
+        margin-bottom: 5px;
       }
 
-      #complaint-button{
+       #complaint-button{
         width: 130px;
         height: 40px;
         font-size: 18px;
-        margin-left: -130px;
-        background-color: green;
+        color: white;
+        /* margin-left: -130px; */
+        background-color: #02b82c;
         border-radius: 5px;
+        font-weight: bold;
       }
+      #req-email{
+        width: 125px;
+        height: 35px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: bold;
+        margin-left: 50px;  
+        margin-right: 450px;
+      }
+    #req-email option{
+        width: 90px;
+        height: 20px;
+        font-size: 18px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
     }
     /* desktop view ends */
+   
     /* complaint box ends here */
   </style>
   <body>
@@ -464,7 +503,17 @@
         <label class="complaint-label" for="">Do you have any complaints?</label>
         <br>
         <textarea rows="10" cols="200" class="complaint-box" name="complaint-box" placeholder="Enter complaint here..." ></textarea>
-        <input type="submit" name="" id="complaint-button">
+        <br>
+        <label class="complaint-label" for="choose-email">Who do you want to submit the complaint?</label>
+        <br>
+          <select id="req-email" name="req-email" >
+            <option value="director">Director</option>
+            <option value="sw-team">SW Team</option>
+            <option value="academics">Academics Team</option>
+            <option value="technical">Technical Team</option>
+          </select>
+
+        <input type="submit" name="submit-btn" id="complaint-button">
       </form>
     </div>
         <!-- complaint section ends -->
