@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title><%= title %></title>
+        <!-- CSS bootrap only -->
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+        <!-- heading font -->
+    <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+    <!-- body font -->
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+    
+
+    </head>
+</html>
+
+  
+  <style>
+      body{
+        font-family: 'Playfair Display', serif;
+      }
+    .head-sec{
+        text-align: center;
+        padding-top: 30px;
+        background-color: #cfbf0e;
+        padding-bottom: 20px;
+        border-radius: 5px;
+        margin-bottom: 50px;
+    }
+    .heading, .serial-no{
+        font-family: 'Ewert', cursive;
+        color: white;
+    }
+    .add-student-btn{
+        background-color: #033dfc;
+        color: white;
+        border-radius: 5px;
+        padding: 10px;
+        text-decoration: none;
+    }
+    .add-btn{
+        margin-top: 10px;
+    }
+
+    .stu-profile-div{
+        background-color: #06299c;
+        border-radius: 5px;
+        height: 200px;
+        color: white;
+        /* padding-bottom: 10px; */
+        /* padding-top: 10px; */
+    }
+    .img-class{
+        margin-top: 5px;
+        height: 190px;
+        width: 100%;
+    }
+    .stu-detail-li{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+    }
+  </style>
+  <body>
+
+    <!-- <h1>STUDENT LIST</h1>
+    <div class="list">
+      <ul>
+        <% for(var person of people) { %>
+        <li>
+          <a class="student" href="/admin/students/edit/<%= person._id %>"
+            ><%= person.name %></a
+          >
+        </li>
+        <% } %>
+      </ul>
+    </div>
+    <br />
+    <br />
+    <h3><a class="add-student-btn" href="/admin/students/add">Add Student</a></h3>
+   -->
+   <div class="container">
+   <header>
+       
+        <div class="row head-sec">
+            <div class="col-9">
+                <h1 class="heading">-: STUDENTS LIST:-</h1>
+            </div>
+            <div class="col-3 add-btn">
+                <h6><a class="add-student-btn" href="/admin/students/add">Add Student</a></h6>
+            </div>
+        </div>
+  
+   </header>
+
+   <section class="one-student">
+    <h4 class="serial-no">1.</h4>
+        <div class="row stu-profile-div">
+            <div class="col-9 stu-detail-div">
+                <h6>
+                    <li class="stu-detail-li">Username : stu@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Password : abcd@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Name : Student Name</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Class: 11th</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Registered Subjects: Maths, Physics, Biology</li>
+                </h6> 
+            </div>
+            <div class="col-3 stu-img-div">
+                <img class="img-class" src="https://i.ytimg.com/vi/qBB_QOZNEdc/maxresdefault.jpg" alt="student-image">
+            </div>
+        </div>
+        <h4 class="serial-no">2.</h4>
+        <div class="row stu-profile-div">
+            <div class="col-9 stu-detail-div">
+                <h6>
+                    <li class="stu-detail-li">Username : stu@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Password : abcd@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Name : Student Name</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Class: 11th</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Registered Subjects: Maths, Physics, Biology</li>
+                </h6> 
+            </div>
+            <div class="col-3 stu-img-div">
+                <img class="img-class" src="https://i.ytimg.com/vi/qBB_QOZNEdc/maxresdefault.jpg" alt="student-image">
+            </div>
+        </div>
+        <h4 class="serial-no">3.</h4>
+        <div class="row stu-profile-div">
+            <div class="col-9 stu-detail-div">
+                <h6>
+                    <li class="stu-detail-li">Username : stu@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Password : abcd@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Name : Student Name</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Class: 11th</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Registered Subjects: Maths, Physics, Biology</li>
+                </h6> 
+            </div>
+            <div class="col-3 stu-img-div">
+                <img class="img-class" src="https://i.ytimg.com/vi/qBB_QOZNEdc/maxresdefault.jpg" alt="student-image">
+            </div>
+        </div>
+        <h4 class="serial-no">4.</h4>
+        <div class="row stu-profile-div">
+            <div class="col-9 stu-detail-div">
+                <h6>
+                    <li class="stu-detail-li">Username : stu@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Password : abcd@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Name : Student Name</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Class: 11th</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Registered Subjects: Maths, Physics, Biology</li>
+                </h6> 
+            </div>
+            <div class="col-3 stu-img-div">
+                <img class="img-class" src="https://i.ytimg.com/vi/qBB_QOZNEdc/maxresdefault.jpg" alt="student-image">
+            </div>
+        </div>
+        <h4 class="serial-no">5.</h4>
+        <div class="row stu-profile-div">
+            <div class="col-9 stu-detail-div">
+                <h6>
+                    <li class="stu-detail-li">Username : stu@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Password : abcd@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Name : Student Name</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Class: 11th</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Registered Subjects: Maths, Physics, Biology</li>
+                </h6> 
+            </div>
+            <div class="col-3 stu-img-div">
+                <img class="img-class" src="https://i.ytimg.com/vi/qBB_QOZNEdc/maxresdefault.jpg" alt="student-image">
+            </div>
+        </div>
+        <h4 class="serial-no">6.</h4>
+        <div class="row stu-profile-div">
+            <div class="col-9 stu-detail-div">
+                <h6>
+                    <li class="stu-detail-li">Username : stu@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Password : abcd@123</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Name : Student Name</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Class: 11th</li>
+                </h6>
+                <h6>
+                    <li class="stu-detail-li">Registered Subjects: Maths, Physics, Biology</li>
+                </h6> 
+            </div>
+            <div class="col-3 stu-img-div">
+                <img class="img-class" src="https://i.ytimg.com/vi/qBB_QOZNEdc/maxresdefault.jpg" alt="student-image">
+            </div>
+        </div>
+       
+   </section>
+   <div style="height: 50px;"></div>
+</div>
+</body>
+  

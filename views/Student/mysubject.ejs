@@ -54,7 +54,7 @@
     <h2 class="chapters">Chapters:</h2>
     <ol>
       <% subject.chapters.forEach((chapter)=>{ %>
-      <li><h3> <%=chapter.chapter_name%> </h3></li>
+      <li> <a href="/student/subject/student-chapter.ejs">  <h3> <%=chapter.chapter_name%> </h3></a></li>
       <ul>
         <li>Chapter Id: <%= chapter.chapter_id %></li>
         <li>Notes:</li>
