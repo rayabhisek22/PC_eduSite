@@ -9,7 +9,7 @@
 
     color: white;
   }
-  .sub-heading{
+  .chapter-heading{
     font-family: 'Ewert', cursive;
     display: flex;
     justify-content: center;
@@ -19,24 +19,20 @@
     display: flex;
     justify-content: center;
   }
-  .sub-link{
+  .chapter-link{
     color: white;
     font-family: 'Playfair Display', serif;
     text-decoration: none;
   }
 </style>
 <div>
-  <h1 class="sub-heading">Subjects</h1>
+  <h1 class="chapter-heading">-: Chapters :-</h1>
 </div>
 <div class="ol-div">
-  <ol class="sub-ol">
-    <%student.subject.forEach((sub)=>{%>
-    <li class="sub-li">
-      <a class="sub-link" href="/student/subject/<%=sub._id%>"
-        ><%= sub.name %>(<%= sub.subject_id %>)</a
-      >
+  <ol class="chapter-ol">
+    <li class="chapter-li">
+      <a class="chapter-link" href="">Chapter One</a>
     </li>
-    <%})%>
   </ol>
 </div>
 
