@@ -89,18 +89,19 @@ app.post("/student/complaint", (req, res) => {
 
   const mail = {
     from: "Student Pragati Classes",
-    to: to,
+    to: emailSendTo,
     subject: "New Message from Pragati Classes (Contact Form)",
     text: content,
   };
 
   transporter.sendMail(mail, (err, data) => {
     if (err) {
+      console.log(err);
       res.json({
         msg: "fail",
       });
     } else {
-      res.redirect("/student/acc");
+      res.send("Complain successfully sent");
     }
   });
 });

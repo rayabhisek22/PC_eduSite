@@ -4,6 +4,7 @@ const express = require("express");
 const router = express.Router();
 const User = require("../../models/User");
 const Admin = require("../../models/Admin");
+const Subject = require("../../models/Subject");
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
 
@@ -125,6 +126,14 @@ router.post(
     failureRedirect: "login",
   })
 );
+
+router.get("/academics", isLoggedIn, isAdmin, async (req, res) => {
+  const subjects = await Subject.find();
+  console.log(subjects);
+  res.render("./Admin/adminAcademics", {
+    subjects,
+  });
+});
 
 router.get("/acc", isLoggedIn, isAdmin, (req, res) => {
   res.render("./Admin/acc");
