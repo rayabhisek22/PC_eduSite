@@ -1,25 +1,28 @@
- <!-- body font -->
- <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
- <!-- heading font -->
+<!-- body font -->
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+<!-- heading font -->
 <link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
 
 <style>
-  body{
-    background-image: linear-gradient(to right, #17209c , #473391);
+  body {
+    background-image: linear-gradient(to right, #17209c, #473391);
 
     color: white;
   }
-  .sub-heading{
+
+  .sub-heading {
     font-family: 'Ewert', cursive;
     display: flex;
     justify-content: center;
   }
-  .ol-div{
+
+  .ol-div {
     position: relative;
     display: flex;
     justify-content: center;
   }
-  .sub-link{
+
+  .sub-link {
     color: white;
     font-family: 'Playfair Display', serif;
     text-decoration: none;
@@ -32,11 +35,8 @@
   <ol class="sub-ol">
     <%student.subject.forEach((sub)=>{%>
     <li class="sub-li">
-      <a class="sub-link" href="/student/subject/<%=sub._id%>"
-        ><%= sub.name %>(<%= sub.subject_id %>)</a
-      >
+      <a class="sub-link" href="/student/subject/<%=sub._id%>"><%= sub.name %>(<%= sub.subject_id %>)</a>
     </li>
     <%})%>
   </ol>
 </div>
-

@@ -1,27 +1,36 @@
- <!-- body font -->
- <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
- <!-- heading font -->
-<link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet">
+<!-- body font -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap"
+  rel="stylesheet"
+/>
+<!-- heading font -->
+<link
+  href="https://fonts.googleapis.com/css2?family=Ewert&display=swap"
+  rel="stylesheet"
+/>
 
 <style>
-  body{
-    background-image: linear-gradient(to right, #17209c , #473391);
+  body {
+    background-image: linear-gradient(to right, #17209c, #473391);
 
     color: white;
   }
-  .chapter-heading{
-    font-family: 'Ewert', cursive;
+
+  .chapter-heading {
+    font-family: "Ewert", cursive;
     display: flex;
     justify-content: center;
   }
-  .ol-div{
+
+  .ol-div {
     position: relative;
     display: flex;
     justify-content: center;
   }
-  .chapter-link{
+
+  .chapter-link {
     color: white;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
     text-decoration: none;
   }
 </style>
@@ -29,10 +38,17 @@
   <h1 class="chapter-heading">-: Chapters :-</h1>
 </div>
 <div class="ol-div">
-  <ol class="chapter-ol">
-    <li class="chapter-li">
-      <a class="chapter-link" href="">Chapter One</a>
+  <ol>
+    <% subject.chapters.forEach((chapter)=>{ %>
+    <li>
+      <a
+        class="chapter-link"
+        href="/student/subject/resources/<%= subject._id %>"
+      >
+        <h3><%=chapter.chapter_name%></h3>
+      </a>
     </li>
+
+    <% }) %>
   </ol>
 </div>
-

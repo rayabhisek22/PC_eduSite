@@ -28,6 +28,7 @@ const isStudent = (req, res, next) => {
 router.get("/", (req, res) => {
   res.redirect("/student/login");
 });
+
 router.get("/subject", isLoggedIn, isStudent, (req, res) => {
   Student.findById(req.user.student_id)
     .populate("subject")
@@ -35,6 +36,30 @@ router.get("/subject", isLoggedIn, isStudent, (req, res) => {
       if (err) console.log(err);
       else {
         res.render("./Student/subject", { student: student });
+      }
+    });
+});
+
+router.get("/subject/resources/:sid", isLoggedIn, isStudent, (req, res) => {
+  Subject.findById(req.params.sid)
+    .populate({
+      path: "chapters",
+      populate: {
+        path: "videos",
+        model: Videos,
+      },
+    })
+    .populate({
+      path: "chapters",
+      populate: {
+        path: "notes",
+        model: Notes,
+      },
+    })
+    .exec((err, subject) => {
+      if (err) console.log(err);
+      else {
+        res.render("./Student/student-chapter", { subject: subject });
       }
     });
 });
@@ -59,7 +84,7 @@ router.get("/subject/:sid", isLoggedIn, isStudent, (req, res) => {
       if (err) console.log(err);
       else {
         console.log(subject.chapters[0].videos);
-        res.render("./Student/mysubject", { subject: subject });
+        res.render("./Student/chapters", { subject: subject });
       }
     });
 });
