@@ -1,13 +1,7 @@
 <!-- body font -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet" />
 <!-- heading font -->
-<link
-  href="https://fonts.googleapis.com/css2?family=Ewert&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Ewert&display=swap" rel="stylesheet" />
 
 <style>
   body {
@@ -41,11 +35,10 @@
   <ol>
     <% subject.chapters.forEach((chapter)=>{ %>
     <li>
-      <a
-        class="chapter-link"
-        href="/student/subject/resources/<%= subject._id %>"
-      >
+      <a class="chapter-link" href="/student/subject/resource/<%= chapter._id %>">
         <h3><%=chapter.chapter_name%></h3>
+
+
       </a>
     </li>
 
