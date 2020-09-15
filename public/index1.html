@@ -72,10 +72,10 @@
         <a href="http://pc.unnamedcreators.in/home">
           <i class="phone__nav-options-a fa fa-graduation-cap"></i>
         </a>
-        <a href="./student/login">
+        <a id="stu-fa-popup-button">
           <i class="phone__nav-options-a fa fa-user"></i>
         </a>
-        <a href="./faculty/login">
+        <a id="tch-fa-popup-button">
           <i class="phone__nav-options-a fa fa-chalkboard-teacher"></i>
         </a>
         <a href="./admissionPortal.html">
@@ -222,25 +222,28 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a
+              id="stu-popup-button"
               class="nav-link"
               style="font-size: 15px; color: white"
-              href="/student/login"
+                
               >Student Portal &nbsp; &nbsp;</a
             >
           </li>
           <li class="nav-item">
             <a
+              id="tch-popup-button"
               class="nav-link"
               style="font-size: 15px; color: white"
-              href="/faculty/login"
+              
               >TCH staff &nbsp; &nbsp;</a
             >
           </li>
           <li class="nav-item">
             <a
+              id="mng-popup-button"
               class="nav-link"
               style="font-size: 15px; color: white"
-              href="/management/login"
+              
               >MNG staff &nbsp; &nbsp;</a
             >
           </li>
@@ -393,6 +396,50 @@
         </div>
       </div>
     </nav>
+
+    <!-- poup menu material begin -->
+    <div class="popup-div stu-popup-div">
+      <div class="popup-block">
+          <div class="close stu-close">+</div>
+          <img src="./assets/images/popup-logo.png">
+          <p style="font-family: Roboto, sans-serif; color: #3d3d3d;">Student LogIn</p>
+          <form>
+              <input type="text" placeholder="Enter ID" id="stu-id"><br>
+              <input type="password" placeholder="Enter Password"><br><br>
+              <a class="stu-popup-a" href="submit.html" class="popup-submit-button">Submit</a>
+          </form>
+      </div>
+  </div>
+
+  <div class="popup-div tch-popup-div">
+      <div class="popup-block">
+          <div class="close tch-close">+</div>
+          <img src="./assets/images/popup-logo.png">
+          <p style="font-family: Roboto, sans-serif; color: #3d3d3d;">Faculty LogIn</p>
+          <form>
+              <input type="text" placeholder="Enter ID" id="stu-id"><br>
+              <input type="password" placeholder="Enter Password"><br><br>
+              <a class="stu-popup-a" href="submit.html" class="popup-submit-button">Submit</a>
+          </form>
+      </div>
+  </div>
+
+  <div class="popup-div mng-popup-div">
+      <div class="popup-block">
+          <div class="close mng-close">+</div>
+          <img src="./assets/images/popup-logo.png">
+          <p style="font-family: Roboto, sans-serif; color: #3d3d3d;">Management LogIn</p>
+          <form>
+              <input type="text" placeholder="Enter ID" id="stu-id"><br>
+              <input type="password" placeholder="Enter Password"><br><br>
+              <a class="stu-popup-a" href="submit.html" class="popup-submit-button">Submit</a>
+          </form>
+      </div>
+  </div>
+
+    <!-- popup menu material end -->
+
+
     <section
       style="
         background-image: url(images/1.jpg);
@@ -995,6 +1042,40 @@
         printDay();
       }, 1000);
     </script>
+
+    <!-- pop up script begin -->
+    <script>
+      document.getElementById("stu-popup-button").addEventListener('click', function() {
+          document.querySelector(".stu-popup-div").style.display='flex';    
+      });
+  
+      document.getElementById("stu-fa-popup-button").addEventListener('click', function() {
+          document.querySelector(".stu-popup-div").style.display='flex';    
+      });
+  
+      document.querySelector(".stu-close").addEventListener('click', function() {
+          document.querySelector(".stu-popup-div").style.display='none';
+      });
+      
+      document.getElementById("tch-popup-button").addEventListener('click', function() {
+          document.querySelector(".tch-popup-div").style.display='flex';    
+      });
+  
+      document.getElementById("tch-fa-popup-button").addEventListener('click', function() {
+          document.querySelector(".tch-popup-div").style.display='flex';    
+      });
+  
+      document.querySelector(".tch-close").addEventListener('click', function() {
+          document.querySelector(".tch-popup-div").style.display='none';
+      });
+      document.getElementById("mng-popup-button").addEventListener('click', function() {
+          document.querySelector(".mng-popup-div").style.display='flex';    
+      });
+      document.querySelector(".mng-close").addEventListener('click', function() {
+          document.querySelector(".mng-popup-div").style.display='none';
+      });
+  </script>
+    <!-- pop up script end -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
@@ -1015,10 +1096,10 @@
         loader.className += " hidden"; // class "loader hidden"
       }
 
-      function otherOperation() {
-        const stick = document.querySelector(".second_nav");
-        stick.className += " sticky-top";
-      }
+      // function otherOperation() {
+      //   const stick = document.querySelector(".second_nav");
+      //   stick.className += " sticky-top";
+      // }
     </script>
 
     <script>

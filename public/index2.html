@@ -75,10 +75,10 @@
         <a href="http://pc.unnamedcreators.in">
           <i class="phone__nav-options-a fa fa-graduation-cap"></i>
         </a>
-        <a href="./student/login">
+        <a id="stu-fa-popup-button">
           <i class="phone__nav-options-a fa fa-user"></i>
         </a>
-        <a href="./faculty/login">
+        <a id="tch-fa-popup-button">
           <i class="phone__nav-options-a fa fa-chalkboard-teacher"></i>
         </a>
 
@@ -104,6 +104,52 @@
       <a href="/admin/login">Administration Zone level 1</a>
       <a href="./faq.html">Administration Zone level 2</a>
     </div>
+
+    <!-- poup menu material begin -->
+    <div class="popup-div stu-popup-div">
+      <div class="popup-block">
+          <div class="close stu-close">+</div>
+          <img src="./assets/images/popup-logo.png">
+          <p style="font-family: Roboto, sans-serif; color: #3d3d3d;">Student LogIn</p>
+          <form>
+              <input type="text" placeholder="Enter ID" id="stu-id"><br>
+              <input type="password" placeholder="Enter Password"><br><br>
+              <a class="stu-popup-a" href="submit.html" class="popup-submit-button">Submit</a>
+          </form>
+      </div>
+  </div>
+
+  <div class="popup-div tch-popup-div">
+      <div class="popup-block">
+          <div class="close tch-close">+</div>
+          <img src="./assets/images/popup-logo.png">
+          <p style="font-family: Roboto, sans-serif; color: #3d3d3d;">Faculty LogIn</p>
+          <form>
+              <input type="text" placeholder="Enter ID" id="stu-id"><br>
+              <input type="password" placeholder="Enter Password"><br><br>
+              <a class="stu-popup-a" href="submit.html" class="popup-submit-button">Submit</a>
+          </form>
+      </div>
+  </div>
+
+  <div class="popup-div mng-popup-div">
+      <div class="popup-block">
+          <div class="close mng-close">+</div>
+          <img src="./assets/images/popup-logo.png">
+          <p style="font-family: Roboto, sans-serif; color: #3d3d3d;">Management LogIn</p>
+          <form>
+              <input type="text" placeholder="Enter ID" id="stu-id"><br>
+              <input type="password" placeholder="Enter Password"><br><br>
+              <a class="stu-popup-a" href="submit.html" class="popup-submit-button">Submit</a>
+          </form>
+      </div>
+  </div>
+
+    <!-- popup menu material end -->
+
+
+
+
     <div class="iframe-container">
       <iframe
         class="iframe"
@@ -809,6 +855,31 @@
       document.getElementById("mySidenav").style.width = "0";
     }
   </script>
+  <!-- pop up script begin -->
+  <script>
+    document.getElementById("stu-fa-popup-button").addEventListener('click', function() {
+        document.querySelector(".stu-popup-div").style.display='flex';    
+    });
+
+    document.querySelector(".stu-close").addEventListener('click', function() {
+        document.querySelector(".stu-popup-div").style.display='none';
+    });
+
+    document.getElementById("tch-fa-popup-button").addEventListener('click', function() {
+        document.querySelector(".tch-popup-div").style.display='flex';    
+    });
+
+    document.querySelector(".tch-close").addEventListener('click', function() {
+        document.querySelector(".tch-popup-div").style.display='none';
+    });
+    document.getElementById("mng-popup-button").addEventListener('click', function() {
+        document.querySelector(".mng-popup-div").style.display='flex';    
+    });
+    document.querySelector(".mng-close").addEventListener('click', function() {
+        document.querySelector(".mng-popup-div").style.display='none';
+    });
+</script>
+  <!-- pop up script end -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

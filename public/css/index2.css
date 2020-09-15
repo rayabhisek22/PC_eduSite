@@ -167,6 +167,96 @@ body {
   margin-left: 50px;
 }
 
+/*  popup menu starts */
+.popup-div {
+  width: auto;
+  height: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.popup-block p{
+  font-size: 25px;
+}
+
+#popup-button {
+  cursor: pointer;
+}
+
+.popup-block {
+  width: 400px;
+  height: 270px;
+  background-color: white;
+  border-radius: 4px;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.popup-block img {
+  height: 80px;
+  width: 80px;
+}
+
+input {
+  height: 20px;
+  width: 200px;
+  padding: 2px;
+  border: solid 0.2px #3d3d3d;
+  border-radius: 2px;
+  color: #3d3d3d;
+  font-size: 13px;
+}
+
+input:focus {
+  outline: 0;
+}
+
+#stu-id{
+  margin-bottom: 5px;
+}
+.stu-popup-a {
+  display: inline-block;
+  box-sizing: border-box;
+  height: 40px;
+  width: 130px;
+  text-align: center;
+  border-radius: 20px;
+  margin-top: 10px;
+  background-color: #3d3d3d;
+  color: #f1f2f6;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: Roboto, sans-serif;
+  text-transform: uppercase;
+  padding: 11px;
+  letter-spacing: 0.5px;
+}
+
+.popup-submit-button:hover {
+  background-color: #5a5757;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 14px;
+  font-size: 38px;
+  transform: rotate(45deg);
+  cursor: pointer;
+  font-weight: 600;
+  color: #3d3d3d;
+}
+/* popup menu ends */
+
+
 .iframe-container {
   margin: 10rem 20rem;
   height: 500px;
