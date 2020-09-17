@@ -7,7 +7,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 	<!-- body font -->
-    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500&display=swap" rel="stylesheet">
 
 </head>
 <style type="text/css">
@@ -109,11 +110,11 @@ body{
 					<img id="pc-logo" src="pc-logo.png">
 				</div>
 
-				<div class="col-5 top-nav">
+				<div class="col-1 top-nav">
 					<!-- <label for="chapters">Select Chapter :</label> -->
 					
 				</div>
-				<div class="col-3 top-nav">Subject:<%= chapter.chapter_name %></div>
+				<div class="col-7 top-nav" style="font-family: 'Lora', serif; font-size: 1.2em;">Chapter: <%= chapter.chapter_name %></div>
 				<div class="col-2 top-nav"></div>
 			</div>
 		</div>
