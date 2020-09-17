@@ -163,6 +163,11 @@ body{
 						<ol>
 							<h5 class="l-box-title">Chapter Content :</h5>
 							<hr>
+							<% chapter.videos.forEach((video) => { %>
+								<li>
+									<b><%= video.title %></b>
+								</li>
+							<% }); %>
 						</ol>
 					</div>
 				</div>
