@@ -13,7 +13,7 @@ const app = express();
 const url = process.env.MONGODB_URL;
 const urlLocal = "mongodb://localhost:27017/PC";
 mongoose.connect(
-  url,
+  urlLocal,
   {
     useNewUrlParser: true,
     useFindAndModify: false,
