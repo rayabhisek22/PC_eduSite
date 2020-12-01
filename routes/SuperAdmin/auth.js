@@ -8,7 +8,6 @@ const SuperAdmin = require("../../models/SuperAdmin");
 const session = require("express-session");
 const bcrypt = require("bcryptjs");
 
-
 const isLoggedIn = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();

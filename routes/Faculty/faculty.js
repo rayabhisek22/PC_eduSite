@@ -246,9 +246,9 @@ router.post("/upload/:subname/chapter/videos", (req, res) => {
     var date = new Date();
 
     var newVideo = new Videos(req.body);
-    
-    newVideo.link = newVideo.link.replace("watch?v=","embed/");
-    
+
+    newVideo.link = newVideo.link.replace("watch?v=", "embed/");
+
     newVideo.faculty = req.user.username;
     newVideo.facultyId = req.user.faculty_id;
     newVideo.chapter = chapter.chapter_name;

@@ -64,19 +64,26 @@ router.get("/subject/resources/:sid", isLoggedIn, isStudent, (req, res) => {
     });
 });
 
-router.get("/subject/resource/:cid", isLoggedIn, isStudent, async (req, res) => {
-  console.log(req.params.cid);
-  try {
-    const chapter = await Chapter.findOne({ _id: req.params.cid }).populate('notes videos');
-    res.status(200).render("./Student/student-chapter", { chapter })
-  } catch (err) {
-    console.log(err)
-    res.status(400).json({
-      status: 'fail',
-      message: err
-    })
+router.get(
+  "/subject/resource/:cid",
+  isLoggedIn,
+  isStudent,
+  async (req, res) => {
+    console.log(req.params.cid);
+    try {
+      const chapter = await Chapter.findOne({ _id: req.params.cid }).populate(
+        "notes videos"
+      );
+      res.status(200).render("./Student/student-chapter", { chapter });
+    } catch (err) {
+      console.log(err);
+      res.status(400).json({
+        status: "fail",
+        message: err,
+      });
+    }
   }
-})
+);
 
 router.get("/subject/:sid", isLoggedIn, isStudent, (req, res) => {
   Subject.findById(req.params.sid)
